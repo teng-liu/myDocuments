@@ -87,3 +87,71 @@ Questions:
 
 => Annotations may include an optional list of **key-value** pairs  
 => Annotations themselves may be annotated to indicate **where** and **when** they can be used
+
+videos:
+https://spring.io/guides/tutorials/rest/
+
+https://javabrains.io/courses/spring_bootquickstart/
+https://www.youtube.com/channel/UCYt1sfh5464XaDBH0oH_o7Q
+
+
+DataBase:
+=========
+
+shell> "C:\Program Files\MySQL\MySQL Server 5.0\bin\mysqld"
+The path to mysqld may vary depending on the install location of MySQL on your system.
+
+shell> "C:\Program Files\MySQL\MySQL Server 5.0\bin\mysqladmin" -u root shutdown
+
+
+~~~sql
+ create database if not exists `tamidb`;
+ use tamidb;
+
+ create table if not exists applications(
+     id INT AUTO_INCREMENT,
+     key_name VARCHAR(60) NOT NULL,
+     PRIMARY KEY (id)
+ );
+
+create table if not exists codetable(
+     id INT AUTO_INCREMENT,
+     key_name VARCHAR(45) NOT NULL,
+     star_date DATE,
+     end_date DATE,
+     app_codetable_idapp INT,
+     PRIMARY KEY (id)
+ );
+
+ create table if not exists application_codetable(
+     id INT AUTO_INCREMENT,
+     app_id INT NOT NULL,
+     codetable_id INT NOT NULL,
+     star_date DATE,
+     end_date DATE,
+     application_idapp INT,
+     PRIMARY KEY (id),
+     FOREIGN KEY fk_appid(app_id)
+     REFERENCES applications(id)
+     ON UPDATE CASCADE
+     ON DELETE RESTRICT,
+     FOREIGN KEY fk_codetableid(codetable_id)
+     REFERENCES codetable(id)
+     ON UPDATE CASCADE
+     ON DELETE RESTRICT
+ );
+
+ create table if not exists codevalue(
+     id INT AUTO_INCREMENT,
+     codetable_id INT,
+     codevalue VARCHAR(128) NOT NULL,
+     star_date DATE,
+     end_date DATE,
+     PRIMARY KEY (id),
+     FOREIGN KEY fk_codetable(codetable_id)
+     REFERENCES codetable(id)
+     ON UPDATE CASCADE
+     ON DELETE RESTRICT
+ );
+
+~~~
