@@ -2,9 +2,11 @@
 Day 3
 =====
 
-1. Re-created my table columns as the ones from the document you provided, 
+1. I Re-created my table columns as the ones from the document you provided, 
    and inserted the data into database. I will attach my sql file later. 
-   I used Visual Studio Code to edit my sql, that's a very powerful editor.  
+   I used Visual Studio Code to edit my sql, that's a very powerful editor. Here is a link of my sql file in github:
+
+   https://github.com/teng-liu/myDocuments/blob/master/tamidb_init.sql  
 
 2. I knew how to query from only one table before, not join multiple tables. 
    But today I spent some time and figured out how to write join, inner join, left/right join of query from multiple tables. This is realy helpful. But I need more practice on this. Here is an example of query codetables for each application:  
