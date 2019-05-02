@@ -370,4 +370,13 @@ select application.application_key, codetable.codetable_key from application
     where id_application=(select id_application from application where name="Employee");
 
 ~~~
+Hi Scott,
 
+I upload my learning-log to my github account, so that it can display mark-down file (.md) well. And I also want to say that this is really a valuable chance for me to create database and write these sql in practical, I learned a lot, but I know there still be much more to learn, I am excited to see how it comes after 4 months work, it must be very rewarding. Thanks again for this chance.
+
+Please check today's report from the link below:
+
+https://github.com/teng-liu/myDocuments/blob/master/tami-learning-log.md 
+
+Best Regards,
+Tami (Teng Liu)

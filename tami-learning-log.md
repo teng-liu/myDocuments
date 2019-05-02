@@ -1,10 +1,11 @@
 
-Day 3
+Day 3 (Mar.02)
 =====
 
 1. I Re-created my table columns as the ones from the document you provided, 
    and inserted the data into database. I will attach my sql file later. 
-   I used Visual Studio Code to edit my sql, that's a very powerful editor. Here is a link of my sql file in github:
+   I used Visual Studio Code to edit my sql, that's a very powerful and efficient editor. 
+   Here is a link of my sql file in github:
 
    https://github.com/teng-liu/myDocuments/blob/master/tamidb_init.sql  
 
@@ -36,7 +37,7 @@ Result:
 3. I will work on **spring boot** tomorrow, see how to connect MySQL there and query the data. 
 
 
-Day 2
+Day 2 (May.01)
 =====
 1. Learned more about the concept about annotations and beans and how they worked.  
 2. checked videos of Spring boot MicroServices, these videos are very good, first create 3 general services in Spring boot, then they turn them to microservice way. I will check more of it.  
@@ -45,7 +46,7 @@ https://javabrains.io/courses/spring_bootquickstart/
 I created sql to create the databse and 4 tables that you gave, but there is no data in them, I will add some testing data tomorrow.  
 
 
-Day 1
+Day 1 (Apr.30)
 =====
 1. Installed Software:  
  
