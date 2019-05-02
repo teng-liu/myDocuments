@@ -1,133 +1,3 @@
-D1.Install-list
-===============
-
-https://www.youtube.com/watch?v=27I1M5RLplE
-
-
-https://github.com/teng-liu/SpringBootLearningPRJ.git
-
-1. Software Installation:
-    Slack, IntelliJ, Tomcat, Java JDK, Orbeon, MySql; 
-    (extra) Visual Studio Code, git
-
-2. Learning Spring Boot(followed spring.io webset and youtube videos)
-    A HelloWorld project created and submitted to my github: 
-        https://github.com/teng-liu/SpringBootLearningPRJ.git
-    
-    *two unit test created of above two pages
-    *server.port=8888
-    *http://localhost:8888/    http://localhost:8888/tami
-
-
-3. New concepts and their usages that I need to learn more:
-    - Annotation (there are lots of annotation need to be familiar with)
-    - Dependency Injection
-
-Notice:
-1. import to IntelliJ, choose Maven
-2. updated the tomcat port(8080 already in use by Cumda)
-    /src/main/resources/application.properties
-        server.port=8888
-
-
-Concepts:
-- Annotation  [@RestController]
-- Dependency Injection 
-    - An injection is the passing of a dependency to a dependent object (a client) that would use it.
-
-~~~java
-public HelloWorld(FancyWriter text) {
-    this.writer = text;
-}
-~~~
-
-
-
-Day 2 
-======
-
-Annotation
-----------
-
-- Java code | Built-in (Compiler)
-    - @Override
-    - @Deprecated
-    - @SupressWarnings
-- Meta Annotations
-
-
-
-Questions:  
-~~~java
- @Author(first = "Oompah", last = "Loompah")
- Book book = new Book();
- 
- public @interface Author {
-     String first();
-     String last();
- }
-
-//---------
-  @Edible(true)
-  Item item = new Carrot();
-
-  public @interface Edible {
-      boolean value() default false;
-  }
-
-//---------
-  @Retention(RetentionPolicy.RUNTIME) // Make this annotation accessible at runtime via reflection.
-  @Target({ElementType.METHOD})       // This annotation can only be applied to class methods.
-  public @interface Tweezable {
-  }
-~~~
-
-1. seems like storing pure data(data for an object)?   
-2. data with when and where it can be used?
-
-=> Annotations may include an optional list of **key-value** pairs  
-=> Annotations themselves may be annotated to indicate **where** and **when** they can be used
-
-videos:
-https://spring.io/guides/tutorials/rest/
-
-https://javabrains.io/courses/spring_bootquickstart/
-https://www.youtube.com/channel/UCYt1sfh5464XaDBH0oH_o7Q
-
-
-DataBase:
-=========
-
-shell> "C:\Program Files\MySQL\MySQL Server 5.0\bin\mysqld"
-The path to mysqld may vary depending on the install location of MySQL on your system.
-
-shell> "C:\Program Files\MySQL\MySQL Server 5.0\bin\mysqladmin" -u root shutdown
-
-
-1. Learned more about the concept about annotations and beans and how they worked.
-2. checked videos of Spring boot MicroServices, these videos are very good, first create 3 general services in Spring boot, then they turn them to microservice way. I will check more of it.
- https://javabrains.io/courses/spring_bootquickstart/ 
-3. Database:
-    I created sql to create the databse and 4 tables that you gave, but there is no data in them, I will add some testing data tomorrow.
-
-tami's collection of DB commands:
-~~~sql
-/*drop table, first drop foreigh-key, or set foreign_key_checks=0*/
-SET FOREIGN_KEY_CHECKS=0;
-drop table if exists applications;
-drop table if exists application;
-drop table if exists codetable;
-drop table if exists application_codetable;
-drop table if exists codevalue;
-
-show databases;
-show tables;
-describe table-name;        /*show structure of table*/
-
-~~~
-
-
-~~~sql
  create database if not exists `tamidb`;
  use tamidb;
 
@@ -280,8 +150,8 @@ insert into application_codetable (app_id, codetable_id, star_date, end_date)
     VALUES
     (4, 1, '2000-7-04', '2099-7-04');
 
-~~~
 
+/*
 => Province:
 Ontario                     -> ON
 Quebec                      -> QC
@@ -319,12 +189,4 @@ Not accepted by SWT
 Declined by student/family
 Referred out
 
-
-
-Day3
-====
-https://www.youtube.com/watch?v=2HVMiPPuPIM
-https://www.youtube.com/watch?v=KTvYHEntvn8
-
-
-
+*/
