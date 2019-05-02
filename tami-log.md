@@ -327,4 +327,47 @@ https://www.youtube.com/watch?v=2HVMiPPuPIM
 https://www.youtube.com/watch?v=KTvYHEntvn8
 
 
+SQL join
+========
+
+- inner join
+  - only staff that matches "left.id=right.id"
+
+- left join (left outer join)
+  - staff that matches "left.id=right.id"
+  - remaining staff in "left" table
+
+- right join (right outer join)
+  - staff that matches "left.id=right.id"
+  - remaining staff in "right" table
+
+- full join (full outer join)
+  - staff that matches "left.id=right.id"
+  - remaining staff in "left" table
+  - remaining staff in "right" table
+
+~~~sql
+/* inner join */
+select * from customer inner join city on customer.city_id=city.id;
+select * from customer left join city on customer.city_id=city.id;
+select * from customer right join city on customer.city_id=city.id;
+select * from customer full join city on customer.city_id=city.id;
+
+/* alias for table */
+select cus.*, ci.name
+    from customer as cus
+    inner join
+    city as ci
+    on cus.city_id=ci.id
+    where ci.name="Tampa"
+
+--list code-tables of each application:
+select application.application_key, codetable.codetable_key from application
+    inner join application_codetable on application_codetable.id_application=application.id_application
+    inner join codetable on codetable.id_codetable=application_codetable.id_codetable;
+
+ select * from application_codetable 
+    where id_application=(select id_application from application where name="Employee");
+
+~~~
 
