@@ -38,7 +38,7 @@ content-type: application/json
 
 {
     "codetableId": 3,
-    "value": "ABC"
+    "value": "ABCDFG"
 }
 
 ###

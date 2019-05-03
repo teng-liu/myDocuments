@@ -1,15 +1,34 @@
 
+Day 4 (May.03)
+==============
+1. I checked from the link below of how connect Mysql from Spring boot. It helped.
 
+https://medium.com/@salisuwy/building-a-spring-boot-rest-api-part-iii-integrating-mysql-database-and-jpa-81391404046a
 
+2. Then I added created a new Spring boot project and add some query(get) methods from database.
+- For GET, the databased returned data is JSON, I didn't do any change;
+- For POST, first I used the URL to indicate the inserting data, this is easier.
+  - Then I tried to use JSON for POST (inserting) data, it took me some time to make this work. but it works finally.
+- For others like delete and update, I don't have chance to try today.
+- For the query on conditions, like query the code list of a form, or the code-value list based on the same code-table-id.
+  - I think it might be need a simple stored procedure for Spring boot to call to return the data.
+  - Or, write the sql(very long with join) in Spring boot. I prefer the Stored Procedure. I will try to study to write stored procedure next week.
 
+Here is a link for this Spring boot project:   
+    https://github.com/teng-liu/SpringBootMySQL 
 
+3. I created a .gif to record the get and post operations (please find the attachment).
+   I used a plugin named "Rest Client" in Visual Studio Code, it does the same thing as the browser does. But this tool display the JSON format better, and it can call POST method by pass a JSON easily. Please refer from my attached .gif file.
 
-
+4. early next week, I will:
+- finish delete, update
+- study basic knowledge of Stored Procedure to query data by a specific condition.
+- Then display the codevalue list for a specific code, and tables(codes) that a form included. 
 
 
 
 Day 3 (May.02)
-=====
+==============
 
 1. I Re-created my table columns as the ones from the document you provided, 
    and inserted the data into database. I will attach my sql file later. 
