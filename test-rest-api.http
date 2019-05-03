@@ -1,0 +1,49 @@
+
+# get all Form (application)
+http://localhost:8888/form
+
+###
+# get Form by ID
+http://localhost:8888/form/1
+
+###
+# insert into Form (JSON)
+POST http://localhost:8888/form
+content-type: application/json
+
+{
+    "name": "addFromAPItami0224-3"
+}
+
+###
+# get all from CodeTable
+http://localhost:8888/codetable
+
+###
+# get code by codetable id
+http://localhost:8888/codetable/5
+
+###
+# get all codeValue
+http://localhost:8888/codevalue
+
+###
+# get codeValue by id
+http://localhost:8888/codevalue/1
+
+###
+# insert codeValue into codeValue (JSON)
+POST http://localhost:8888/codevalue
+content-type: application/json
+
+{
+    "codetableId": 3,
+    "value": "ABC"
+}
+
+###
+# get all mapping (Form and codetable)
+http://localhost:8888/codeformmapping
+
+
+

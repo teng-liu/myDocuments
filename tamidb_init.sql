@@ -156,7 +156,7 @@ insert into codevalue (id_codetable, code_value, codevalue_sd, codevalue_ed)
     (3,	"Audi", "2019-05-02", NULL);
 insert into codevalue (id_codetable, code_value, codevalue_sd, codevalue_ed)
     VALUES
-    (3,	"Porsche", "2019-05-02", "06/02/2019");
+    (3,	"Porsche", "2019-05-02", "2019-06-02");
 insert into codevalue (id_codetable, code_value, codevalue_sd, codevalue_ed)
     VALUES
     (3,	"BMW", "2019-05-02", NULL);

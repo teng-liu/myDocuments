@@ -1,3 +1,55 @@
+Day 4 (May.3)
+
+1. To connect the Spring Boot application to the MySQL database:
+
+1.1 Add the required dependencies (e.g. MySQL library) to the “pom.xml” file. These dependencies are the Java libraries needed to connect to the database
+
+1.2 Provide the database connection properties to the application. These properties include the database connection string, port, username, password etc
+
+1.3 Create a class that talks to the database. This class is commonly referred to as a “Repository class”
+
+https://medium.com/@salisuwy/building-a-spring-boot-rest-api-part-iii-integrating-mysql-database-and-jpa-81391404046a 
+
+https://spring.io/guides/gs/accessing-data-mysql/
+
+
+Tasks:
+------
+get all from application(form)
+*get one specific form by id, name
+
+*get codetable by an application(id or name)
+
+get all from codetable
+
+get one specific code from code table, by id, name
+*get all codevalue under a code(id or name)
+
+~~~
+post:
+{
+    "name":"Chris",
+    "age":22,
+    "sex":"male"
+}
+
+
+POST https://example.com/comments HTTP/1.1
+content-type: application/json
+
+{
+    "name": "sample",
+    "time": "Wed, 21 Oct 2015 18:27:50 GMT"
+}
+
+
+{
+    "name":"addFromAPI"
+}
+
+~~~
+
+
 D1.Install-list
 ===============
 
