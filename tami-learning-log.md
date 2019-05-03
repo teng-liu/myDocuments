@@ -16,6 +16,8 @@ https://medium.com/@salisuwy/building-a-spring-boot-rest-api-part-iii-integratin
 
 Here is a link for this Spring boot project:   
     https://github.com/teng-liu/SpringBootMySQL 
+And all the calls that I have so far:
+    https://github.com/teng-liu/myDocuments/blob/master/test-rest-api.http 
 
 3. I created a .gif to record the get and post operations (please find the attachment).
    I used a plugin named "Rest Client" in Visual Studio Code, it does the same thing as the browser does. But this tool display the JSON format better, and it can call POST method by pass a JSON easily. Please refer from my attached .gif file.
