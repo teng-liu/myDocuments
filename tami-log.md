@@ -1,3 +1,35 @@
+Day 5 (May.6)
+
+1. How to pass query (with JPA and JDBC)
+
+JPA:
+https://www.jeejava.com/spring-boot-data-jpa-left-right-inner-and-cross-join-examples/
+
+https://docs.spring.io/spring-data/jpa/docs/current/reference/html/
+
+https://dzone.com/articles/spring-boot-jpa-mysql-sample-app-code-example
+
+JDBC:
+https://www.tutorialspoint.com/springjdbc/springjdbc_preparedstatementsetter.htm
+https://www.concretepage.com/spring-boot/spring-boot-jdbc-example
+
+
+
+~~~sql
+select application.application_key, codetable.codetable_key from application
+    inner join application_codetable on application_codetable.id_application=application.id_application
+    inner join codetable on codetable.id_codetable=application_codetable.id_codetable;
+
+select  a.id_application, a.application_key, ct.codetable_key, cv.code_value
+    from codevalue cv
+    inner join codetable ct on cv.id_codetable=ct.id_codetable
+    inner join application_codetable m on ct.id_codetable=m.id_codetable
+    inner join application a on m.id_application=a.id_application
+    where a.id_application = 2;
+~~~
+
+
+
 Day 4 (May.3)
 
 1. To connect the Spring Boot application to the MySQL database:
