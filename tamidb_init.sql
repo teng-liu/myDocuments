@@ -8,6 +8,12 @@
  drop table if exists application_codetable;
  drop table if exists codevalue;
 
+CREATE TABLE if not exists user_application (
+    id_user_application INT AUTO_INCREMENT,
+    content JSON,
+    optional VARCHAR(60),
+    PRIMARY KEY (id_user_application)
+);
 
  create table if not exists application(
      id_application INT AUTO_INCREMENT,
@@ -25,6 +31,25 @@ create table if not exists codetable(
      PRIMARY KEY (id_codetable)
  );
 
+--  create table if not exists application_codetable(
+--      id_application_codetable INT AUTO_INCREMENT,
+--      id_application INT NOT NULL,
+--      id_codetable INT NOT NULL,
+--      application_codetable_sd DATE,
+--      application_codetable_ed DATE,
+--      optional VARCHAR(60),
+--      PRIMARY KEY (id_application_codetable),
+--      FOREIGN KEY fk_appid(id_application)
+--      REFERENCES applications(id_application)
+--      ON UPDATE CASCADE
+--      ON DELETE RESTRICT,
+--      FOREIGN KEY fk_codetableid(id_codetable)
+--      REFERENCES codetable(id_codetable)
+--      ON UPDATE CASCADE
+--      ON DELETE RESTRICT
+--  );
+
+
  create table if not exists application_codetable(
      id_application_codetable INT AUTO_INCREMENT,
      id_application INT NOT NULL,
@@ -32,15 +57,7 @@ create table if not exists codetable(
      application_codetable_sd DATE,
      application_codetable_ed DATE,
      optional VARCHAR(60),
-     PRIMARY KEY (id_application_codetable),
-     FOREIGN KEY fk_appid(id_application)
-     REFERENCES applications(id_application)
-     ON UPDATE CASCADE
-     ON DELETE RESTRICT,
-     FOREIGN KEY fk_codetableid(id_codetable)
-     REFERENCES codetable(id_codetable)
-     ON UPDATE CASCADE
-     ON DELETE RESTRICT
+     PRIMARY KEY (id_application_codetable)
  );
 
  create table if not exists codevalue(
@@ -50,11 +67,7 @@ create table if not exists codetable(
      codevalue_sd DATE,
      codevalue_ed DATE,
      optional VARCHAR(60),
-     PRIMARY KEY (id_codevalue),
-     FOREIGN KEY fk_codetable(id_codetable)
-     REFERENCES codetable(id_codetable)
-     ON UPDATE CASCADE
-     ON DELETE RESTRICT
+     PRIMARY KEY (id_codevalue)
  );
 
 /*
@@ -191,3 +204,11 @@ insert into application_codetable (id_application, id_codetable, application_cod
 insert into application_codetable (id_application, id_codetable, application_codetable_sd, application_codetable_ed)
     VALUES
     (3, 3, '2000-7-04', '2099-7-04');
+
+
+INSERT INTO user_application (content)
+    VALUES
+    ('{"key1": "value1", "key2": "value2"}'),
+    ('{"key1": "value1", "key2": "value2", "key1": "value1", "key2": "value2"}');
+
+

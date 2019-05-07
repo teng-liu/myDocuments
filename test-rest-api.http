@@ -1,49 +1,176 @@
 
-# get all Form (application)
+#------QUERY-ALL-------------------------------------
+
+# get all Forms|Applications
+###
 http://localhost:8888/form
 
+# get all applications(jdbc)
 ###
-# get Form by ID
-http://localhost:8888/form/1
+http://localhost:8888/jdbc-applications
+
+# get all codetable
+###
+http://localhost:8888/codetable
+
+# get all map-relation of form and code
+###
+http://localhost:8888/codeformmapping
+
+# get all codevalue
+###
+http://localhost:8888/codevalue
+
+
+
+#------QUERY-BY-ID------------------------------------
+
+# get application by id
+###
+GET http://localhost:8888/jdbc-applicationbyid
+content-type: application/json
+
+{
+    "id": 2
+}
 
 ###
-# insert into Form (JSON)
+# get code list by form-id
+GET http://localhost:8888/jdbc-getcodelistbyformid
+content-type: application/json
+
+{
+    "formID": 3
+}
+
+###
+# get application by id
+GET http://localhost:8888/jdbc-getcodevaluebycodeid
+content-type: application/json
+
+{
+    "codeTableId": 3
+}
+
+
+
+#------INSERT-------------------------------------
+
+# insert new application by giving a name
+###
 POST http://localhost:8888/form
 content-type: application/json
 
 {
-    "name": "addFromAPItami0224-3"
+    "name": "addFromAPItami-0507-III"
 }
 
+# insert new codevalue by giving a code-id
 ###
-# get all from CodeTable
-http://localhost:8888/codetable
-
-###
-# get code by codetable id
-http://localhost:8888/codetable/5
-
-###
-# get all codeValue
-http://localhost:8888/codevalue
-
-###
-# get codeValue by id
-http://localhost:8888/codevalue/1
-
-###
-# insert codeValue into codeValue (JSON)
-POST http://localhost:8888/codevalue
+POST http://localhost:8888/addcodevalue
 content-type: application/json
 
 {
     "codetableId": 3,
-    "value": "ABCDFG"
+    "value": "ABCDFG-tami-car-brand"
 }
 
 ###
-# get all mapping (Form and codetable)
-http://localhost:8888/codeformmapping
+# insert new code
+POST http://localhost:8888/addcode
+content-type: application/json
+
+{
+    "name": "tamiAddCodeFromAPI-12"
+}
+
+###
+# insert relation between form and codetable
+POST http://localhost:8888/addmapping
+content-type: application/json
+
+{
+    "formID": 2,
+    "codeId": 3
+}
+
+#------UPDATE---------------------------------------------
+
+# update applicatioin by id (re-name)
+###
+PUT http://localhost:8888/form
+content-type: application/json
+
+{
+    "id": 2,
+    "name": "Customer Address PEI"
+}
+
+# update codetable by id (re-name codetable)
+###
+PUT http://localhost:8888/codetable
+content-type: application/json
+
+{
+    "id": 2,
+    "name": "Month-updated from API"
+}
 
 
+# update (re-name | change its codetable) the code value by id
+###
+PUT http://localhost:8888/codevalue
+content-type: application/json
+
+{
+    "id": 3,
+    "codetableId":1,
+    "value": "Updated Nova Scotia"
+}
+###
+
+
+#------DELETE---------------------------------------------
+
+# delete form by given form id
+DELETE http://localhost:8888/form
+content-type: application/json
+
+{
+    "id": 7
+}
+
+###
+# delete codetable by given codetable id
+DELETE http://localhost:8888/codetable
+content-type: application/json
+
+{
+    "id": 9
+}
+
+###
+# delete codevalue by given codevalue id
+DELETE http://localhost:8888/codevalue
+content-type: application/json
+
+{
+    "id": 21
+}
+
+#==========OLD-QUERY=======PathVariable=====================
+###
+http://localhost:8888/form/1
+
+###
+http://localhost:8888/jdbc-application/1
+
+###
+http://localhost:8888/codetable/5
+
+###
+http://localhost:8888/codevalue/1
+
+###
+http://localhost:8888/jdbc-codevalue/1
 

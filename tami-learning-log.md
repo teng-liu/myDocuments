@@ -12,8 +12,10 @@ https://docs.spring.io/spring-data/jpa/docs/current/reference/html/
 https://dzone.com/articles/spring-boot-jpa-mysql-sample-app-code-example
 
 JDBC:
-https://www.tutorialspoint.com/springjdbc/springjdbc_preparedstatementsetter.htm
 https://www.concretepage.com/spring-boot/spring-boot-jdbc-example
+https://www.tutorialspoint.com/springjdbc/springjdbc_preparedstatementsetter.htm
+
+
 
 
 ~~~sql

@@ -1,3 +1,24 @@
+
+
+
+[
+    {"name": "tami-name",
+    "application-number":"NO.23445345",
+    "gender": "Female",
+    "language": "English(CA)"
+    }
+]
+OR
+[
+    {"name": "tami-name",
+    "application-number":"NO.23445345",
+    "gender": 2,
+    "codeName": 3
+    }
+]
+
+
+
 Day 5 (May.6)
 
 1. How to pass query (with JPA and JDBC)
@@ -26,6 +47,18 @@ select  a.id_application, a.application_key, ct.codetable_key, cv.code_value
     inner join application_codetable m on ct.id_codetable=m.id_codetable
     inner join application a on m.id_application=a.id_application
     where a.id_application = 2;
+
+
+select ct.id_codetable, ct.codetable_key, cv.id_codevalue, cv.code_value
+    from codetable ct
+    inner join codevalue cv on ct.id_codetable=cv.id_codetable
+    where ct.id_codetable=2;
+
+select m.id_application_codetable, m.id_application, m.id_codetable, ct.codetable_key
+    from application_codetable m 
+    inner join codetable ct on m.id_codetable=ct.id_codetable
+    where m.id_application = 3;
+
 ~~~
 
 
