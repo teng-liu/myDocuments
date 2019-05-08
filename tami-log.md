@@ -1,4 +1,36 @@
 
+Day 6 (May.7)
+
+1. Finished the JDBC query accross multiple tables(with joins)
+2. Done the delete and update operation by API (PUT and DELETE)
+3. All the API are done, but it may need more api when later developing the UI, I will add then.
+   API calls:   https://github.com/teng-liu/myDocuments/blob/master/test-rest-api.http
+   Java project: https://github.com/teng-liu/SpringBootMySQL/tree/master/src/main/java/com/tamiconnectdb/TamiConnDB 
+
+4. 1)  Tomorrow I will try to write a simple table store user and user-application data. 
+    For the user-application, I think I might be use a JSON to store the application data, because otherwise it might lots of columns of the user-application data and the table may various.
+
+    But if I use a JSON to store the application like below, then the UI can analysis it and get the necessary data display on UI. The floowing is only an example. I will think more about this tomorrow. 
+   1) And I might have time tomorrow to check what should I start the UI developing, I will let you know then.
+
+Example of JSON the user-application:
+
+[
+    {"name": "tami-name",
+    "application-number":"NO.23445345",
+    "gender": "Female",
+    "language": "English(CA)"
+    }
+]
+OR
+[
+    {"name": "tami-name",
+    "application-number":"NO.23445345",
+    "gender": 2,
+    "codeName": 3
+    }
+]
+
 
 <<<<<<< HEAD
 
