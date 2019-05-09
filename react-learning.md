@@ -57,7 +57,7 @@ Create Project
 
 - React router (install separately)
 
-- Http
+- Http library
   - a web site for fake Rest API call: http://jsonplaceholder.typicode.com/ 
 
 http://jsonplaceholder.typicode.com/todos

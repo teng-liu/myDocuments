@@ -1,3 +1,88 @@
+May.9
+=====
+Wiki
+----
+https://en.wikipedia.org/wiki/Contract_management_software
+
+Compare contract management systems in market:
+----------------------------------------------
+https://www.softwareadvice.com/contract-management/
+
+https://financesonline.com/contract-lifecycle-management/ca
+
+
+
+CMx contract management experience
+----------------------------------
+https://www.contractexperience.com/index.html#features 
+
+Life-Cycle:
+https://www.contractexperience.com/resources/resources-main.html
+
+
+Trail:
+------
+https://app.contractsafe.com/dashboard
+    tami.liu@icloud.com / Welcome22
+
+
+
+
+
+Contract Management System
+==========================
+
+- res
+  - contract-template
+    - contract-infor (part-1)
+      - contract-type
+      - date
+      - first-part
+      - second-part
+      - statements
+    - definitions (part-2)
+      - contractor(<read from vendor infor>)
+      - statements
+    - convenants-contractor (part-3)
+    - payment (part-4)
+    - conditions (part-5)
+    - reports (part-6)
+    - administration (part-7)
+    - termination (part-8)
+    - confidentiality (part-9)
+    - conflict-of-interest (part-10)
+    - freedom-protection (part-11)
+    - indemnification-insurance (part-12)
+    - memorandum-prevail (part-13)
+    - general (part-14)
+    - sign (part-15)
+    - schedule-a (statement of work, part-16)
+    - schedule-b (location of work, part-17)
+    - schedule-c (nondisclosure agreement, part-18)
+    - schedule-d (use of computer, part-19)
+  - definitions (terminologys)
+  - contract
+    - id | convenant | contractor | content | status | optional
+  - code-table
+  - code-value
+  - vendor (Contractor? Parties?)
+    - GOVERNMENT OF PRINCE EDWARD ISLAND
+  - project
+
+- sys.user-group
+  - Contract Administrator
+  - Approval Administrator
+  - Vendor Administrator
+
+
+- sys.user
+
+
+
+
+
+
+
 
 Day 6 (May.7)
 
@@ -32,7 +117,6 @@ OR
 ]
 
 
-<<<<<<< HEAD
 
 [
     {"name": "tami-name",
@@ -49,11 +133,6 @@ OR
     "codeName": 3
     }
 ]
-=======
-osprey js
-Express js
-
->>>>>>> 3bb26f9b8876d8e176681ce2d2b0e2f310f966bb
 
 
 

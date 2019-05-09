@@ -1,3 +1,124 @@
+Day 8 (May.9)
+=============
+1. I checked online of the "Contract management software" and got some idea about the contract related conccept and workflow.
+   wiki:  https://en.wikipedia.org/wiki/Contract_management_software
+
+2. Then I checked some products currently on market. There are a lot, and I checked their screenshots of their application, and there are lots of introductions and features on their webset. I think this is good to understand the contract management system directly.
+
+List of current products:  
+    https://financesonline.com/contract-lifecycle-management/ca 
+* some of them provide free version, I will try to look for how their UI look and what's necessary functions they have. Then we can compare them and decide if we need the same functions.
+
+An example of work-flow:
+ https://www.contractexperience.com/resources/resources-main.html 
+
+I will also attach some screenshots of their products that I saved.
+
+3. Then I looked the documents you sent, especially the contact-template. I de-constrct the content of the template as below, so that I can understand well, and might be help when think about the design of database.
+
+4. I construct a spreadsheet of the requirements and my understanding of the contract-data-structure together. you can check it out from the attached spreadsheet.
+
+Contract Management System
+--------------------------
+Anatomy of a contract template:
+
+- res
+  - contract-template
+    - contract-infor (part-1)
+      - contract-type
+      - date
+      - first-part
+      - second-part
+      - statements
+    - definitions (part-2)
+      - contractor(<read from vendor infor>)
+      - statements
+    - convenants-contractor (part-3)
+    - payment (part-4)
+    - conditions (part-5)
+    - reports (part-6)
+    - administration (part-7)
+    - termination (part-8)
+    - confidentiality (part-9)
+    - conflict-of-interest (part-10)
+    - freedom-protection (part-11)
+    - indemnification-insurance (part-12)
+    - memorandum-prevail (part-13)
+    - general (part-14)
+    - sign (part-15)
+    - schedule-a (statement of work, part-16)
+    - schedule-b (location of work, part-17)
+    - schedule-c (nondisclosure agreement, part-18)
+    - schedule-d (use of computer, part-19)
+  - definitions (terminologys)
+  - contract
+    - id | convenant | contractor | content | status | optional
+  - code-table
+  - code-value
+  - vendor (Contractor? Parties?)
+    - GOVERNMENT OF PRINCE EDWARD ISLAND
+  - project
+
+- sys.user-group
+  - Contract Administrator
+  - Approval Administrator
+  - Vendor Administrator
+
+
+- sys.user
+
+
+
+
+Day 7 (May.8)
+============
+1. followed the video below(long, detailed but good) to learn the React to build UI:
+- learning video:  https://www.youtube.com/watch?v=sBws8MSXN7A&t=130s
+- project I created:  https://github.com/teng-liu/FirstReactPrj
+
+I spent the whole day on this project, there are lots of new things, the UI is a different world (compare to middle-ware).
+But after created this very simple example, I've got the base idea of what the react is and how it works. But still lots of knowledges to learn.
+
+I have a log for the react learning today, and there are required installations and some commands there. I will add more during further learning.
+my react log: 
+    https://github.com/teng-liu/myDocuments/blob/master/react-learning.md 
+
+Also, a quick .gif (from the attachment) of today's first example.
+
+Day 6 (May.7)
+=============
+
+1. Finished the JDBC query accross multiple tables(with joins)
+2. Done the delete and update operation by API (PUT and DELETE)
+3. All the API are done, but it may need more api when later developing the UI, I will add then.
+   API calls:   https://github.com/teng-liu/myDocuments/blob/master/test-rest-api.http
+   Java project: https://github.com/teng-liu/SpringBootMySQL/tree/master/src/main/java/com/tamiconnectdb/TamiConnDB 
+
+4. 1)  Tomorrow I will try to write a simple table store user and user-application data. 
+    For the user-application, I think I might be use a JSON to store the application data, because otherwise it might lots of columns of the user-application data and the table may various.
+
+    But if I use a JSON to store the application like below, then the UI can analysis it and get the necessary data display on UI. The floowing is only an example. I will think more about this tomorrow. 
+   1) And I might have time tomorrow to check what should I start the UI developing, I will let you know then.
+
+Example of JSON the user-application:
+
+[
+    {"name": "tami-name",
+    "application-number":"NO.23445345",
+    "gender": "Female",
+    "language": "English(CA)"
+    }
+]
+OR
+[
+    {"name": "tami-name",
+    "application-number":"NO.23445345",
+    "gender": 2,
+    "codeName": 3
+    }
+]
+
+
 
 Day 5 (May.6)
 =============
