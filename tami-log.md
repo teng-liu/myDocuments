@@ -1,3 +1,32 @@
+May.10
+======
+1. learned about Redux(), which is used for managing the application state:
+Redux (with React):
+
+- Actions
+- State management
+- Reducer
+- Middlewaer(redux-thunk)
+
+wiki: https://en.wikipedia.org/wiki/Redux_(JavaScript_library) 
+
+Redux Crash Course With React (video):
+https://www.youtube.com/watch?v=93p3LxR9xfM
+
+My redux code: https://github.com/teng-liu/tami-first-redux
+
+2. Learned more about Json: https://www.youtube.com/watch?v=wI1CWzNtE-M
+
+3. Project:
+   For the project we are going to do, I think we may need a soure code control tool like github or gitlab to work together. And I've tried to define the json for the contract template, I only done the Definitions part, I displayed part of them on web UI(please refer to the attachment), but the remaining terms need more effort, i will aslo consult my friends of how to design the json for a better manage and some database knowledge. 
+
+Have a great weekend. 
+
+Best Regards,
+Tami (Teng Liu)
+
+
+
 May.9
 =====
 Wiki

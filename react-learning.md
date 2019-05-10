@@ -80,7 +80,51 @@ npm i react-router-dom
 # install axios - http library
 npm i axios
 
+
+########Redux----
+# install create-react-app
+npm i -g create-react-app
+
+# install redux | react-redux | redux-thunk(middleware of the redux)
+npm i redux react-redux redux-thunk
+
+# add development tool of Redux -> Google:  chrome extensions redux -> Redux devTools
+
 ~~~
+Redux (with React):
+
+- Actions
+- State management
+- Reducer
+- Middlewaer(redux-thunk)
+
+
+
+~~~json
+  [{
+    "userId": 1,
+    "id": 1,
+    "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+    "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+  },
+  {
+    "userId": 1,
+    "id": 2,
+    "title": "qui est esse",
+    "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
+  }]
+~~~
+
+
+
+redux document:
+---------------
+Followed video: https://www.youtube.com/watch?v=93p3LxR9xfM
+Documents:
+https://github.com/reduxjs/redux/blob/master/docs/basics/Store.md
+https://github.com/reduxjs/redux
+
+
 
 ~~~log
 Initialized a git repository.
