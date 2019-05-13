@@ -1,5 +1,56 @@
-### JSON design
 
+### contract (May.13)
+
+
+- Template Information (head)
+  - id | name | title | version
+- Template content (body)
+  - clauses: [  ]
+
+
+~~~json
+
+{
+    "head": {
+        "code": "contract-template-itss",
+        "title": "Default Contract Template",
+        "version": "1.0"
+    }
+    "body": {
+        "title"
+        "clauses": []
+    }
+
+
+"clauses": [{
+    "type": "head/no.1",
+    "title": "MEMORANDUM OF AGREEMENT",
+    "fields": "{agreement-name}"
+},
+{
+
+}
+
+
+]
+
+
+}
+
+~~~
+
+
+
+
+
+
+
+
+
+
+
+
+### JSON design
 
 ~~~json
   [{
@@ -75,12 +126,6 @@
   }]
 ~~~
 
-
-
-{
-    "id":
-    "name": "Definitions"
-}
 
 
 

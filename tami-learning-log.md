@@ -1,3 +1,11 @@
+Day 10 (May.13)
+===============
+
+1. Installed VirtualBox -> created a guest of Fedora (server)
+2. installed docker and Postgres database on the VM (Postgres support storing Json as Jsonb), and created simple tables and data.
+3. Researched more information about the framwork.
+4. worked on JSON design about storing the Contract sections.
+
 Day 9 (May.10)
 ==============
 1. learned about Redux(), which is used for managing the application state(used in React):

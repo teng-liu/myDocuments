@@ -1,4 +1,14 @@
 
+http://jsonplaceholder.typicode.com/posts{
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        }
+
+
+###
+
+
 #------QUERY-ALL-------------------------------------
 
 # get all Forms|Applications

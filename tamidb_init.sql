@@ -221,7 +221,7 @@ INSERT INTO user_application (content)
      id INT AUTO_INCREMENT,
      order_num INT,
      name_key VARCHAR(60) NOT NULL,
-     explanation VARCHAR(400),
+     explanation text,
      PRIMARY KEY (id)
  );
 
@@ -233,5 +233,36 @@ INSERT INTO user_application (content)
     (4,"government","\"Government\" means Government of Prince Edward Island, as represented by the Minister of Finance;"),
     (5,"parties","\"Parties\" means Government and the Contractor, and \"Party\" means either of them as the context requires;"),
     
+
+-- postgres
+create database cms;
+create role cmsdev with login password '123';
+
+-- incorrect
+create schema cont owner cmsdev;  
+
+
+
+ CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+ create table definitions(
+     id uuid DEFAULT uuid_generate_v4 (),
+     order_num INT,
+     name_key VARCHAR NOT NULL,
+     explanation text,
+     PRIMARY KEY (id)
+ );
+
+ INSERT INTO definitions (order_num, name_key, explanation) 
+    VALUES
+    (1, 'agreement', '"Agreement" means this Memorandum of Agreement and all attached schedules, and "Memorandum of Agreement" means this Agreement excluding all attached schedules;'),
+    (2,'contractor','"Contractor" means [INSERT CONTRACTOR’S FULL LEGAL NAME HERE];'),
+    (3,'fiscal-year','"Fiscal Year" means a 12 month period beginning on April 1st in a year and ending on March 31st in the following year;'),
+    (4,'government','"Government" means Government of Prince Edward Island, as represented by the Minister of Finance;'),
+    (5,'parties','"Parties" means Government and the Contractor, and "Party" means either of them as the context requires;'),
+    
+
+
+
 
 
