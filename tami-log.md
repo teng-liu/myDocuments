@@ -1,3 +1,28 @@
+May.15
+=======
+1. Events / Action 
+2. Roles (user group) -> Previledge
+
+- Audit log 
+    - who (user -> with role)
+    - what (event -> edit, update date, edit money, approval, closed..)
+    - where (target -> contract, vendors, or users, groups)
+    - when (date)
+
+1. when approval -> need to check Audit Log of what changed, and make sure all these logs/events are normal and no impact
+2. path of form/contract (store path, in file system, or database, or cloud...)
+3. 
+
+
+
+May.14
+======
+
+- Spring Boot <-VS-> Express:
+https://dzone.com/articles/web-development-comparison-springboot-vs-expressjs
+
+
+
 May.10
 ======
 1. learned about Redux(), which is used for managing the application state:

@@ -3,6 +3,18 @@ Express
 https://www.tutorialspoint.com/nodejs/nodejs_express_framework.htm
 
 
+~~~js
+var regex = /(\w*)(\{\$[\w,$#]+\})(\w*)/g;
+
+var paragraph = 'The quick brown fox jumps over the lazy {$dog,#sdfsd,$we}. It barked.';
+var regex = /(\w*)(\{\$[\w,$#]+\})(\w*)/g;
+var regex1 = /(\w*)(\{\$[\w,$#\s-]+\})(\w*)/g;
+var found = paragraph.match(regex);
+
+console.log(found);
+~~~
+
+
 
 VirtualBox
 ==========
