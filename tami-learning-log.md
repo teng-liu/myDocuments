@@ -1,5 +1,7 @@
 May 16
 ======
+0. installing Alfresco on VirtualBox, not done, will continue tomorrow.
+
 1. Postgres support full-text search function  
 http://rachbelaid.com/postgres-full-text-search-is-good-enough/
 
