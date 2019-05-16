@@ -1,3 +1,9 @@
+
+Fedora:
+
+https://www.server-world.info/en/note?os=Fedora_29&p=desktop&f=1
+
+
 May.15
 =======
 1. Events / Action 
