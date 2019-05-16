@@ -1,6 +1,53 @@
+May 16
+======
+1. Postgres support full-text search function  
+http://rachbelaid.com/postgres-full-text-search-is-good-enough/
+
+official site: 
+https://www.postgresql.org/docs/9.5/textsearch-intro.html
+
+2. Query in Json(Jsonb) in Postgres  
+- function: jsonb_array_elements
+- And there are lots of functions and operators for Json in postgres:
+official doc: https://www.postgresql.org/docs/9.4/functions-json.html
+
+3. Web Development Project 
+- with very detailed information about web development procedures
+https://levelup.gitconnected.com/the-non-developers-guide-to-development-in-2018-7f023a2ff5e1
+
+4. Overall development prodedures
+
+- Frontend Frameworks
+  - React + Redux + HTML|CSS
+- Backend Frameworks/Language (middleware, api | REST)
+  - Spring Boot(Java) | Express JS (Javascript)
+- Database 
+  - Mysql | Postgres | SQL server
+- Deployment & Delivery
+  - regular server | docker, etc.
+- Testing 
+  - Test Cases -> Bugzilla | SpiraTeam
+  - Manually -> Automaticly
+- Project Management    ->  Jira / Trello / Scrum
+  - Recording Requirements, user stories, set up meetings, plans etc. for each sprint
+- source code control   ->  git / github | gitlab
+  - store source code / team work / pull request - review, etc.
+
+- **Each step above requires**:    
+    - install and setup the enviornment 
+    - design 
+    - document 
+    - implement
 
 
+May.15
+======
+Meetings with stakeholders, and first design session
 
+
+May.14
+======
+worked on UI (contract template) today, kind of a mockup(by React) 
 
 
 Day 10 (May.13)

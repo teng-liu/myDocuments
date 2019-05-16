@@ -11,7 +11,10 @@ May.15
 
 1. when approval -> need to check Audit Log of what changed, and make sure all these logs/events are normal and no impact
 2. path of form/contract (store path, in file system, or database, or cloud...)
-3. 
+3. contract | Approval Control form -> Frasco
+4. Contract title -> unique (also, contract no.)
+5. track when sign and send email - notification to all related users and record where is the process of the contract
+6. 
 
 
 
