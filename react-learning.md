@@ -2,6 +2,44 @@ Express
 =======
 https://www.tutorialspoint.com/nodejs/nodejs_express_framework.htm
 
+~~~sh
+# create a json package (-y, means all question answer yes)
+npm init -y
+
+# install express
+npm install express
+
+# then create file called "index.js" file
+
+# install nodemon only for development, it can watch the server, so no need re-start on every change
+npm i -D nodemon
+
+# then edit the package.json:
+#   "scripts": {
+#     "start": "node index",
+#     "dev": "nodemon index"
+#   }
+
+npm run dev    # this will run the dev -> nodemon index
+
+
+
+
+~~~
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ~~~js
 var regex = /(\w*)(\{\$[\w,$#]+\})(\w*)/g;

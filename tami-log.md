@@ -3,6 +3,15 @@ Fedora:
 
 https://www.server-world.info/en/note?os=Fedora_29&p=desktop&f=1
 
+~~~
+u/n:   same as GroupWise
+p/w:  Welcome1
+ 
+http://alfrescotest.gpei.ca/share/page/
+~~~
+
+
+
 
 May.15
 =======

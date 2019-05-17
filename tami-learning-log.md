@@ -1,6 +1,15 @@
+May 17
+======
+1. Finished the install of Alfresco docker version. And got 30 days trail. 
+2. learned about the work-flow and the version control in the Alfresco Petti showed us in the demo.
+3. Discussed with team about the plan and TODO list as well as To Discuss/determine list.
+4. Tried Express JS (instead of Spring Boot), which use same language (Javascript) as React frontend development.
+
+
 May 16
 ======
 0. installing Alfresco on VirtualBox, not done, will continue tomorrow.
+Alfresco:  https://docs.alfresco.com/trial/tasks/deploy-docker-compose.html
 
 1. Postgres support full-text search function  
 http://rachbelaid.com/postgres-full-text-search-is-good-enough/
