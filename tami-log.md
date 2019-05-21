@@ -1,3 +1,24 @@
+May 21
+======
+~~~
+
+VENDOR NAME: $[vendor-name::textinput::Type here]
+
+label: $[var::component-type::label/placeholder]
+
+textinput
+textarea
+checkbox
+calander
+singleselection
+multipleselection
+
+~~~
+
+
+
+
+
 
 Fedora:
 

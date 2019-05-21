@@ -2,7 +2,7 @@
     "head": {
         "code": "contract-template-itss",
         "title": "Default Contract Template",
-        "version": "1.0"
+        "version": "1.0.0"
     },
     "body": {
         "clauses": [
