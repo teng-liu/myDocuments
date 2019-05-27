@@ -1,6 +1,26 @@
 #--------api from express js---------
 ###
 
+PUT http://localhost:9000/api/contract/c26eac14-7a02-4564-b864-40cfd28da438
+
+###
+
+###
+PUT http://localhost:9000/api/contract/22
+content-type: application/json
+
+{
+    "uuid": "c26eac14-7a02-4564-b864-40cfd28da438",
+    "data":{
+        "selected": 2
+    }
+}
+
+###
+http://localhost:9000/api/contract
+
+###
+
 http://localhost:5000/api/controlsheet
 
 ###

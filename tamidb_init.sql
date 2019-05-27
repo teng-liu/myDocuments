@@ -3,7 +3,7 @@
  
 -- enter pg:   psql -h localhost -U postgres
 
-
+---------show tables
 SELECT
     table_schema || '.' || table_name
 FROM
@@ -14,11 +14,7 @@ AND
     table_schema NOT IN ('pg_catalog', 'information_schema');
 
 
-
-
-
-
-
+--------create table, query, insert
 select * from contracts where name_key='itss-control-approval-sheet';
 
 CREATE TABLE public.contracts
@@ -36,11 +32,35 @@ insert into public.contracts (name_key, content)
             "code": "contract-template-itss",
             "title": "Default Contract Template",
             "version": "1.0"
-        }
+        },
+        {....}
     }')
  
- 
- 
+
+--------jsonb_set 
+select * from contracts;
+select content->'data' from contracts;
+
+jsonb_set(
+	contracts.content,
+	'{data, selected}',
+	2) from contracts;
+
+update contracts
+	set content = (
+		jsonb_set(
+			content,
+			'{data, selected}',
+			'1',
+			false))::json where uuid='c26eac14-7a02-4564-b864-40cfd28da438'
+
+update tests_summary_data 
+	set data = (
+		jsonb_set(
+			to_jsonb(data), 
+			'{misc,gap,pa}', 
+			'-1', 
+			false))::json where data->'misc'->'gap'->>'pa' = '0';
  
  
  

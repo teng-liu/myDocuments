@@ -2,6 +2,52 @@ Express
 =======
 https://www.tutorialspoint.com/nodejs/nodejs_express_framework.htm
 
+questions: 
+1. body-parser ? middleware
+2. different ways:
+3. resource <-> routers ? express.Router
+4. resources -> async get|query|save|delete( pool.query (select * from ..get|query|save|delete...))
+
+
+
+~~~js
+//a
+import express from 'express'
+//b
+const express = require('express');
+
+
+// allow cors
+//a
+  this.app.use(cors());
+//b
+app.all('/api/controlsheet', function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    next();
+   });
+
+
+// db connection
+//a 
+const Pool = require('pg').Pool;
+const pool = new Pool({
+    user: 'postgres',
+    host: 'localhost',
+    database: 'cms',
+    password: 'postgres',
+    port: 5432            
+});
+//b 
+import {Pool} from 'pg'
+this.pool = new Pool(config.database);
+
+
+~~~
+
+
+
+
 ~~~sh
 # create a json package (-y, means all question answer yes)
 npm init -y
@@ -32,14 +78,6 @@ npm i express-handlebars
 npm i -s pg
 
 ~~~
-
-
-
-
-
-
-
-
 
 
 

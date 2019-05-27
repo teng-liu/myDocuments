@@ -1,6 +1,12 @@
 May 27
 ======
 
+### today worked on:
+- express <-> postgres
+  - wrote API in express => connected postgres db to get data (get is working, update not)
+    - but the sql of update properties in jsonb is done (jsonb_set() method)
+  - problem: use put to update, api with json parameter
+
 
 ### Possible Methods of form:
 
