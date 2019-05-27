@@ -22,8 +22,14 @@ npm i -D nodemon
 
 npm run dev    # this will run the dev -> nodemon index
 
+# display the api call datetime
+npm i moment
 
+# install handlebars
+npm i express-handlebars
 
+# install db postgres
+npm i -s pg
 
 ~~~
 

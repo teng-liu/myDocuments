@@ -1,3 +1,63 @@
+May 27
+======
+
+### Possible Methods of form:
+
+- retrieve -> get form by doc_id, version...
+- create  -> save with version infor
+- update  -> 
+  - (content?)save with version infor;
+  - (status-> expired)not the form, but the attributes of form
+- delete  -> delete on version | delete of all history versions
+- attachment -> with doc_id and attachment_id?
+
+1. what kind of format it saved as (doc?) -> the exported file from CMS(maintain all data in its own database, support export/import/integrate to/from different storage systems -> Synchonization)
+
+2. How it displayed? as **web form** with each field seprated OR as a **word doc**(a block of content, not possible to get inside field recorded)
+
+
+May 24
+======
+1. More research on contract management and document management business require and related information:
+Contract management
+https://en.wikipedia.org/wiki/Contract_management
+
+Document management system
+https://en.wikipedia.org/wiki/Document_management_system 
+
+
+May 23
+======
+1. Meeting with supervisor 
+2. Researched on:
+1) open work doc in browser -> React
+https://www.opcito.com/blogs/configuring-an-office-js-word-add-in-with-reactjs-without-the-yeoman-generator/
+
+2) API -> Office 365 
+https://docs.microsoft.com/en-us/graph/onedrive-concept-overview
+https://docs.microsoft.com/en-us/sharepoint/dev/sp-add-ins/working-with-folders-and-files-with-rest
+
+3) API -> Alfrasco
+http://localhost:8080/api-explorer/#!/sites/getSiteMembershipRequestForPerson
+
+
+May 22
+======
+1. worked on express, move the UI hard-code data to express, react call API in express.
+
+
+May 21
+======
+1. worked on json design of control-approval sheet.
+   https://github.com/teng-liu/myDocuments/blob/master/contract-control-approval.json
+2. tried to draw it on UI, without style (please refer to the attached screenshot)
+
+
+May.20
+======
+Holiday 
+
+
 May 17
 ======
 1. Finished the install of Alfresco docker version. And got 30 days trail. 

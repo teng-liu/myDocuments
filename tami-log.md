@@ -1,3 +1,72 @@
+May 27
+======
+
+possible Methods of form:
+
+- retrieve -> get form by doc_id, version...
+- create  -> save with version infor
+- update  -> 
+  - (content?)save with version infor;
+  - (status-> expired)not the form, but the attributes of form
+- delete  -> delete on version | delete of all history versions
+- attachment -> with doc_id and attachment_id?
+
+
+1. what kind of format it saved as (doc?) -> the exported file from CMS(maintain all data in its own database, support export/import/integrate to/from different storage systems -> Synchonization)
+
+2. How it displayed? as **web form** with each field seprated OR as a **word doc**(a block of content, not possible to get inside field recorded)
+
+
+
+
+
+May 23
+======
+
+1. Meeting with supervisor 
+2. Researched on:
+3) open work doc in browser -> React
+https://www.opcito.com/blogs/configuring-an-office-js-word-add-in-with-reactjs-without-the-yeoman-generator/
+
+2) API -> Office 365 
+https://docs.microsoft.com/en-us/graph/onedrive-concept-overview
+https://docs.microsoft.com/en-us/sharepoint/dev/sp-add-ins/working-with-folders-and-files-with-rest
+
+3) API -> Alfrasco
+http://localhost:8080/api-explorer/#!/sites/getSiteMembershipRequestForPerson
+
+
+
+~~~sql
+
+select * from contracts where name_key='itss-control-approval-sheet';
+
+
+CREATE TABLE public.contracts
+(
+    uuid uuid NOT NULL DEFAULT uuid_generate_v4(),
+    name_key text,
+    content jsonb,
+    CONSTRAINT contract_pkey PRIMARY KEY (uuid)
+)
+
+insert into public.contracts (name_key, content) 
+    values ('itss-control-approval-sheet', '{
+    "head": {
+        "id": "contract-template-itss",
+        "code": "contract-template-itss",
+        "title": "Default Contract Template",
+        "version": "1.0"
+    },
+    "body": {}
+}')
+~~~
+
+
+
+
+
+
 May 21
 ======
 ~~~
@@ -14,10 +83,23 @@ singleselection
 multipleselection
 
 ~~~
+Co-op
+-----
+Based on your current understanding of your job duties, what would you identify as the top three skills your work term will require you to draw upon to be successful? How do these skills connect wider to your career plans?
+
+Top three skills identified from the first month of first work-term:
+First, communication is important and Together with listen and understanding. Both the communication with the end-user, who knows less about technic but know more about the business requirement, and the technical leader, who breaks down the user requirements to the software model, are necessary and they are long-lasting process during the entire software development. Good communication skills allow gaining this information efficiently.
+Then, open mindedness is important us as a programmer. There are always new languages, new technologies and new implementing structures come up in software development world. We may use a totally different strategy or frameworks when starting a new project from what we've been worked on before. Technology is evolving in a rapid speed, so should us programmer. So we need to keep our open-mind all the time to listen to the new ideas, learn new knowledge and keep the same pace with the updated knowledge.
+Last but not the least, the problem solving skill. Programming is process of finding and fixing problems. There are always problems when you write tens or hundreds lines of code, as well as when we try something new. We need to be patient and positive to narrow down the problem, find out the root cause, and provide a solution to fix it. Problem solving is an everyday-use skill when programming, and it is a core skill.
 
 
 
 
+Communication, listen, and understanding:
+    understanding the requirements and what do user really want...
+Open-mindedness
+    new ideas, new technologies
+Problem solving
 
 
 Fedora:
@@ -30,6 +112,9 @@ p/w:  Welcome1
  
 http://alfrescotest.gpei.ca/share/page/
 ~~~
+
+
+
 
 
 

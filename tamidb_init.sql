@@ -1,3 +1,53 @@
+ 
+ ---------postgres------------------------------------------
+ 
+-- enter pg:   psql -h localhost -U postgres
+
+
+SELECT
+    table_schema || '.' || table_name
+FROM
+    information_schema.tables
+WHERE
+    table_type = 'BASE TABLE'
+AND
+    table_schema NOT IN ('pg_catalog', 'information_schema');
+
+
+
+
+
+
+
+select * from contracts where name_key='itss-control-approval-sheet';
+
+CREATE TABLE public.contracts
+(
+    uuid uuid NOT NULL DEFAULT uuid_generate_v4(),
+    name_key text,
+    content jsonb,
+    CONSTRAINT contract_pkey PRIMARY KEY (uuid)
+)
+
+insert into public.contracts (name_key, content) 
+    values ('itss-control-approval-sheet', '{
+        "head": {
+            "id": "contract-template-itss",
+            "code": "contract-template-itss",
+            "title": "Default Contract Template",
+            "version": "1.0"
+        }
+    }')
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ ---------------------------------------------------
  create database if not exists `tamidb`;
  use tamidb;
 
