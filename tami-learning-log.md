@@ -1,3 +1,26 @@
+May 28
+======
+1. problem: when call PATCH api (update part of data), how to refresh the UI? 
+   1. call getAllData api again
+      1. from UI action or 
+      2. redux api layer
+   2. OR render part of the UI data( how? )
+   3. OR at the same time Generate Action, modify the state in redux
+when update data, what should be in response?
+
+!! Solution:
+Check Shallow copy (redux):
+https://redux.js.org/recipes/structuring-reducers/immutable-update-patterns
+
+React-Redux-UI:    https://github.com/teng-liu/Contract-System
+Express-API:       https://github.com/teng-liu/ExpressExampleII
+
+2. problem: patchAttribute api -> get table-name, json-path, updates-value 
+   1. only work for {"path": "{data, selected}", "updates": 24}
+   2. not working when update string.
+
+*need to solve tomorrow
+
 May 27
 ======
 
@@ -5,7 +28,7 @@ May 27
 - express <-> postgres
   - wrote API in express => connected postgres db to get data (get is working, update not)
     - but the sql of update properties in jsonb is done (jsonb_set() method)
-  - problem: use put to update, api with json parameter
+  - problem: use PUT api to update with json parameter
 
 
 ### Possible Methods of form:

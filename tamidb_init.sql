@@ -1,6 +1,10 @@
  
  ---------postgres------------------------------------------
- 
+-- user: 'postgres',
+-- host: 'localhost',
+-- database: 'cms',
+-- password: 'postgres',
+-- port: 5432      
 -- enter pg:   psql -h localhost -U postgres
 
 ---------show tables
@@ -36,6 +40,16 @@ insert into public.contracts (name_key, content)
         {....}
     }')
  
+CREATE TABLE public.contract_template
+(
+    uuid uuid NOT NULL DEFAULT uuid_generate_v4(),
+    name_key text,
+    content jsonb,
+    CONSTRAINT contract_pkey PRIMARY KEY (uuid)
+)
+
+
+
 
 --------jsonb_set 
 select * from contracts;

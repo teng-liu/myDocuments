@@ -1,23 +1,54 @@
 #--------api from express js---------
 ###
 
+GET http://localhost:9000/api/contracts/itss-control-approval-contract
+
+
+###
+PATCH http://localhost:9000/api/contracts/itss-control-approval-contract
+content-type: application/json
+
+ {
+     "path": "{data, selected}",
+     "updates": 24
+ }
+
+###
+GET http://localhost:9000/api/contract-templates/tami-test-template-IIIII
+
+###
+PATCH http://localhost:9000/api/contract-templates/tami-test-template-IIIII
+content-type: application/json
+
+ {
+     "path": "{head, code}",
+     "updates": "ttttttt"
+ }
+
+
+
+###
+
+
+
+
 PUT http://localhost:9000/api/contract/c26eac14-7a02-4564-b864-40cfd28da438
 
 ###
 
 ###
-PUT http://localhost:9000/api/contract/22
+PATCH http://localhost:9000/api/contracts/itss-control-approval-sheet
 content-type: application/json
 
 {
     "uuid": "c26eac14-7a02-4564-b864-40cfd28da438",
     "data":{
-        "selected": 2
+        "selected": 1
     }
 }
 
 ###
-http://localhost:9000/api/contract
+http://localhost:9000/api/contracts
 
 ###
 

@@ -257,3 +257,9 @@ We suggest that you begin by typing:
   cd C:\Users\tliu\Documents\tami\react-2019-tami
   npm start
 ~~~
+
+React Debug in VS code:
+~~~
+ npm install --save -dev redux-devtools-extension
+ 
+~~~
