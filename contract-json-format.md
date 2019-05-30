@@ -1,4 +1,6 @@
+### Template
 
+~~~json
 {
     "head":{
         "code": "contract-control-approval-itss",
@@ -21,7 +23,7 @@
                     },
                     {
                         "code": "start-end-date",
-                        "field": "START DATE: $[start-date::calander::Type Here]  END DATE: $[start-date::calander::Type Here]"
+                        "field": "START DATE: $[start-date::calander::Type Here]  END DATE: $[end-date::calander::Type Here]"
                     },
                     {
                         "code": "contract-summary",
@@ -29,7 +31,7 @@
                     },
                     {
                         "code": "contract-type",
-                        "field": "$[contract-type::singleselection::Professional Services,Maintenance/Service Support,Standing Offer Contract]"
+                        "field": "CONTRACT TYPE: $[contract-type::singleselection::Professional Services,Maintenance/Service Support,Standing Offer Contract]"
                     },
                     {
                         "code": "amendment-no",
@@ -67,13 +69,11 @@
                         "requirement": "Option to Extend:  $[option-extend::textarea::Identify any option to extend the contract and provide a note on extension details]"
                     },
                     {
-                        "code": "contract-management-items",
-                        "field": "BUDGET SECTION CODES: $[budegt-section::textarea::Section] $[budegt-object::textarea::Object] $[budegt-program::textarea::Program] $[budegt-project::textarea::Project] $[budegt-contract-no::textarea::Contract #] ",
+                        "code": "budget-section-codes",
+                        "field": "BUDGET SECTION CODES: Section: $[budegt-section::textarea::Section] Object: $[budegt-object::textarea::Object] Program: $[budegt-program::textarea::Program] Project: $[budegt-project::textarea::Project] Contract #: $[budegt-contract-no::textarea::Contract #] ",
                         "notes": "Authors should confirm budget codes with Manager/Director Contract# is provided by SCC and is required to be referenced in the SOW"
                     }
                 ]
-
-
             },
             {
                 "role": "scc",
@@ -83,7 +83,6 @@
                 "role": "approvals",
                 "content": {}
             }
-
         ],
         "checklist":[
             {
@@ -109,3 +108,56 @@
         ]
     }
 }
+
+~~~
+
+### contract
+
+~~~json
+
+{
+    "head": {
+        "code": "contract-code",
+        "title":"contract-name-display",
+        "template-key": "",
+        "generated-date": "",
+        "author": "",
+        "version":"1.0.0"
+    },
+    "body": {
+        "data": {
+            "contract-title": "",
+            "vendor-name": "",
+            "verified": "",
+            "registry-link": "",
+            "start-date": "",
+            "end-date": "",
+            "contract-summary": "",
+            "contract-type": "",
+            "amendment-no": "",
+            "totalvalue": "",
+            "value-per-year": {
+                "value-20182019":"",
+                "value-20192020":"",
+                "value-20202021":""
+            },
+            "value-history-year": {
+                "value-20162017":"",
+                "value-20172018":""
+            },
+            "associated-tb-ec": "",
+            "contract-notes": "",
+            "vender-selected-by": "",
+            "background-doc": "",
+            "ongoing-required": "",
+            "option-extend": "",
+            "budegt-section": "",
+            "budegt-object": "",
+            "budegt-program": "",
+            "budegt-project": "",
+            "budegt-contract-no": ""
+        }
+    }
+}
+
+~~~

@@ -1,3 +1,25 @@
+Week 5 (May.27 ~ May.31)
+=======================
+
+May.30
+======
+Two link for react, redux explaination:
+https://www.robinwieruch.de/react-redux-tutorial/ 
+https://www.valentinog.com/blog/redux/ 
+
+1. done the PUT api (express->postgres) with upsert operation (updata if exists, otherwise insert)
+2. saved new-contract data(onChange of each property) into state (not in DB yet).
+
+!!Question: how to submit-contract by the data in the state, instead of from action.parameters (need to solve tomorrow)
+
+May 29
+====== 
+1. fixed the problem of updating property in JSON. (using JSON.stringify)
+2. determine what should be updated in UI state, and what should call API (distinguish UI state and db data) => when submit -> call API
+3. there should be no data in response when 'update' or 'save', only a success/failed message (the UI state already updated with the updated data)
+4. tomorrow, work on db data -> "contract-template" & "contract" data, save the customer contract data in DB (Json -> (key, value) for each variable/property)
+5. generate a contract with template (keep empty-contract for each template? or generate from template-> variables by api? )
+
 May 28
 ======
 1. problem: when call PATCH api (update part of data), how to refresh the UI? 
@@ -19,7 +41,8 @@ Express-API:       https://github.com/teng-liu/ExpressExampleII
    1. only work for {"path": "{data, selected}", "updates": 24}
    2. not working when update string.
 
-*need to solve tomorrow
+*need to solve tomorrow  
+!! solution: need to use JSON.stringify -> JSON.stringify(req.body.updates)
 
 May 27
 ======
@@ -46,6 +69,8 @@ May 27
 2. How it displayed? as **web form** with each field seprated OR as a **word doc**(a block of content, not possible to get inside field recorded)
 
 
+Week 4 (May.20 ~ May.24)
+=======================
 May 24
 ======
 1. More research on contract management and document management business require and related information:
@@ -87,7 +112,8 @@ May.20
 ======
 Holiday 
 
-
+Week 3 (May.13 ~ May.17)
+=======================
 May 17
 ======
 1. Finished the install of Alfresco docker version. And got 30 days trail. 
@@ -151,7 +177,7 @@ May.14
 worked on UI (contract template) today, kind of a mockup(by React) 
 
 
-Day 10 (May.13)
+May.13
 ===============
 
 1. Installed VirtualBox -> created a guest of Fedora (server)
@@ -159,8 +185,9 @@ Day 10 (May.13)
 3. Researched more information about the framwork.
 4. worked on JSON design about storing the Contract sections.
 
-
-Day 9 (May.10)
+Week 2 (May.6 ~ May.10)
+=======================
+May.10
 ==============
 1. learned about Redux(), which is used for managing the application state(used in React):
 Redux (with React):
@@ -183,8 +210,8 @@ My redux code: https://github.com/teng-liu/tami-first-redux
    For the project we are going to do, I think we may need a soure code control tool like github or gitlab to work together. And I've tried to define the json for the contract template, I only done the Definitions part, I displayed part of them on web UI(please refer to the attachment), but the remaining terms need more effort, i will aslo consult my friends of how to design the json for a better manage and some database knowledge. 
 
 
-Day 8 (May.9)
-=============
+May.9
+=====
 1. I checked online of the "Contract management software" and got some idea about the contract related conccept and workflow.
    wiki:  https://en.wikipedia.org/wiki/Contract_management_software
 
@@ -253,10 +280,8 @@ Anatomy of a contract template:
 - sys.user
 
 
-
-
-Day 7 (May.8)
-============
+May.8
+=====
 1. followed the video below(long, detailed but good) to learn the React to build UI:
 - learning video:  https://www.youtube.com/watch?v=sBws8MSXN7A&t=130s
 - project I created:  https://github.com/teng-liu/FirstReactPrj
@@ -270,8 +295,8 @@ my react log:
 
 Also, a quick .gif (from the attachment) of today's first example.
 
-Day 6 (May.7)
-=============
+May.7
+=====
 
 1. Finished the JDBC query accross multiple tables(with joins)
 2. Done the delete and update operation by API (PUT and DELETE)
@@ -305,8 +330,8 @@ OR
 
 
 
-Day 5 (May.6)
-=============
+May.6
+=====
 
 1. How to pass query (with JPA and JDBC)
 
@@ -338,9 +363,10 @@ select  a.id_application, a.application_key, ct.codetable_key, cv.code_value
 ~~~
 
 
-
-Day 4 (May.03)
-==============
+Week 1 (April.30 ~ May.3)
+=======================
+May.03
+======
 1. I checked from the link below of how connect Mysql from Spring boot. It helped.
 
 https://medium.com/@salisuwy/building-a-spring-boot-rest-api-part-iii-integrating-mysql-database-and-jpa-81391404046a
@@ -368,9 +394,8 @@ And all the calls that I have so far:
 - Then display the codevalue list for a specific code, and tables(codes) that a form included. 
 
 
-
-Day 3 (May.02)
-==============
+May.02
+======
 
 1. I Re-created my table columns as the ones from the document you provided, 
    and inserted the data into database. I will attach my sql file later. 
@@ -407,7 +432,7 @@ Result:
 3. I will work on **spring boot** tomorrow, see how to connect MySQL there and query the data. 
 
 
-Day 2 (May.01)
+May.01
 =====
 1. Learned more about the concept about annotations and beans and how they worked.  
 2. checked videos of Spring boot MicroServices, these videos are very good, first create 3 general services in Spring boot, then they turn them to microservice way. I will check more of it.  
@@ -416,8 +441,8 @@ https://javabrains.io/courses/spring_bootquickstart/
 I created sql to create the databse and 4 tables that you gave, but there is no data in them, I will add some testing data tomorrow.  
 
 
-Day 1 (Apr.30)
-=====
+Apr.31
+======
 1. Installed Software:  
  
 - Slack, IntelliJ, Tomcat, Java JDK, Orbeon, MySql;   
@@ -438,4 +463,8 @@ Day 1 (Apr.30)
  
 - Annotation (there are lots of annotation need to be familiar with)  
 - Dependency Injection  
+
+Apr.30
+======
+First day meeting, checklist. Machine not ready.
 
