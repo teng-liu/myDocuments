@@ -1,6 +1,46 @@
 Week 5 (May.27 ~ May.31)
 =======================
 
+May.31
+======
+
+1. solved the problem of submit contract from state(currentContract), instead of action.parameters.
+2. one more dev problem: the parameter of PUT -> body, didn't passed by. (need to solve next week)
+3. Discussed with team, the following list contains very roughly idea about features, we will go through again and make more details next Monday
+
+v1.0.0 (2019 summer)
+------
+Feature List:
+1. support display Template List  
+  1.1 support filter by contract-type
+2. support modify Template and create new one  
+  2.1 Template Builder
+3. support create/modify Contract on an existing template
+4. support display Contract List
+5. support user-base role control (Basic)  
+   5.1 user group  
+   5.2 user Event / activity  
+   5.3 assign priviledge  
+6. support basic work-flow procees  
+...
+
+v2.0.0 (2020 summer)
+------
+1. support advanced role-control
+2. support advanced work-flow process
+3. support export as word/pdf 
+4. support integrate with alfrasco -> save exported file
+5. ...
+
+
+v3.0.0 (2021 summer)
+-------
+1. support all kinds of form/templates
+2. support export to Office 365, or any Cloud platform
+3. performance enhance  
+....
+
+
 May.30
 ======
 Two link for react, redux explaination:
