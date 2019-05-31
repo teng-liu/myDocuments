@@ -5,7 +5,8 @@ May.31
 ======
 
 1. solved the problem of submit contract from state(currentContract), instead of action.parameters.
-2. one more dev problem: the parameter of PUT -> body, didn't passed by. (need to solve next week)
+2. one more dev problem: the parameter of PUT -> body, didn't passed by. (need to solve next week)   
+!!!solved -> need to add a top-level json node to contain all the nodes
 3. Discussed with team, the following list contains very roughly idea about features, we will go through again and make more details next Monday
 
 v1.0.0 (2019 summer)
