@@ -1,3 +1,20 @@
+Week 6 (June.3 ~ June.7)
+=======================
+
+June.3
+======
+- Database structure
+  - contract | template
+  - user | role | org
+
+~~~
+
+
+~~~
+
+
+
+
 Week 5 (May.27 ~ May.31)
 =======================
 
