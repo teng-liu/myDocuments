@@ -17,6 +17,7 @@ You also need to have basic knowledge about how to use linux and bash.
 
 - Download and install **VirtualBox**
 - Download **Fedora Server 29** installation image (Fedora-Server-dvd-x86_64-29-1.2.iso)
+  - https://www.server-world.info/en/note?os=Fedora_29&p=desktop&f=1
 - Create a virtual machine named: pei-cms.vm-db
    - 1 GB memory
    - 60 GB disk (minimum recommendation), with incremental size.
