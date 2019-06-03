@@ -60,7 +60,7 @@ jsonb_set(
 	'{data, selected}',
 	2) from contracts;
 
-update contracts
+update contract
 	set content = (
 		jsonb_set(
 			content,

@@ -1,0 +1,44 @@
+{
+    "head": {
+        "code": "",
+        "title":"",
+        "template-key": "itss-control-approval-template",
+        "generated-date": "",
+        "author": "",
+        "version":"1.0.0"
+    },
+    "body": {
+        "data": {
+            "contract-title": "",
+            "vendor-name": "",
+            "verified": "",
+            "registry-link": "",
+            "start-date": "",
+            "end-date": "",
+            "contract-summary": "",
+            "contract-type": "",
+            "amendment-no": "",
+            "totalvalue": "",
+            "value-per-year": {
+                "value-20182019":"",
+                "value-20192020":"",
+                "value-20202021":""
+            },
+            "value-history-year": {
+                "value-20162017":"",
+                "value-20172018":""
+            },
+            "associated-tb-ec": "",
+            "contract-notes": "",
+            "vender-selected-by": "",
+            "background-doc": "",
+            "ongoing-required": "",
+            "option-extend": "",
+            "budegt-section": "",
+            "budegt-object": "",
+            "budegt-program": "",
+            "budegt-project": "",
+            "budegt-contract-no": ""
+        }
+    }
+}

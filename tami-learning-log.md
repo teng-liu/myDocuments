@@ -12,7 +12,8 @@ June.3
 
 ~~~
 
-
+link for team:
+https://github.com/teng-liu/myDocuments/blob/master/setup-database.md
 
 
 Week 5 (May.27 ~ May.31)
