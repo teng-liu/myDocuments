@@ -1,18 +1,119 @@
 Week 6 (June.3 ~ June.7)
 =======================
 
+
+
+June.4
+======
+
+1. wrote documents(json, sql) about database structure introduction
+2. features that thought about:
+- template
+  - get |create | modify | delete
+  - tokenizr (well support format)
+- contract
+  - get |create | modify | delete
+  - tokenizr (well support format)
+- css -> grid -> display UI
+- role
+  - operations
+  - org | user
+- contract -> status
+- user
+  - login
+  - role
+  - basic ACL 
+- audit log
+3. afternoon -> create -> template [layout]
+
+
+
 June.3
 ======
-- Database structure
-  - contract | template
-  - user | role | org
+1. I've read through the contract process material  -> collected:   
+- Roles
+- Contract-Status
+- Process
+- Events/Operations on Contract
 
-~~~
+
+Object |	Actions |	Role |
+-------|----------|------|--
+Contract | Contract.Create (Prepare) |	Contract Author | 
+Contract | Contract.Modify (Correction)	| Manager | 
+Contract | Contract.Review | Director | 
+Contract | Contract.Approve | SCC - Supply Chain Coordinator | 
+Contract | Contract.Rollback(sent back) |	CFO - Chief Financial Officer | 
+Contract | Contract.Agree | COO - Chief Operating Officer | 
+Template | Template.Agree | Vendor | 
+Contract | Contract.Send (completed contract)	 | All
+Contract | Contract.Receive (completed contract)	 |  All
+Contract | Contract.Finalized (process end)	 | Contract Author
+Contract | Contract.Backup (save to…Alfrasco...)	 | Contract Author
 
 
-~~~
+#### contract status
 
-link for team:
+Object | order | previous status | template/Contract Status | next status | Role	 | 
+-------|-------|-----------------|--------------------------|-------------|---------|
+template | 1000	|	| template preparing | |	contract-author
+template | 91000|	| template pending Acceptance by vendor | |	vendor
+template | 92000|	| template accepted by vendor | |	vendor
+contract | 93000|	| contract pending Acceptance by vendor | |	vendor
+contract | 94000|	| vendor accepted | |	vendor
+contract | 95000|	| vendor vendor-signed | |	vendor
+contract | 95000|	| received the finalized contract | |	vendor
+contract | 2900	|	| Rolled back by [who] from [status] to [status] the previous step  | |	
+template | 1300	|	| template prepared | |	contract-author
+contract | 2000	|	| contract drafting | |	contract-author
+contract | 2100	|	| contract draft Done | |	contract-author
+contract | 2200	|	| contract being modified (after 'rolled back') | |	contract-author
+contract | 2300	|	| contract modified done | |	contract-author
+contract | 2400	|	| sent Manager to review | |	contract-author
+contract | 2500	|	| sent to SCC after correction | |	contract-author
+contract | 2600	|	| sent vendor-signed contract to SCC | |	contract-author
+contract | 2700	|	| received the finalized contract | |	contract-author
+contract | 2800	|	| sent the finalized contract to vendor | |	contract-author
+contract | 3000	|	| manager reviewing | |	manager
+contract | 3100	|	| Pending approval by manager | |	manager
+contract | 3200	|	| manager approved | |	manager
+contract | 3300	|	| manager declined ( + rolled back..author..) | |	manager
+contract | 3400	|	| sent director to review | |	manager
+contract | 4000	|	| director reviewing | |	director
+contract | 4100	|	| Pending approval by  director | |	director
+contract | 4200	|	| director approved | |	director
+contract | 4300	|	| director declined ( + rolled back..author..) | |	director
+contract | 4400	|	| sent to SCC to review | |	director
+contract | 5000	|	| SCC reviewing | |	SCC
+contract | 5100	|	| Pending approval by SCC | |	SCC
+contract | 5200	|	| SCC approved | |	SCC
+contract | 5300	|	| SCC declined ( + rolled back..author..) | |	SCC
+contract | 5400	|	| sent CFO to review | |	SCC
+contract | 5500	|	| received vendor-signed contract | |	SCC
+contract | 5600	|	| sent vendor-signed contract to COO | |	SCC
+contract | 5700	|	| received both-signed contract | |	SCC
+contract | 5800	|	| backed up both-signed contract to [alfrasco] | |	SCC
+contract | 5900	|	| broadcast of the contract finalization (CFO, author) | |	SCC
+contract | 6000	|	| CFO reviewing | |	CFO
+contract | 6100	|	| Pending approval by  CFO | |	CFO
+contract | 6200	|	| CFO approved | |	CFO
+contract | 6300	|	| CFO declined ( + rolled back..scc..) | |	CFO
+contract | 6400	|	| sent to COO to review | |	CFO
+contract | 5500	|	| received vendor-signed contract | |	COO
+contract | 5600	|	| sent vendor-signed contract to COO | |	COO
+contract | 7000	|	| COO reviewing | |	COO
+contract | 7100	|	| Pending approval by COO | |	COO
+contract | 7200	|	| COO approved | |	COO
+contract | 7300	|	| COO declined ( + rolled back..scc..) | |	COO
+contract | 7400	|	| sent to contract-author | |	COO
+contract | 8000	|	| received vendor-signed contract | |	Treasury board
+contract | 8100	|	| tb-signed the vendor-signed contract | |	Treasury board
+contract | 8200	|	| sent both-signed contract to COO | |	Treasury board
+
+
+
+
+link for team -> database setup:
 https://github.com/teng-liu/myDocuments/blob/master/setup-database.md
 
 
