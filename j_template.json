@@ -26,17 +26,23 @@
                     "code": "contract-summary",
                     "field": "CONTRACT SUMMARY: $[contract-summary::textarea::The summary is meant to be a description, in layman’s terms, of what the vendor will provide to government within this contract. It is intended to brief executive leadership about the contract. It should be summarized in 3-4 sentences.]"
                 },
+
                 {
                     "code": "contract-type",
                     "field": "CONTRACT TYPE: $[contract-type::singleselection::Professional Services,Maintenance/Service Support,Standing Offer Contract]"
                 },
+                {
+                    "code": "contract-type",
+                    "field": "CONTRACT TYPE: $[contract-type::singleselection::DDDD-codetable-contract_type]"
+                },
+
                 {
                     "code": "amendment-no",
                     "field": "Amendment No: $[amendment-no::textinput::Type here]"
                 },
                 {
                     "code": "contract-value",
-                    "field": "TOTAL CONTRACT VALUE: $ $[totalvalue::textinput::Type here]",
+                    "field": "TOTAL CONTRACT VALUE: $[totalvalue::textinput::Type here]",
                     "requirement": "Value/Year (if multi-year, add as needed): 2018-2019: $ $[value-20182019::textinput::Type here] 2019-2020: $ $[value-20192020::textinput::Type here] 2020-2021: $ $[value-20202021::textinput::Type here]"
                 },
                 {

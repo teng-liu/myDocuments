@@ -21,13 +21,61 @@ AND
 --------create table, query, insert
 select * from contracts where name_key='itss-control-approval-sheet';
 
+CREATE TABLE public.codetable
+(
+    uuid uuid NOT NULL DEFAULT uuid_generate_v4(),
+    name_key text unique,
+    content jsonb,
+    CONSTRAINT codetable_pkey PRIMARY KEY (uuid)
+);
+
 CREATE TABLE public.contracts
 (
     uuid uuid NOT NULL DEFAULT uuid_generate_v4(),
-    name_key text,
+    name_key text unique,
     content jsonb,
     CONSTRAINT contract_pkey PRIMARY KEY (uuid)
-)
+);
+
+
+
+---codetable---
+SELECT content->'body' FROM codetable; 
+
+insert into public.codetable (name_key, content)
+    values('contract_type',
+	'{
+        "head": {
+            "code": "contract_type",
+            "display": "Contract Type",
+            "expire-date": ""
+        },
+        "body": [
+            	{
+                    "code": "professional-services",
+                    "display": "Professional Services",
+		   			"order": 1,
+                    "start-date": "2016-03-03",
+                    "end-date": "2022-03-03"
+                },
+            	{
+                    "code": "maintenance-service-support",
+                    "display": "Maintenance/Service Support",
+		   			"order": 2,
+                    "start-date": "2016-03-03",
+                    "end-date": "2022-03-03"
+                },
+				{
+                    "code": "standing-offer-contract",
+                    "display": "Standing Offer Contract",
+		   			"order": 3,
+                    "start-date": "2016-03-03",
+                    "end-date": "2022-03-03"
+                }
+        ]
+    }' 
+		  );
+	
 
 insert into public.contracts (name_key, content) 
     values ('itss-control-approval-sheet', '{
@@ -38,7 +86,7 @@ insert into public.contracts (name_key, content)
             "version": "1.0"
         },
         {....}
-    }')
+    }');
  
 CREATE TABLE public.contract_template
 (
@@ -46,7 +94,7 @@ CREATE TABLE public.contract_template
     name_key text,
     content jsonb,
     CONSTRAINT contract_pkey PRIMARY KEY (uuid)
-)
+);
 
 
 

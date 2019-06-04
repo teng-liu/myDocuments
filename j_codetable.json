@@ -1,0 +1,30 @@
+{
+    "head": {
+        "code": "contract_type",
+        "display": "Contract Type",
+        "expire-date": ""
+    },
+    "body": [
+            {
+                "code": "professional-services",
+                "display": "Professional Services",
+                   "order": 1,
+                "start-date": "2016-03-03",
+                "end-date": "2022-03-03"
+            },
+            {
+                "code": "maintenance-service-support",
+                "display": "Maintenance/Service Support",
+                   "order": 2,
+                "start-date": "2016-03-03",
+                "end-date": "2022-03-03"
+            },
+            {
+                "code": "standing-offer-contract",
+                "display": "Standing Offer Contract",
+                   "order": 3,
+                "start-date": "2016-03-03",
+                "end-date": "2022-03-03"
+            }
+    ]
+}
