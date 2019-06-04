@@ -28,12 +28,13 @@ CREATE TABLE public.codetable
 
 
 -- contract_template
-
 -- inside json -> grammer for variables
+-- grammar-I
 -- {
 --     "code": "contract-type",
 --     "field": "CONTRACT TYPE: $[contract-type::singleselection::Professional Services,Maintenance/Service Support,Standing Offer Contract]"
 -- },
+-- grammar-II
 -- {
 --     "code": "contract-type",
 --     "field": "CONTRACT TYPE: $[contract-type::singleselection::VVV-codetable-contract_type]"
@@ -332,3 +333,28 @@ insert into public.codetable (name_key, content)
         ]
     }' 
 		  );
+
+
+--about update
+insert into public.contract (name_key, content) 
+    values ('tami-contract-cccc', '{"head-updated":{}}')
+    on conflict (name_key)
+    do 
+        update
+            set content='{"head-updated":{}}';
+
+update contract
+	set content = (
+		jsonb_set(
+			content,
+			'{data, selected}',
+			'1',
+			false))::json where uuid='c26eac14-7a02-4564-b864-40cfd28da438';
+
+update tests_summary_data 
+	set data = (
+		jsonb_set(
+			to_jsonb(data), 
+			'{misc,gap,pa}', 
+			'-1', 
+			false))::json where data->'misc'->'gap'->>'pa' = '0';
