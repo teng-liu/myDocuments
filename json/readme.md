@@ -12,14 +12,21 @@ type | chars |
 start   |   $[ 
 end     |   ]
 seprater|  ::
-formate |   $[variableName::componentType::placeholder]
+formate |   ${variableName::componentType::placeholder}
 placeholder | normal text
 ph_DB_code | VVV:dbTableName:name_key
 
 ~~~json
-$[contract-title::textinput::Type Here]
+${contract-title::textinput::Type Here}
 
-$[contract-type::singleselection::VVV:codetable:contract_type]
+${contract-type::singleselection::VVV:codetable:contract_type}
 
-$[contract-type::dropdownbox::VVV:codetable:province]
+${contract-type::dropdownbox::VVV:codetable:province}
 ~~~
+
+#### style
+${style-text-right}   
+
+${ style-Name }
+
+=> apply to the text before the style definition

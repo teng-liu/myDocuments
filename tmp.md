@@ -47,8 +47,8 @@ insert into public.contract_template (name_key, content)
     "body": {
         "header": [
             {"field": "THIS AGREEMENT made this $[made-date::calander::dateformat1]"},
-            {"field": "BETWEEN: GOVERNMENT OF PRINCE EDWARD ISLAND, as represented by the Minister of $[minister-partA::textinput::Type here], $$$$(hereinafter referred to as \"Government\")$$$$OF THE PART A;"},
-            {"field": "AND: $[partB-department::textinput::Type Here] $$of $[partB-company::textinput::Type Here] $$in $[partB-county::textinput::Type Here] County,  Province of $[partB-province::dropdownlist::VVV:codetable:province], $$$$(hereinafter referred to as the \"Contractor\")$$$$OF THE PART B"},
+            {"field": "BETWEEN: GOVERNMENT OF PRINCE EDWARD ISLAND, as represented by the Minister of $[minister-partA::textinput::Type here], $$$$(hereinafter referred to as \"Government\") OF THE PART A;"},
+            {"field": "AND: $[partB-department::textinput::Type Here] $$of $[partB-company::textinput::Type Here] $$in $[partB-county::textinput::Type Here] County,  Province of $[partB-province::dropdownlist::VVV:codetable:province], $$$$(hereinafter referred to as the \"Contractor\") OF THE PART B"},
             {"field": "WHEREAS Government wishes to engage the services of the Contractor to carry out the services described in Schedule \"A\" attached hereto;$$"},
             {"field": "AND WHEREAS the Contractor has agreed to provide Government with these services on certain terms and conditions as more particularly set out in this Agreement;$$"},
             {"field": "NOW THEREFORE in consideration of the mutual promises contained in this Agreement, the Parties agree that the terms and conditions of their relationship are as follows:$$"}
