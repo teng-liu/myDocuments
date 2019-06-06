@@ -1,0 +1,369 @@
+
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+CREATE TABLE public.contract
+(
+    uuid uuid NOT NULL DEFAULT uuid_generate_v4(),
+    name_key text unique,
+    content jsonb,
+    CONSTRAINT contract_pkey PRIMARY KEY (uuid)
+);
+
+
+CREATE TABLE public.contract_template
+(
+    uuid uuid NOT NULL DEFAULT uuid_generate_v4(),
+    name_key text unique,
+    content jsonb,
+    CONSTRAINT contract_template_pkey PRIMARY KEY (uuid)
+);
+
+
+CREATE TABLE public.codetable
+(
+    uuid uuid NOT NULL DEFAULT uuid_generate_v4(),
+    name_key text unique,
+    content jsonb,
+    CONSTRAINT codetable_pkey PRIMARY KEY (uuid)
+);
+
+CREATE TABLE public.definition
+(
+    uuid uuid NOT NULL DEFAULT uuid_generate_v4(),
+    name_key text unique,
+    content jsonb,
+    CONSTRAINT definition_pkey PRIMARY KEY (uuid)
+);
+
+
+
+
+
+--about update
+--upsert
+insert into public.contract (name_key, content) 
+    values ('tami-contract-cccc', '{"head-updated":{}}')
+    on conflict (name_key)
+    do 
+        update
+            set content='{"head-updated":{}}';
+
+--update
+update contract
+	set content = (
+		jsonb_set(
+			content,
+			'{data, selected}',
+			'1',
+			false))::json where uuid='c26eac14-7a02-4564-b864-40cfd28da438';
+
+--update path-> value
+update tests_summary_data 
+	set data = (
+		jsonb_set(
+			to_jsonb(data), 
+			'{misc,gap,pa}', 
+			'-1', 
+			false))::json where data->'misc'->'gap'->>'pa' = '0';
+
+
+
+
+
+-- contract_template
+-- inside json -> grammer for variables
+-- grammar-I
+-- {
+--     "code": "contract-type",
+--     "field": "CONTRACT TYPE: $[contract-type::singleselection::Professional Services,Maintenance/Service Support,Standing Offer Contract]"
+-- },
+-- grammar-II
+-- {
+--     "code": "contract-type",
+--     "field": "CONTRACT TYPE: $[contract-type::singleselection::VVV:codetable:contract_type]"
+-- },
+
+
+--Contract---
+
+insert into public.contract (name_key, content) 
+    values('empty-contract-of-itss-control-approval-template','
+{
+    "body": {
+        "start-date": "2019-06-18",
+        "totalvalue": "2000",
+        "vendor-name": "iWave",
+        "amendment-no": "Test-AMDNO-83859",
+        "contract-type": "Maintenance/Service Support",
+        "contract-title": "TestContract-0603",
+        "contract-summary": "this is a test contract, and this is the contract summary",
+        "vender-selected-by": "Competitive Process"
+    },
+    "head": {
+        "code": "Test creating contract-iWave",
+        "template-key": "itss-control-approval-template"
+    }
+}
+');
+
+
+insert into public.contract (name_key, content) 
+    values('empty-contract-of-itss-control-approval-template','
+    {
+    "head": {
+        "code": "",
+        "title":"",
+        "template-key": "itss-control-approval-template",
+        "generated-date": "",
+        "author": "",
+        "version":"1.0.0"
+    },
+    "body": {
+        "data": {
+            "contract-title": "",
+            "vendor-name": "",
+            "verified": "",
+            "registry-link": "",
+            "start-date": "",
+            "end-date": "",
+            "contract-summary": "",
+            "contract-type": "",
+            "amendment-no": "",
+            "totalvalue": "",
+            "value-per-year": {
+                "value-20182019":"",
+                "value-20192020":"",
+                "value-20202021":""
+            },
+            "value-history-year": {
+                "value-20162017":"",
+                "value-20172018":""
+            },
+            "associated-tb-ec": "",
+            "contract-notes": "",
+            "vender-selected-by": "",
+            "background-doc": "",
+            "ongoing-required": "",
+            "option-extend": "",
+            "budegt-section": "",
+            "budegt-object": "",
+            "budegt-program": "",
+            "budegt-project": "",
+            "budegt-contract-no": ""
+        }
+    }
+}
+');
+
+
+
+
+---codetable---
+SELECT content->'body' FROM codetable; 
+SELECT content->>'body' FROM codetable where name_key='contract_type';
+
+insert into public.codetable (name_key, content)
+    values('contract_type',
+	'{
+        "head": {
+            "code": "contract_type",
+            "display": "Contract Type",
+            "expire-date": ""
+        },
+        "body": [
+                    {
+                        "code": "professional-services",
+                        "display": "Professional Services",
+                        "order": 1,
+                        "start-date": "2016-03-03",
+                        "end-date": "2022-03-03"
+                    },
+                    {
+                        "code": "maintenance-service-support",
+                        "display": "Maintenance/Service Support",
+                        "order": 2,
+                        "start-date": "2016-03-03",
+                        "end-date": "2022-03-03"
+                    },
+                    {
+                        "code": "standing-offer-contract",
+                        "display": "Standing Offer Contract",
+                        "order": 3,
+                        "start-date": "2016-03-03",
+                        "end-date": "2022-03-03"
+                    }
+                ]
+    }' 
+		  );
+
+
+insert into public.codetable (name_key, content)
+    values('vender_selected_by',
+	'{
+        "head": {
+            "code": "vender_selected_by",
+            "display": "Vender Selected By",
+            "expire-date": ""
+        },
+        "body": [
+                    {
+                        "code": "competitive_process",
+                        "display": "Competitive Process",
+                        "order": 1,
+                        "start-date": "2016-03-03",
+                        "end-date": "2022-03-03"
+                    },
+                    {
+                        "code": "sole_source",
+                        "display": "Sole Source",
+                        "order": 2,
+                        "start-date": "2016-03-03",
+                        "end-date": "2022-03-03"
+                    },
+                    {
+                        "code": "three_quotes_received",
+                        "display": "Three Quotes Received",
+                        "order": 3,
+                        "start-date": "2016-03-03",
+                        "end-date": "2022-03-03"
+                    }
+                ]
+    }' 
+		  );
+
+
+insert into public.codetable (name_key, content)
+    values('province',
+	'{
+        "head": {
+            "code": "province",
+            "display": "Province",
+            "expire-date": "3022-03-03"
+        },
+        "body": [    
+                    {
+                        "code": "Prince-Edward-Island",
+                        "display": "Prince Edward Island",
+                        "initial": "PE",
+                        "start-date": "2016-03-03",
+                        "end-date": "3022-03-03"
+                    },
+                    {
+                        "code": "Nova-Scotia",
+                        "display": "Nova Scotia",
+                        "initial": "NS",
+                        "start-date": "2016-03-03",
+                        "end-date": "3022-03-03"
+                    },
+                    {
+                        "code": "New-Brunswich",
+                        "display": "New Brunswich",
+                        "initial": "NB",
+                        "start-date": "2016-03-03",
+                        "end-date": "3022-03-03"
+                    },  
+                    {
+                        "code": "ontario",
+                        "display": "Ontario",
+                        "initial": "ON",
+                        "start-date": "2016-03-03",
+                        "end-date": "3022-03-03"
+                    },
+                    {
+                        "code": "Quebec",
+                        "display": "Quebec",
+                        "initial": "QB",
+                        "start-date": "2016-03-03",
+                        "end-date": "3022-03-03"
+                    },
+                    {
+                        "code": "Manitoba",
+                        "display": "Manitoba",
+                        "initial": "MB",
+                        "start-date": "2016-03-03",
+                        "end-date": "3022-03-03"
+                    },
+                    {
+                        "code": "British-Columbia",
+                        "display": "British Columbia",
+                        "initial": "BC",
+                        "start-date": "2016-03-03",
+                        "end-date": "3022-03-03"
+                    },
+                    {
+                        "code": "Saskatchewan",
+                        "display": "Saskatchewan",
+                        "initial": "SK",
+                        "start-date": "2016-03-03",
+                        "end-date": "3022-03-03"
+                    },
+                    {
+                        "code": "Alberta",
+                        "display": "Alberta",
+                        "initial": "AB",
+                        "start-date": "2016-03-03",
+                        "end-date": "3022-03-03"
+                    },
+                    {
+                        "code": "Newfoundland-and-Labrador",
+                        "display": "Newfoundland and Labrador",
+                        "initial": "NL",
+                        "start-date": "2016-03-03",
+                        "end-date": "3022-03-03"
+                    }
+        ]
+    }' 
+		  );
+
+
+-----defination---
+
+insert into public.definition (name_key, content) 
+    values ('agreement', '
+    {
+        "head": {
+            "code": "agreement",
+            "template-key": " ",
+            "author": "author-guy"
+        },
+        "body": "\"Agreement\" means this Memorandum of Agreement and all attached schedules, and \"Memorandum of Agreement\" means this Agreement excluding all attached schedules;"
+    }'),
+    ('contractor', '
+    {
+        "head": {
+            "code": "contractor",
+            "template-key": " ",
+            "author": "author-guy"
+        },
+        "body": "\"Contractor\" means [INSERT CONTRACTOR’S FULL LEGAL NAME HERE];"
+    }'),
+    ('fiscal_year', '
+    {
+        "head": {
+            "code": "fiscal_year",
+            "template-key": " ",
+            "author": "author-guy"
+        },
+        "body": "\"Fiscal Year\" means a 12 month period beginning on April 1st in a year and ending on March 31st in the following year;"
+    }'),
+
+    ('government', '
+    {
+        "head": {
+            "code": "government",
+            "template-key": " ",
+            "author": "author-guy"
+        },
+        "body": "\"Government\" means Government of Prince Edward Island, as represented by the Minister of Finance;"
+    }'),
+
+    ('parties', '
+    {
+        "head": {
+            "code": "parties",
+            "template-key": " ",
+            "author": "author-guy"
+        },
+        "body": "\"Parties\" means Government and the Contractor, and \"Party\" means either of them as the context requires;"
+    }');
+

@@ -29,11 +29,13 @@ insert into public.contract_template (name_key, content)
 
 
 
------------------------------
+-----2019.06.06------------------------
+
+
 
 
 insert into public.contract_template (name_key, content)  
-    values ('NO33333', '{
+    values ('Contract Template - Default', '{
     "head": {
         "id": "default-contract-template-itss",
         "code": "default-contract-template-itss",
@@ -89,10 +91,107 @@ insert into public.contract_template (name_key, content)
                 "field": "(c) The payments described herein shall be paid upon the basis of the submission, by the ${payday_c::calander::Type here},of a detailed statement together with all necessary receipts.  Such statements shall be submitted to Government, and Government shall pay the amount owing within ${within_days_of_receipt::textinput::Type here}"
             },
             {
-                "field": "(d) All payments are subject to a hold back of an amount equal to ${percentage_bill_on_completion::textinput::Type here}% of the amount billed.  The hold back shall be paid upon completion and acceptance of the Work."
+                "field": "(d) All payments are subject to a hold back of an amount equal to ${percentage_bill_on_completion::textinput::Type here}__% of the amount billed.  The hold back shall be paid upon completion and acceptance of the Work."
             },
             {
                 "field": "OR"
+            },
+            {
+                "field": "(d) All payments are subject to a hold back of an amount equal to ${percentage_bill_on_finalReport::textinput::Type here}__% of the amount billed.  The hold back shall be paid upon the submission and acceptance of the final report and completion of the work."
+            }
+        ],
+        "conditions-of-agreement": {}
+    }
+
+}');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-----------------------------
+
+
+insert into public.contract_template (name_key, content)  
+    values ('NO33333', '{
+    "head": {
+        "id": "default-contract-template-itss",
+        "code": "default-contract-template-itss",
+        "title": "Default ITSS Contract Template",
+        "version": "1.0"
+    },
+    "body": {
+        "header": [
+            {"field": "THIS AGREEMENT made this ${made-date::calander::dateformat1}"},
+            {"field": "BETWEEN: GOVERNMENT OF PRINCE EDWARD ISLAND, as represented by the Minister of ${minister-partA::textinput::Type here},"},
+            {"field": "(hereinafter referred to as \"Government\")"},
+            {"field": "OF THE PART A;###right####"},
+            {"field": "AND: ${partB-department::textinput::Type Here}"},
+            {"field": "of ${partB-company::textinput::Type Here}"},
+            {"field": "in ${partB-county::textinput::Type Here} County,  Province of ${partB-province::dropdownlist::VVV:codetable:province},"},
+            {"field": "(hereinafter referred to as the \"Contractor\")"},
+            {"field": "OF THE PART B###right####"},
+            {"field": "WHEREAS Government wishes to engage the services of the Contractor to carry out the services described in Schedule \"A\" attached hereto;"},
+            {"field": "AND WHEREAS the Contractor has agreed to provide Government with these services on certain terms and conditions as more particularly set out in this Agreement;"},
+            {"field": "NOW THEREFORE in consideration of the mutual promises contained in this Agreement, the Parties agree that the terms and conditions of their relationship are as follows:"}
+        ],
+        "definitions":
+        {
+            "title": "Definitions",
+            "sub_title": "In this Agreement, the following definitions apply:",
+            "list": "agreement;contractor;fiscal_year;government;parties"
+        },
+        "convenants-contractor": {},
+        "payments": [
+            {
+                "title": "Payments, Records and Accounts"
+            },
+            {
+                "field":"Government shall make payments to the Contractor in the following manner:"
+            },
+            {
+                "field": "(a) Payment for the Work shall be at the rate of $ ${rate-per-hour::textinput::Type here} per hour, excluding taxes, but in no case shall the total payment exceed $ ${total-no-exceed::textinput::Type here}"
+            },
+            {
+                "field": "OR###center####"
+            },
+            {
+                "field": "(a) Payment for the Work shall be a lump sum of $ ${lump-sum::textinput::Type here} , excluding taxes, payable on the ${lump-paydate::calander::Type here}"
+            },
+            {
+                "field": "OR###center####"
+            },
+            {
+                "field": "(a) Payment for the work  shall  be  by installments  of $ ${rate-per-hour::textinput::Type here}, excluding taxes, payable as follows [ie. List dates (milestones) when payments will be made including amount to be paid on each date]"
+            },
+            {
+                "field": "AND, IF APPLICABLE###center####"
+            },
+            {
+                "field": "(b) Government shall pay all expenses of the Contractor, exclusive of all taxes, up to a maximum of $ ${expenses-maximum::textinput::Type here},based on expenses actually incurred and verified by receipt."
+            },
+            {
+                "field": "(c) The payments described herein shall be paid upon the basis of the submission, by the ${payday_c::calander::Type here},of a detailed statement together with all necessary receipts.  Such statements shall be submitted to Government, and Government shall pay the amount owing within ${within_days_of_receipt::textinput::Type here}"
+            },
+            {
+                "field": "(d) All payments are subject to a hold back of an amount equal to ${percentage_bill_on_completion::textinput::Type here}% of the amount billed.  The hold back shall be paid upon completion and acceptance of the Work."
+            },
+            {
+                "field": "OR###center####"
             },
             {
                 "field": "(d) All payments are subject to a hold back of an amount equal to ${percentage_bill_on_finalReport::textinput::Type here}% of the amount billed.  The hold back shall be paid upon the submission and acceptance of the final report and completion of the work."
@@ -145,7 +244,7 @@ insert into public.contract_template (name_key, content)
             },
             {
                 "code": "contract-type",
-                "field": "CONTRACT TYPE: ${contract-type::singleselection::Professional Services,Maintenance/Service Support,Standing Offer Contract}"
+                "field": "CONTRACT TYPE: ${contract-type::dropdownlist::VVV:codetable:contract_type}"
             },
             {
                 "code": "amendment-no",
@@ -171,11 +270,11 @@ insert into public.contract_template (name_key, content)
             },
             {
                 "code": "vender-selected-by",
-                "field": "Vendor Selected by: ${vender-selected-by::singleselection::Competitive Process, Sole Source, Three Quotes Received}"
+                "field": "Vendor Selected by: ${vender-selected-by::dropdownlist::VVV:codetable:vender_selected_by}"
             },
             {
                 "code": "background-documentation",
-                "field": "Background Documentation: ${background-doc::multipleselection::Used standard template with no changes, Legal Review Notes Attached, Risk Review Notes Attached, The Contract Review Checklist was completed and is included in the contract package (available on Alfresco)}"
+                "field": "Background Documentation: ${background-doc::checkbox::Used standard template with no changes, Legal Review Notes Attached, Risk Review Notes Attached, The Contract Review Checklist was completed and is included in the contract package (available on Alfresco)}"
             },
             {
                 "code": "contract-management-items",

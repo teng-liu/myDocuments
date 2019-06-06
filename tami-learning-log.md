@@ -2,6 +2,19 @@ Week 6 (June.3 ~ June.7)
 =======================
 
 
+June.6
+======
+
+1. !!Solved yesterday's problem:  
+-> should not call api in render, should be in 'componentDidMount'.  
+=> solution is: create a separate component of DropDownBox, call api to get data source from its 'componentDidMount' method
+2. added some css style (basic) for displaying better
+
+June.5
+======
+1. tried tokenizr, which allows multiple inline variables $[...]...$[...] => efficient and convinent
+2. Abstract the Contract Template doc => to Json and stored => And displayed on UI (part of the template, not all)
+3. !!Problem: call api(dispatch action) to get codeValue for displaying as Drop-down-box -> called in render -> caused infinit loop of keep calling api (need to be solved)
 
 June.4
 ======
