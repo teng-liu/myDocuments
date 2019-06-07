@@ -7,10 +7,10 @@ tami: 2019.June.04
 
 #### variables
 
-type | chars |
------|-------|--
-start   |   $[ 
-end     |   ]
+type | chars 
+-----|-------
+start   |   ${
+end     |   }
 seprater|  ::
 formate |   ${variableName::componentType::placeholder}
 placeholder | normal text
@@ -25,8 +25,8 @@ ${contract-type::dropdownbox::VVV:codetable:province}
 ~~~
 
 #### style
-${style-text-right}   
-
-${ style-Name }
-
+~~~
+###style-text-right####   
+${contract-title::textinput::Type Here::style}
 => apply to the text before the style definition
+~~~
