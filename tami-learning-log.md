@@ -7,6 +7,9 @@ June.7
 2. prepared documents for meeting of next monday
 3. working on css grid -> layout
 
+4. current ui -> .gif -> download link:  
+   https://github.com/teng-liu/myDocuments/blob/master/UI-0607-002.gif
+
 June.6
 ======
 
