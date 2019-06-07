@@ -1,6 +1,11 @@
 Week 6 (June.3 ~ June.7)
 =======================
 
+June.7
+======
+1. Discussed features (todo list) with team
+2. prepared documents for meeting of next monday
+3. working on css grid -> layout
 
 June.6
 ======
@@ -38,7 +43,6 @@ June.4
   - basic ACL 
 - audit log
 3. afternoon -> create -> template [layout]
-
 
 
 June.3

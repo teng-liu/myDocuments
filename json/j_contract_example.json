@@ -1,16 +1,23 @@
-{
-    "body": {
-        "start-date": "2019-06-18",
-        "totalvalue": "2000",
-        "vendor-name": "iWave",
-        "amendment-no": "Test-AMDNO-83859",
-        "contract-type": "Maintenance/Service Support",
-        "contract-title": "TestContract-0603",
-        "contract-summary": "this is a test contract, and this is the contract summary",
-        "vender-selected-by": "Competitive Process"
+{  
+    "body":{  
+       "lump-sum":"789",
+       "payday_c":"2019-07-25",
+       "made-date":"2019-06-04",
+       "lump-paydate":"2019-06-18",
+       "partB-county":"PEI",
+       "partB-company":"iWave",
+       "rate-per-hour":"3450",
+       "minister-partA":"Steve",
+       "partB-province":"Nova Scotia",
+       "total-no-exceed":"56",
+       "expenses-maximum":"4800",
+       "partB-department":"iWave-Dep",
+       "within_days_of_receipt":"30",
+       "percentage_bill_on_completion":"60",
+       "percentage_bill_on_finalReport":"78"
     },
-    "head": {
-        "code": "Test creating contract-iWave",
-        "template-key": "itss-control-approval-template"
+    "head":{  
+       "code":"tami-test-0607",
+       "template-key":"NO33333"
     }
-}
+ }
