@@ -1,3 +1,20 @@
+Week 7 (June.10 ~ June.14)
+==========================
+
+June.10
+=======
+
+1. Made the navigator works based on 'current-selected-tab'.
+2. meeting with team
+3. research on Camunda, installed camunda (by docker image), started, but can't get response, don't knwo why. continue research...  
+https://github.com/camunda/docker-camunda-bpm-platform   
+
+docker pull camunda/camunda-bpm-platform:latest   
+docker run -d --name camunda -p 8088:8088 camunda/camunda-bpm-platform:latest   
+
+
+
+
 Week 6 (June.3 ~ June.7)
 =======================
 
@@ -232,6 +249,8 @@ May 27
   - wrote API in express => connected postgres db to get data (get is working, update not)
     - but the sql of update properties in jsonb is done (jsonb_set() method)
   - problem: use PUT api to update with json parameter
+  - 
+possible link (added later): https://www.youtube.com/watch?v=s_PlIZs8CPE
 
 
 ### Possible Methods of form:

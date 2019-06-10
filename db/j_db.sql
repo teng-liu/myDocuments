@@ -34,6 +34,39 @@ CREATE TABLE public.definition
     content jsonb,
     CONSTRAINT definition_pkey PRIMARY KEY (uuid)
 );
+----role-event----
+
+CREATE TABLE public.role
+(
+    uuid uuid NOT NULL DEFAULT uuid_generate_v4(),
+    name_key text unique,
+    content jsonb,
+    CONSTRAINT role_pkey PRIMARY KEY (uuid)
+);
+
+CREATE TABLE public.user
+(
+    uuid uuid NOT NULL DEFAULT uuid_generate_v4(),
+    name_key text unique,
+    content jsonb,
+    CONSTRAINT user_pkey PRIMARY KEY (uuid)
+);
+
+CREATE TABLE public.action
+(
+    uuid uuid NOT NULL DEFAULT uuid_generate_v4(),
+    name_key text unique,
+    content jsonb,
+    CONSTRAINT action_pkey PRIMARY KEY (uuid)
+);
+
+CREATE TABLE public.event
+(
+    uuid uuid NOT NULL DEFAULT uuid_generate_v4(),
+    name_key text unique,
+    content jsonb,
+    CONSTRAINT event_pkey PRIMARY KEY (uuid)
+);
 
 
 
@@ -366,4 +399,193 @@ insert into public.definition (name_key, content)
         },
         "body": "\"Parties\" means Government and the Contractor, and \"Party\" means either of them as the context requires;"
     }');
+
+
+
+----action---
+
+
+insert into public.action (name_key, content) 
+    values
+('view', '{
+    "head": {
+        "code": "view",
+        "display": "View",
+        "objects": ["template", "contract", "user"]
+    },
+    "body": {
+    }
+}'), 
+('create', '{
+    "head": {
+        "code": "create",
+        "display": "Create",
+        "objects": ["template", "contract", "user"]
+    },
+    "body": {
+    }
+}'),
+('modify', '{
+    "head": {
+        "code": "modify",
+        "display": "Modify",
+        "objects": ["template", "contract", "user"]
+    },
+    "body": {
+    }
+}'),
+('delete', '{
+    "head": {
+        "code": "delete",
+        "display": "Delete",
+        "objects": ["template", "contract", "user"]
+    },
+    "body": {
+    }
+}'),
+('review', '{
+    "head": {
+        "code": "review",
+        "display": "Review",
+        "objects": ["template", "contract", "user"]
+    },
+    "body": {
+    }
+}'),
+('approve', '{
+    "head": {
+        "code": "approve",
+        "display": "Approve",
+        "objects": ["template", "contract", "user"]
+    },
+    "body": {
+    }
+}'),
+('rollback', '{
+    "head": {
+        "code": "rollback",
+        "display": "Rollback",
+        "objects": ["template", "contract", "user"]
+    },
+    "body": {
+    }
+}'),
+('finalize', '{
+    "head": {
+        "code": "finalize",
+        "display": "Finalize",
+        "objects": ["template", "contract", "user"]
+    },
+    "body": {
+    }
+}'),
+('agree', '{
+    "head": {
+        "code": "agree",
+        "display": "Agree",
+        "objects": ["template", "contract", "user"]
+    },
+    "body": {
+    }
+}'),
+('allocate', '{
+    "head": {
+        "code": "allocate",
+        "display": "Allocate",
+        "objects": ["template", "contract", "user"]
+    },
+    "body": {
+    }
+}'),
+('receive', '{
+    "head": {
+        "code": "receive",
+        "display": "Receive",
+        "objects": ["template", "contract", "user"]
+    },
+    "body": {
+    }
+}'),
+('backup', '{
+    "head": {
+        "code": "backup",
+        "display": "Backup",
+        "objects": ["template", "contract", "user"]
+    },
+    "body": {
+    }
+}');
+
+
+---role---
+
+
+
+insert into public.role (name_key, content) 
+    values
+('author', '{
+    "head": {
+        "code": "author",
+        "display": "Contract Author"
+    },
+    "body": {
+    }
+}'),
+('manager', '{
+    "head": {
+        "code": "manager",
+        "display": "Manager"
+    },
+    "body": {
+    }
+}'),
+('director', '{
+    "head": {
+        "code": "director",
+        "display": "Director"
+    },
+    "body": {
+    }
+}'),
+('coo', '{
+    "head": {
+        "code": "coo",
+        "display": "Chief Operating Officer"
+    },
+    "body": {
+    }
+}'),
+('cfo', '{
+    "head": {
+        "code": "cfo",
+        "display": "Chief Financial Officer"
+    },
+    "body": {
+    }
+}'),
+('scc', '{
+    "head": {
+        "code": "scc",
+        "display": "Supply Chain Coordinator"
+    },
+    "body": {
+    }
+}'),
+('vendor', '{
+    "head": {
+        "code": "vendor",
+        "display": "Vendor"
+    },
+    "body": {
+    }
+}');
+
+
+
+---event / process----
+
+
+---task------
+
+
 
