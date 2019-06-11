@@ -1,6 +1,19 @@
 Week 7 (June.10 ~ June.14)
 ==========================
 
+June.11
+=======
+
+1. camunda started sucessfully -> need to use 8080 port, can't change
+2. checked camunda UI ...
+3. tried a JS tool about state-machine, can use for simulate process
+https://github.com/jakesgordon/javascript-state-machine
+https://stackoverflow.com/questions/10414849/workflow-engine-in-javascript
+4. tried the above tool, useful -> test project:
+   https://github.com/teng-liu/FirstReactPrj
+
+
+
 June.10
 =======
 
@@ -12,6 +25,10 @@ https://github.com/camunda/docker-camunda-bpm-platform
 docker pull camunda/camunda-bpm-platform:latest   
 docker run -d --name camunda -p 8088:8088 camunda/camunda-bpm-platform:latest   
 
+
+docker pull camunda/camunda-bpm-platform:latest
+docker run -d --name camunda -p 8080:8080 camunda/camunda-bpm-platform:latest
+# open browser with url: http://localhost:8080/camunda-welcome/index.html
 
 
 
