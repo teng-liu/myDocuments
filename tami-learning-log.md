@@ -14,10 +14,11 @@ June.14
   - add to Trello
   - discuss with team
 - prepare for next Stackholder meeting -> demo and collect requirements
+- create project in GitLab -> when team are ready to work together
 - developing
   - edit contract
   - mockup -> Home panel
-  - user log in
+  - user login
 
 
 
