@@ -67,13 +67,23 @@ https://github.com/jakesgordon/javascript-state-machine
   https://stackoverflow.com/questions/10414849/workflow-engine-in-javascript
 
 - list of workflow engine in javascript (from above reference link):
+
 XState - https://github.com/davidkpiano/xstate
+
 Workflow.js for Backbone.js https://github.com/kendagriff/workflow.js
+
 Sprout Workflow Engine https://github.com/bstaats/workr
-Javascript Finite State Machine https://github.com/jakesgordon/javascript-state-machine
+
+Javascript Finite State Machine https://github.com/jakesgordon/
+
+javascript-state-machine
+
 State chart https://github.com/DavidDurman/statechart
+
 machina.js https://github.com/ifandelse/machina.js
+
 jWorkflow https://github.com/tinyhippos/jWorkflow
+
 Stately https://github.com/fschaefer/Stately.js
 
 
@@ -87,13 +97,11 @@ June.10
 3. research on Camunda, installed camunda (by docker image), started, but can't get response, don't knwo why. continue research...  
 https://github.com/camunda/docker-camunda-bpm-platform   
 
-docker pull camunda/camunda-bpm-platform:latest   
-docker run -d --name camunda -p 8088:8088 camunda/camunda-bpm-platform:latest   
-
-
+~~~sh
 docker pull camunda/camunda-bpm-platform:latest
 docker run -d --name camunda -p 8080:8080 camunda/camunda-bpm-platform:latest
-# open browser with url: http://localhost:8080/camunda-welcome/index.html
+~~~
+open browser with url: http://localhost:8080/camunda-welcome/index.html
 
 
 
