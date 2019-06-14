@@ -1,19 +1,80 @@
 Week 7 (June.10 ~ June.14)
 ==========================
 
-https://github.com/jakesgordon/javascript-state-machine
+June.14
+=======
+1. morning meeting: good with FSM
 
+- more requirements
+  - need a dashboard display current contract state / audit log / summary report
+  - need an admin role to config the privilige allocation and create user/role...
+
+2. TODO:
+- list features (user storys) that will achieve in the next 11 weeks.
+  - add to Trello
+  - discuss with team
+- prepare for next Stackholder meeting -> demo and collect requirements
+- developing
+  - edit contract
+  - mockup -> Home panel
+  - user log in
+
+
+
+June.12  and June.13
+====================
+
+1. tried a workflow engine in javascript
+- Javascript Finite State Machine 
+  https://github.com/jakesgordon/javascript-state-machine
+
+2. Defined (draft) Role, Process, Actions out from the current contract workflow document. **but may need more accurate information about the business logics.
+- database tables created
+- api route added
+- displayed on UI -> used a checkbox-tree to display the process(categorized)
+- process control(Finite State Machine JS) also working (concept proofed), it is good so far, will continue to develop by on it.
+
+Problems: 
+1. when using  a ready Checked-Tree component, it can't display the css and referenced icon it used. 
+   
+Solved -> by enter their icon link, they used public web link for icon reference, and copy their less(css) file included in the index.html file. 
+
+TODO -> find a better way to solve this problem. When using others component library, how to include their style.
+
+2. when using FSM to control the process, the example showed how to refer to the data, in the same object. it used "this.color..." which means 'this' is not the component but the this object. 
+
+Solved -> need to define the object out of the FSM definition, different from the example they gave.
+
+TODO -> need to store the FSM definition data into database
 
 June.11
 =======
 
-1. camunda started sucessfully -> need to use 8080 port, can't change
-2. checked camunda UI ...
+1. camunda started sucessfully -> need to use 8080 port
+2. tried camunda, installed locally: 
+   http://localhost:8080/camunda/app/welcome/default/#/welcome
+
+   Cockpit | Tasklist | Admin -> powerful workflow engine
+   
+   supported Restful API (can be used for non-java application): 
+   https://docs.camunda.org/manual/latest/reference/rest/
+
 3. tried a JS tool about state-machine, can use for simulate process
 https://github.com/jakesgordon/javascript-state-machine
-https://stackoverflow.com/questions/10414849/workflow-engine-in-javascript
-4. tried the above tool, useful -> test project:
-   https://github.com/teng-liu/FirstReactPrj
+
+- reference:
+  https://stackoverflow.com/questions/10414849/workflow-engine-in-javascript
+
+- list of workflow engine in javascript (from above reference link):
+XState - https://github.com/davidkpiano/xstate
+Workflow.js for Backbone.js https://github.com/kendagriff/workflow.js
+Sprout Workflow Engine https://github.com/bstaats/workr
+Javascript Finite State Machine https://github.com/jakesgordon/javascript-state-machine
+State chart https://github.com/DavidDurman/statechart
+machina.js https://github.com/ifandelse/machina.js
+jWorkflow https://github.com/tinyhippos/jWorkflow
+Stately https://github.com/fschaefer/Stately.js
+
 
 
 
