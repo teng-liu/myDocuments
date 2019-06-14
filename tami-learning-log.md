@@ -1,6 +1,9 @@
 Week 7 (June.10 ~ June.14)
 ==========================
 
+https://github.com/jakesgordon/javascript-state-machine
+
+
 June.11
 =======
 
