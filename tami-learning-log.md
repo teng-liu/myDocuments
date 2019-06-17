@@ -1,3 +1,21 @@
+
+
+
+June.17
+=======
+
+1. Finished the Record training on Moodle
+2. added some feature list into Trello
+3. tried to display graph (process graph):
+   
+   tried both graphviz-react and viz, both have memory leak -> can't start -> the npm package has problem, need to find other ways
+
+
+
+
+
+
+
 Week 7 (June.10 ~ June.14)
 ==========================
 
