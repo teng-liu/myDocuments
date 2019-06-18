@@ -1,5 +1,13 @@
 
 
+June.18
+=======
+
+1. component:
+   https://react-bootstrap.github.io/getting-started/introduction
+
+2. good colorpicker: 
+   https://htmlcolorcodes.com/color-chart/
 
 June.17
 =======

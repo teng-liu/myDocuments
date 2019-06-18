@@ -640,3 +640,36 @@ insert into public.role (name_key, content)
 
 
 
+
+-----user-----
+insert into public.user (name_key, content)
+    values
+('tliu', '{"head": 
+    { "code":"tliu",  
+        "version": "1.0",
+        "firstName": "Teng",
+        "lastName": "Liu",
+        "role": "author",
+        "email": "tliu@gov.pe.ca",
+        "phone": "902758483"}
+}'),
+('summerc', '{"head": 
+    { "code":"summerc",  
+        "version": "1.0",
+        "firstName": "Summer",
+        "lastName": "Cake",
+        "role": "scc",
+        "email": "sck@gov.pe.ca",
+        "phone": "902752223"}
+}'),
+('winterw', '{"head": 
+    { "code":"winterw",  
+        "version": "1.0",
+        "firstName": "Wendy",
+        "lastName": "Warm",
+        "role": "coo",
+        "email": "swk@gov.pe.ca",
+        "phone": "90275233"}
+}');
+
+
