@@ -26,7 +26,20 @@
             "sub_title": "In this Agreement, the following definitions apply:",
             "list": "agreement;contractor;fiscal_year;government;parties"
         },
-        "convenants-contractor": {},
+        "convenants-contractor": [
+            {
+                "title": "Covenants of the Contractor and Government"
+            },
+            {
+                "field": "The Contractor shall perform the services, assume all those responsibilities and diligently execute all those duties described in the attached Schedule \"A\" (the \"Work\"), in a manner satisfactory to Government."
+            },
+            {
+                "field":"(a) Subject to the termination clause contained in the Termination section of this Agreement, the term of this Agreement shall commence on ${commence-start-date::calander::dateformat1}, and end on ${commence-end-date::calander::dateformat1} (the \"Term\")."
+            },
+            {
+                "field":"(b) Subject to the termination clause contained in the Termination section of this Agreement and notwithstanding the date of signing of this Agreement, it is acknowledged by both Parties that the Contractor commenced the performance of the Work on ${agreenment-date::calander::dateformat1}. It is further agreed that the amount of $ ${maximum-total-amount::textinput::Type here} is the maximum amount to be paid for the Work and includes all amounts which may be owed for the Work done since ${work-start-date::calander::dateformat1}."
+            }
+        ],
         "payments": [
             {
                 "title": "Payments, Records and Accounts"

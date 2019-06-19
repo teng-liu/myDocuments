@@ -1,5 +1,31 @@
 
 
+
+Jun.1
+======
+
+
+~~~sql
+
+
+select c.content->'body'->>'maximum-total-amount' AS "cost", 
+		c.content->'body'->>'partB-company' AS "company"
+	from public.contract c;
+
+
+select c.content->'body'->>'maximum-total-amount' AS "cost", 
+		c.content->'body'->>'partB-company' AS "company"
+	from public.contract c
+	group by 
+		--c#>>'{content, body, partB-company}';		
+		c.content->'body'->>'partB-company';
+		
+	sum((c.content->'body'->>'maximum-total-amount')::integer) AS "total"
+
+
+~~~
+
+
 June.18
 =======
 

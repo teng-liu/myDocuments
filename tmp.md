@@ -146,3 +146,35 @@ insert into public.contract_template (name_key, content)
 }');
 
 ~~~
+
+
+
+~~~sql
+insert into public.contract (name_key, content)  
+    values('CONTRACT NO783487', '
+{
+    "body": {
+        "payday_c": "2018-05-30",
+        "made-date": "2017-11-01",
+        "partB-county": "Prince",
+        "partB-company": "MAXMUS",
+        "rate-per-hour": "38",
+        "minister-partA": "Steven",
+        "agreenment-date": "2018-06-01",
+        "total-no-exceed": "9060",
+        "work-start-date": "2019-06-01",
+        "expenses-maximum": "1600",
+        "partB-department": "Deltaware",
+        "commence-end-date": "2020-4-30",
+        "commence-start-date": "2019-04-30",
+        "maximum-total-amount": "12000",
+        "within_days_of_receipt": "14",
+        "percentage_bill_on_completion": "50",
+        "percentage_bill_on_finalReport": "60"
+    },
+    "head": {
+        "code": "CONTRACT NO783487",
+        "template-key": "default-contract-template-itss"
+    }
+}');
+~~~
