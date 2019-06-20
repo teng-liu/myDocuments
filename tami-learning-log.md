@@ -1,10 +1,56 @@
 
 
 
-Jun.1
+June.20
+=======
+
+1. may need a Project concept to control the process
+- template stage
+- contract stage
+- approval stage
+- sign stage
+- finite stage
+
+2. each project has a process
+
+
+
+
+#### meeting record
+1. Template may changed during a contract process (need to keep a copy of template -> branch)
+
+2. States of approval:
+- approve -> approved -> pending next-level approval
+- disapprove -> declined -> back to author/scc
+- approve with conditions (master) -> 
+  - back to author/scc (branch) -> 
+  - correction done (branch) ->  
+  - pending next-level approval (master)
+
+3. Priviledge of different contract -> user priviledge/org priviledge of Contract
+- contract group (a bunch of contract) -> assign to user/org
+- a contract allow to be in multiple group 
+
+4. contract:
+- option clauses => only keep one (when decide? when preparing template? or preparing contract?)
+- filter clause option (nice to have for different role approval)
+
+5. Nots about process-graph:
+~~~
+circle: node -> contract state
+arrow: action -> kind of task which can be allocated to different role
+
+can be read as: "state_1" get an "action" turn to "state_2"
+*the action called "next" in the graph will be operated automatically by the application, but all others are operated by allocated corresponding role(user).
+~~~
+
+
+
+Jun.19
 ======
 
-
+1. graphviz online tool: https://edotor.net/
+table -> selected row problem -> solved by lambda
 ~~~sql
 
 
