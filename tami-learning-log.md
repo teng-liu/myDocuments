@@ -1,4 +1,14 @@
 
+Week 8 (June.17 ~ June.21)
+==========================
+
+June.21
+=======
+
+1. worked on login page
+2. Added a simple query to simulate a report
+3. added action: Approval with Condition (for the case that approve but with small changes)
+4. updated process graph, added template preparing stage and the Approval with condition action.
 
 
 June.20
@@ -12,8 +22,11 @@ June.20
 - finite stage
 
 2. each project has a process
-
-
+- project stages
+  - template prepare stage
+  - contract prepare stage
+  - approval stage
+  - finialization stage
 
 
 #### meeting record
@@ -44,42 +57,22 @@ can be read as: "state_1" get an "action" turn to "state_2"
 *the action called "next" in the graph will be operated automatically by the application, but all others are operated by allocated corresponding role(user).
 ~~~
 
-
-
 Jun.19
 ======
-
 1. graphviz online tool: https://edotor.net/
-table -> selected row problem -> solved by lambda
-~~~sql
-
-
-select c.content->'body'->>'maximum-total-amount' AS "cost", 
-		c.content->'body'->>'partB-company' AS "company"
-	from public.contract c;
-
-
-select c.content->'body'->>'maximum-total-amount' AS "cost", 
-		c.content->'body'->>'partB-company' AS "company"
-	from public.contract c
-	group by 
-		--c#>>'{content, body, partB-company}';		
-		c.content->'body'->>'partB-company';
-		
-	sum((c.content->'body'->>'maximum-total-amount')::integer) AS "total"
-
-
-~~~
-
+2. problem: table -> selected row problem -> solved by using lambda expression
+3. added Users, roles, and privilege modules 
 
 June.18
 =======
-
 1. component:
    https://react-bootstrap.github.io/getting-started/introduction
 
 2. good colorpicker: 
    https://htmlcolorcodes.com/color-chart/
+
+3. modified the style, using variables of color control color-theme
+
 
 June.17
 =======
@@ -88,12 +81,9 @@ June.17
 2. added some feature list into Trello
 3. tried to display graph (process graph):
    
-   tried both graphviz-react and viz, both have memory leak -> can't start -> the npm package has problem, need to find other ways
-
-
-
-
-
+   tried both graphviz-react and viz, 
+   both have memory leak -> can't start -> the npm package has problem, 
+   need to find other ways
 
 
 Week 7 (June.10 ~ June.14)

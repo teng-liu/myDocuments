@@ -680,7 +680,7 @@ insert into public.user (name_key, content)
         "version": "1.0",
         "firstName": "uauthorF",
         "lastName": "uauthorL",
-        "passward": "202cb962ac59075b964b07152d234b70",
+        "passward": "123",
         "role": "author",
         "email": "uauthor@gov.pe.ca",
         "phone": "902758483"}
@@ -690,7 +690,7 @@ insert into public.user (name_key, content)
         "version": "1.0",
         "firstName": "umanagerF",
         "lastName": "umanagerL",
-        "passward": "202cb962ac59075b964b07152d234b70",
+        "passward": "123",
         "role": "manager",
         "email": "umanager@gov.pe.ca",
         "phone": "902758483"}
@@ -700,7 +700,7 @@ insert into public.user (name_key, content)
         "version": "1.0",
         "firstName": "udirectorF",
         "lastName": "udirectorL",
-        "passward": "202cb962ac59075b964b07152d234b70",
+        "passward": "123",
         "role": "director",
         "email": "udirector@gov.pe.ca",
         "phone": "902758483"}
@@ -710,7 +710,7 @@ insert into public.user (name_key, content)
         "version": "1.0",
         "firstName": "usccF",
         "lastName": "usccL",
-        "passward": "202cb962ac59075b964b07152d234b70",
+        "passward": "123",
         "role": "scc",
         "email": "uscc@gov.pe.ca",
         "phone": "902758483"}
@@ -720,7 +720,7 @@ insert into public.user (name_key, content)
         "version": "1.0",
         "firstName": "ucooF",
         "lastName": "ucooL",
-        "passward": "202cb962ac59075b964b07152d234b70",
+        "passward": "123",
         "role": "coo",
         "email": "ucoo@gov.pe.ca",
         "phone": "902758483"}
@@ -730,7 +730,7 @@ insert into public.user (name_key, content)
         "version": "1.0",
         "firstName": "ucfoF",
         "lastName": "ucfoL",
-        "passward": "202cb962ac59075b964b07152d234b70",
+        "passward": "123",
         "role": "cfo",
         "email": "ucfo@gov.pe.ca",
         "phone": "902758483"}
@@ -740,7 +740,7 @@ insert into public.user (name_key, content)
         "version": "1.0",
         "firstName": "uvendorF",
         "lastName": "uvendorL",
-        "passward": "202cb962ac59075b964b07152d234b70",
+        "passward": "123",
         "role": "vendor",
         "email": "uvendor@gov.pe.ca",
         "phone": "902758483"}
