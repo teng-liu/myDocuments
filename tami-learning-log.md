@@ -10,6 +10,10 @@ June.21
 3. added action: Approval with Condition (for the case that approve but with small changes)
 4. updated process graph, added template preparing stage and the Approval with condition action.
 
+https://github.com/teng-liu/myDocuments/blob/master/process_graph_0621_approveWithCondition.svg 
+
+*right click on the image save it localy, then use browser to open it. It is also in Alfrasco.
+
 
 June.20
 =======
