@@ -1,4 +1,43 @@
 
+Week 9 (June.24 ~ June.28)
+==========================
+
+
+June.25
+=======
+1. gitlab account working now. need to prepare code for submit
+2. done the role-action mapping (save and edit) in the Previlege section.
+
+
+
+June.24
+=======
+
+
+1.Meeting record => process work-flow
+
+README of shared files:
+~~~
+1. install database:
+   https://github.com/teng-liu/myDocuments/blob/master/setup-database.md 
+
+  port forwarding for the DB guest VM:
+    22:22
+    15432:15432
+    5432:5432
+
+
+2. UI package: contract-system-ui.zip
+    npm install
+    npm start
+
+3. API package: contract-system-api.zip
+    npm install
+    npm start
+    (apply the sql -> cms_init.sql in the database)
+
+~~~
+
 Week 8 (June.17 ~ June.21)
 ==========================
 

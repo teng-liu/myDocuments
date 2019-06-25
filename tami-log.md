@@ -1,3 +1,18 @@
+
+
+$ git clone git@gitlab.gpei.ca:quickr/framework/coop-student-shared-repository.git
+Cloning into 'coop-student-shared-repository'...
+The authenticity of host 'gitlab.gpei.ca (172.18.54.88)' can't be established.
+ECDSA key fingerprint is SHA256:rmiVQOW98CZgKr+SP1l8mOb10ol3UElqkch4+kymVOA.
+Are you sure you want to continue connecting (yes/no)?
+
+
+
+
+
+/usr/local/pgsql-11/pg_dump --file "/var/lib/pgadmin/storage/pgadmin4_pgadmin.org/DBscript" --host "postgres" --port "5432" --username "postgres" --no-password --verbose --format=p "cms"
+
+
 May 27
 ======
 
