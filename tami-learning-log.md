@@ -2,6 +2,14 @@
 Week 9 (June.24 ~ June.28)
 ==========================
 
+June.26
+=======
+1. done Create new user from UI
+2. re-organise the code -> components -> organise by feature(folder)
+3. create Role -> only create, and view, no edit, will do later
+4. re-organize the process-states -> saved into database
+5. TODO: refresh list, need to add refresh function after edit/delete/create
+6. Problem: click on create user, then the creating user form will be updated when Edit different user, but if click on Edit directly, the state->data refreshed, but the Creating User Panel UI not updated... need to solve when have time
 
 June.25
 =======

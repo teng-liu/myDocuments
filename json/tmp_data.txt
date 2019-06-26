@@ -1,0 +1,81 @@
+                { name: 'next',                                        from: 'start',                                                                               to: 'templatePreparing' },
+                { name: 'templatePrepare',                                        from: 'templatePreparing',                                                                               to: 'templatePrepared' },
+                { name: 'next',                                        from: 'templatePrepared',                                                                               to: 'templatePendingApprovalBySupervisor' },
+                { name: 'templatePartAApprove',                                        from: 'templatePendingApprovalBySupervisor',                                                                               to: 'templatePartAApproved' },
+                { name: 'templatePartADecline',                                        from: 'templatePendingApprovalBySupervisor',                                                                               to: 'templatePartADeclined' },
+                { name: 'next',                                        from: 'templatePartADeclined',                                                                               to: 'pendingTemplateCorrectionFromPartA' },
+                { name: 'templateCorrectionForPartA',                                        from: 'pendingTemplateCorrectionFromPartA',                                                                               to: 'templateCorrectedForPartA' },
+                { name: 'next',                                        from: 'templateCorrectedForPartA',                                                                               to: 'templatePendingApprovalBySupervisor' },
+                { name: 'next',                                        from: 'templatePartAApproved',                                                                               to: 'templatePendingAcceptanceByVendor' },
+                { name: 'templatePartBApprove',                                        from: 'templatePendingAcceptanceByVendor',                                                                               to: 'templatePartBApproved' },
+                { name: 'templatePartBDecline',                                        from: 'templatePendingAcceptanceByVendor',                                                                               to: 'templatePartBDeclined' },
+                { name: 'next',                                        from: 'templatePartBDeclined',                                                                               to: 'pendingTemplateCorrectionFromPartB' },
+                { name: 'templateCorrectionForPartB',                                        from: 'pendingTemplateCorrectionFromPartB',                                                                               to: 'templateCorrectedForPartB' },
+                { name: 'next',                                        from: 'templateCorrectedForPartB',                                                                               to: 'templatePendingAcceptanceByVendor' },
+                { name: 'next',                                        from: 'templatePartBApproved',                                                                               to: 'templateFixed' },
+                { name: 'next',                                        from: 'templateFixed',                                                                               to: 'contractPreparing' },
+                { name: 'contractPrepare',                                        from: 'contractPreparing',                                                                               to: 'contractPrepared' },
+                { name: 'next',                                        from: 'contractPrepared',                                                                               to: 'PendingL1Approval' },
+                { name: 'level1Approve',                                        from: 'PendingL1Approval',                                                                               to: 'level1Approved' },
+                { name: 'level1Decline',                                        from: 'PendingL1Approval',                                                                               to: 'level1Declined' },
+                { name: 'next',                                        from: 'level1Declined',                                                                               to: 'contractPendingCorrection' },
+                { name: 'contractCorrectionL1',                                        from: 'contractPendingCorrection',                                                                               to: 'contractCorrectedL1Issue' },
+                { name: 'next',                                        from: 'contractCorrectedL1Issue',                                                                               to: 'PendingL1Approval' },
+                { name: 'next',                                        from: 'level1Approved',                                                                               to: 'PendingL2Approval' },
+                { name: 'level2Approve',                                        from: 'PendingL2Approval',                                                                               to: 'level2Approved' },
+                { name: 'level2Decline',                                        from: 'PendingL2Approval',                                                                               to: 'level2Declined' },
+                { name: 'next',                                        from: 'level2Declined',                                                                               to: 'contractPendingCorrectionL2Issue' },
+                { name: 'contractCorrectionL2',                                        from: 'contractPendingCorrectionL2Issue',                                                                               to: 'contractCorrectedL2Issue' },
+                { name: 'next',                                        from: 'contractCorrectedL2Issue',                                                                               to: 'PendingL1Approval' },
+                { name: 'next',                                        from: 'level2Approved',                                                                               to: 'PendingL3Approval' },
+                { name: 'level3Approve',                                        from: 'PendingL3Approval',                                                                               to: 'level3Approved' },
+                { name: 'level3Decline',                                        from: 'PendingL3Approval',                                                                               to: 'level3Declined' },
+                { name: 'next',                                        from: 'level3Declined',                                                                               to: 'contractPendingCorrectionL3Issue' },
+                { name: 'contractCorrectionL3',                                        from: 'contractPendingCorrectionL3Issue',                                                                               to: 'contractCorrectedL3Issue' },
+                { name: 'next',                                        from: 'contractCorrectedL3Issue',                                                                               to: 'PendingL3Approval' },
+                { name: 'next',                                        from: 'level3Approved',                                                                               to: 'PendingL4Approval' },
+                { name: 'level4Approve',                                        from: 'PendingL4Approval',                                                                               to: 'level4Approved' },
+                { name: 'level4Decline',                                        from: 'PendingL4Approval',                                                                               to: 'level4Declined' },
+                { name: 'level4ApproveWithCondition',                                        from: 'PendingL4Approval',                                                                               to: 'contractPendingCorrectionL4IssueWithApproval' },
+                { name: 'contractCorrectionL4WithApproval',                                        from: 'contractPendingCorrectionL4IssueWithApproval',                                                                               to: 'contractCorrectedL4IssueWithApproval' },
+                { name: 'next',                                        from: 'contractCorrectedL4IssueWithApproval',                                                                               to: 'PendingL5Approval' },
+                { name: 'next',                                        from: 'level4Declined',                                                                               to: 'contractPendingCorrectionL4Issue' },
+                { name: 'contractCorrectionL4',                                        from: 'contractPendingCorrectionL4Issue',                                                                               to: 'contractCorrectedL4Issue' },
+                { name: 'next',                                        from: 'contractCorrectedL4Issue',                                                                               to: 'PendingL3Approval' },
+                { name: 'next',                                        from: 'level4Approved',                                                                               to: 'PendingL5Approval' },
+                { name: 'level5Approve',                                        from: 'PendingL5Approval',                                                                               to: 'level5Approved' },
+                { name: 'level5Decline',                                        from: 'PendingL5Approval',                                                                               to: 'level5Declined' },
+                { name: 'level5ApproveWithCondition',                                        from: 'PendingL5Approval',                                                                               to: 'contractPendingCorrectionL5IssueWithApproval' },
+                { name: 'contractCorrectionL5WithApproval',                                        from: 'contractPendingCorrectionL5IssueWithApproval',                                                                               to: 'contractCorrectedL5IssueWithApproval' },
+                { name: 'next',                                        from: 'contractCorrectedL5IssueWithApproval',                                                                               to: 'PreparingPartBSign' },
+                { name: 'next',                                        from: 'level5Declined',                                                                               to: 'contractPendingCorrectionL5Issue' },
+                { name: 'contractCorrectionL5',                                        from: 'contractPendingCorrectionL5Issue',                                                                               to: 'contractCorrectedL5Issue' },
+                { name: 'next',                                        from: 'contractCorrectedL5Issue',                                                                               to: 'PendingL3Approval' },
+                { name: 'next',                                        from: 'level5Approved',                                                                               to: 'PreparingPartBSign' },
+                { name: 'preparePartBSign',                                        from: 'PreparingPartBSign',                                                                               to: 'PendingPartBSign' },
+                { name: 'partBSign',                                        from: 'PendingPartBSign',                                                                               to: 'PartBSigned' },
+                { name: 'partBSignDecline',                                        from: 'PendingPartBSign',                                                                               to: 'PartBDeclined' },
+                { name: 'next',                                        from: 'PartBDeclined',                                                                               to: 'contractPendingCorrectionL100Issue' },
+                { name: 'contractCorrectionL100',                                        from: 'contractPendingCorrectionL100Issue',                                                                               to: 'contractCorrectedL100Issue' },
+                { name: 'next',                                        from: 'contractCorrectedL100Issue',                                                                               to: 'PendingL3Approval' },
+                { name: 'next',                                        from: 'PartBSigned',                                                                               to: 'PreparingPartASign' },
+                { name: 'preparePartASign',                                        from: 'PreparingPartASign',                                                                               to: 'PendingPartASign' },
+                { name: 'partASign',                                        from: 'PendingPartASign',                                                                               to: 'PartASigned' },
+                { name: 'next',                                        from: 'PartASigned',                                                                               to: 'Finalizing' },
+                { name: 'finalize',                                        from: 'Finalizing',                                                                               to: 'Finalized' },
+                { name: 'next',                                        from: 'Finalized',                                                                               to: 'Finished' }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

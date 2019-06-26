@@ -90,34 +90,44 @@ CREATE TABLE public.process_action
 
 
 
+
+-------new--06.26.2019--
 insert into public.process_action (name_key, content)
     values
-('contractCorrectionL1', '{"head": { "code":"contractCorrectionL1", "display":"Make Correction for Level1 issue", "version": "1.0", "category":"process.contract.modification" }}'),
-('contractCorrectionL100', '{"head": { "code":"contractCorrectionL100", "display":"Make Correction for PartB reported issue", "version": "1.0", "category":"process.contract.modification" }}'),
-('contractCorrectionL2', '{"head": { "code":"contractCorrectionL2", "display":"Make Correction for Level2 issue", "version": "1.0", "category":"process.contract.modification" }}'),
-('contractCorrectionL3', '{"head": { "code":"contractCorrectionL3", "display":"Make Correction for Level3 issue", "version": "1.0", "category":"process.contract.modification" }}'),
-('contractCorrectionL4', '{"head": { "code":"contractCorrectionL4", "display":"Make Correction for Level4 issue", "version": "1.0", "category":"process.contract.modification" }}'),
-('contractCorrectionL5', '{"head": { "code":"contractCorrectionL5", "display":"Make Correction for Level5 issue", "version": "1.0", "category":"process.contract.modification" }}'),
-('contractPrepare', '{"head": { "code":"contractPrepare", "display":"Prepare Contract", "version": "1.0", "category":"process.contract.creation" }}'),
-('finalize', '{"head": { "code":"finalize", "display":"Finalize Contract (Backup, Broadcast)", "version": "1.0", "category":"process.contract.finalization" }}'),
-('level1Approve', '{"head": { "code":"level1Approve", "display":"First Level Contract Approval", "version": "1.0", "category":"process.contract.approval" }}'),
-('level1Decline', '{"head": { "code":"level1Decline", "display":"First Level Contract Refusal", "version": "1.0", "category":"process.contract.approval" }}'),
-('level2Approve', '{"head": { "code":"level2Approve", "display":"Second Level Contract Approval", "version": "1.0", "category":"process.contract.approval" }}'),
-('level2Decline', '{"head": { "code":"level2Decline", "display":"Second Level Contract Refusal", "version": "1.0", "category":"process.contract.approval" }}'),
-('level3Approve', '{"head": { "code":"level3Approve", "display":"Third Level Contract Approval", "version": "1.0", "category":"process.contract.approval" }}'),
-('level3Decline', '{"head": { "code":"level3Decline", "display":"Third Level Contract Refusal", "version": "1.0", "category":"process.contract.approval" }}'),
-('level4Approve', '{"head": { "code":"level4Approve", "display":"Forth Level Contract Approval", "version": "1.0", "category":"process.contract.approval" }}'),
-('level4Decline', '{"head": { "code":"level4Decline", "display":"Forth Level Contract Refusal", "version": "1.0", "category":"process.contract.approval" }}'),
-('level5Approve', '{"head": { "code":"level5Approve", "display":"Fifth Level Contract Approval", "version": "1.0", "category":"process.contract.approval" }}'),
-('level5Decline', '{"head": { "code":"level5Decline", "display":"Fifth Level Contract Refusal", "version": "1.0", "category":"process.contract.approval" }}'),
-('next', '{"head": { "code":"next", "display":"Next", "version": "1.0", "category":"process.auto" }}'),
-('partASign', '{"head": { "code":"partASign", "display":"Sign Contract as Part A", "version": "1.0", "category":"process.contract.sign" }}'),
-('partBacceptTemplate', '{"head": { "code":"partBacceptTemplate", "display":"Accept Template as Part B", "version": "1.0", "category":"process.template" }}'),
-('partBSign', '{"head": { "code":"partBSign", "display":"Sign Contract as Part B", "version": "1.0", "category":"process.contract.sign" }}'),
-('partBSignDecline', '{"head": { "code":"partBSignDecline", "display":"Decline Sign Contract as Part B", "version": "1.0", "category":"process.contract.sign" }}'),
-('preparePartASign', '{"head": { "code":"preparePartASign", "display":"Prepare Sign for Part A", "version": "1.0", "category":"process.contract.sign" }}'),
-('preparePartBSign', '{"head": { "code":"preparePartBSign", "display":"Prepare Sign for Part B", "version": "1.0", "category":"process.contract.sign" }}'),
-('templatePrepare', '{"head": { "code":"templatePrepare", "display":"Prepare Template", "version": "1.0", "category":"process.template" }}');
+('contractCorrectionL1','{"head": { "code": "contractCorrectionL1", "display": "Contract Correction L1", "transformations": [{ "from": "contractPendingCorrection", "to": "contractCorrectedL1Issue"}], "ui_actions": ["contract.ru"], "category": "Process.Contract.Prepare", "version": "1.0.0"}}'),
+('contractCorrectionL100','{"head": { "code": "contractCorrectionL100", "display": "Contract Correction for Part B", "transformations": [{ "from": "contractPendingCorrectionL100Issue", "to": "contractCorrectedL100Issue"}], "ui_actions": ["contract.ru"], "category": "Process.Contract.Prepare", "version": "1.0.0"}}'),
+('contractCorrectionL2','{"head": { "code": "contractCorrectionL2", "display": "Contract Correction L2", "transformations": [{ "from": "contractPendingCorrectionL2Issue", "to": "contractCorrectedL2Issue"}], "ui_actions": ["contract.ru"], "category": "Process.Contract.Prepare", "version": "1.0.0"}}'),
+('contractCorrectionL3','{"head": { "code": "contractCorrectionL3", "display": "Contract Correction L3", "transformations": [{ "from": "contractPendingCorrectionL3Issue", "to": "contractCorrectedL3Issue"}], "ui_actions": ["contract.ru"], "category": "Process.Contract.Prepare", "version": "1.0.0"}}'),
+('contractCorrectionL4','{"head": { "code": "contractCorrectionL4", "display": "Contract Correction L4", "transformations": [{ "from": "contractPendingCorrectionL4Issue", "to": "contractCorrectedL4Issue"}], "ui_actions": ["contract.ru"], "category": "Process.Contract.Prepare", "version": "1.0.0"}}'),
+('contractCorrectionL4WithApproval','{"head": { "code": "contractCorrectionL4WithApproval", "display": "Contract Correction L4 Pre-Approved", "transformations": [{ "from": "contractPendingCorrectionL4IssueWithApproval", "to": "contractCorrectedL4IssueWithApproval"}], "ui_actions": ["contract.ru"], "category": "Process.Contract.Prepare", "version": "1.0.0"}}'),
+('contractCorrectionL5','{"head": { "code": "contractCorrectionL5", "display": "Contract Correction L5", "transformations": [{ "from": "contractPendingCorrectionL5Issue", "to": "contractCorrectedL5Issue"}], "ui_actions": ["contract.ru"], "category": "Process.Contract.Prepare", "version": "1.0.0"}}'),
+('contractCorrectionL5WithApproval','{"head": { "code": "contractCorrectionL5WithApproval", "display": "Contract Correction L5 Pre-Approved", "transformations": [{ "from": "contractPendingCorrectionL5IssueWithApproval", "to": "contractCorrectedL5IssueWithApproval"}], "ui_actions": ["contract.ru"], "category": "Process.Contract.Prepare", "version": "1.0.0"}}'),
+('contractPrepare','{"head": { "code": "contractPrepare", "display": "Prepare Contract", "transformations": [{ "from": "contractPreparing", "to": "contractPrepared"}], "ui_actions": ["contract.cru"], "category": "Process.Contract.Prepare", "version": "1.0.0"}}'),
+('finalize','{"head": { "code": "finalize", "display": "Finalize", "transformations": [{ "from": "Finalizing", "to": "Finalized"}], "ui_actions": ["contract.finalize"], "category": "Process.Contract.Finalize", "version": "1.0.0"}}'),
+('level1Approve','{"head": { "code": "level1Approve", "display": "Approve as Level 1 staff", "transformations": [{ "from": "PendingL1Approval", "to": "level1Approved"}], "ui_actions": ["contract.approve"], "category": "Process.Contract.Approval", "version": "1.0.0"}}'),
+('level1Decline','{"head": { "code": "level1Decline", "display": "Decline as Level 1 staff", "transformations": [{ "from": "PendingL1Approval", "to": "level1Declined"}], "ui_actions": ["contract.decline"], "category": "Process.Contract.Approval", "version": "1.0.0"}}'),
+('level2Approve','{"head": { "code": "level2Approve", "display": "Approve as Level 2 staff", "transformations": [{ "from": "PendingL2Approval", "to": "level2Approved"}], "ui_actions": ["contract.approve"], "category": "Process.Contract.Approval", "version": "1.0.0"}}'),
+('level2Decline','{"head": { "code": "level2Decline", "display": "Decline as Level 2 staff", "transformations": [{ "from": "PendingL2Approval", "to": "level2Declined"}], "ui_actions": ["contract.decline"], "category": "Process.Contract.Approval", "version": "1.0.0"}}'),
+('level3Approve','{"head": { "code": "level3Approve", "display": "Approve as Level 3 staff", "transformations": [{ "from": "PendingL3Approval", "to": "level3Approved"}], "ui_actions": ["contract.approve"], "category": "Process.Contract.Approval", "version": "1.0.0"}}'),
+('level3Decline','{"head": { "code": "level3Decline", "display": "Decline as Level 3 staff", "transformations": [{ "from": "PendingL3Approval", "to": "level3Declined"}], "ui_actions": ["contract.decline"], "category": "Process.Contract.Approval", "version": "1.0.0"}}'),
+('level4Approve','{"head": { "code": "level4Approve", "display": "Approve as Level 4 staff", "transformations": [{ "from": "PendingL4Approval", "to": "level4Approved"}], "ui_actions": ["contract.approve"], "category": "Process.Contract.Approval", "version": "1.0.0"}}'),
+('level4ApproveWithCondition','{"head": { "code": "level4ApproveWithCondition", "display": "Conditional Approve as Level 4 staff", "transformations": [{ "from": "PendingL4Approval", "to": "contractPendingCorrectionL4IssueWithApproval"}], "ui_actions": ["contract.conditonalApprove"], "category": "Process.Contract.Approval", "version": "1.0.0"}}'),
+('level4Decline','{"head": { "code": "level4Decline", "display": "Decline as Level 4 staff", "transformations": [{ "from": "PendingL4Approval", "to": "level4Declined"}], "ui_actions": ["contract.decline"], "category": "Process.Contract.Approval", "version": "1.0.0"}}'),
+('level5Approve','{"head": { "code": "level5Approve", "display": "Approve as Level 5 staff", "transformations": [{ "from": "PendingL5Approval", "to": "level5Approved"}], "ui_actions": ["contract.approve"], "category": "Process.Contract.Approval", "version": "1.0.0"}}'),
+('level5ApproveWithCondition','{"head": { "code": "level5ApproveWithCondition", "display": "Conditional Approve as Level 5 staff", "transformations": [{ "from": "PendingL5Approval", "to": "contractPendingCorrectionL5IssueWithApproval"}], "ui_actions": ["contract.conditonalApprove"], "category": "Process.Contract.Approval", "version": "1.0.0"}}'),
+('level5Decline','{"head": { "code": "level5Decline", "display": "Decline as Level 5 staff", "transformations": [{ "from": "PendingL5Approval", "to": "level5Declined"}], "ui_actions": ["contract.decline"], "category": "Process.Contract.Approval", "version": "1.0.0"}}'),
+('partASign','{"head": { "code": "partASign", "display": "Sign Contract as Part A", "transformations": [{ "from": "PendingPartASign", "to": "PartASigned"}], "ui_actions": ["contract.sign"], "category": "Process.Contract.Sign", "version": "1.0.0"}}'),
+('partBSign','{"head": { "code": "partBSign", "display": "Sign Contract as Part B", "transformations": [{ "from": "PendingPartBSign", "to": "PartBSigned"}], "ui_actions": ["contract.sign"], "category": "Process.Contract.Sign", "version": "1.0.0"}}'),
+('partBSignDecline','{"head": { "code": "partBSignDecline", "display": "Decline Sign Contract as Part B", "transformations": [{ "from": "PendingPartBSign", "to": "PartBDeclined"}], "ui_actions": ["contract.declineSign"], "category": "Process.Contract.Sign", "version": "1.0.0"}}'),
+('preparePartASign','{"head": { "code": "preparePartASign", "display": "Prepare Part A Sign", "transformations": [{ "from": "PreparingPartASign", "to": "PendingPartASign"}], "ui_actions": ["contract.prepareSign"], "category": "Process.Contract.Sign", "version": "1.0.0"}}'),
+('preparePartBSign','{"head": { "code": "preparePartBSign", "display": "Prepare Part B Sign", "transformations": [{ "from": "PreparingPartBSign", "to": "PendingPartBSign"}], "ui_actions": ["contract.prepareSign"], "category": "Process.Contract.Sign", "version": "1.0.0"}}'),
+('templateCorrectionForPartA','{"head": { "code": "templateCorrectionForPartA", "display": "Template Correction for Part A", "transformations": [{ "from": "pendingTemplateCorrectionFromPartA", "to": "templateCorrectedForPartA"}], "ui_actions": ["template.ru"], "category": "Process.Template.Prepare", "version": "1.0.0"}}'),
+('templateCorrectionForPartB','{"head": { "code": "templateCorrectionForPartB", "display": "Template Correction for Part B", "transformations": [{ "from": "pendingTemplateCorrectionFromPartB", "to": "templateCorrectedForPartB"}], "ui_actions": ["template.ru"], "category": "Process.Template.Prepare", "version": "1.0.0"}}'),
+('templatePartAApprove','{"head": { "code": "templatePartAApprove", "display": "Approve Template as Part A", "transformations": [{ "from": "templatePendingApprovalBySupervisor", "to": "templatePartAApproved"}], "ui_actions": ["template.approve"], "category": "Process.Template.Prepare", "version": "1.0.0"}}'),
+('templatePartADecline','{"head": { "code": "templatePartADecline", "display": "Decline Template as Part A", "transformations": [{ "from": "templatePendingApprovalBySupervisor", "to": "templatePartADeclined"}], "ui_actions": ["template.decline"], "category": "Process.Template.Prepare", "version": "1.0.0"}}'),
+('templatePartBApprove','{"head": { "code": "templatePartBApprove", "display": "Approve Template as Part B", "transformations": [{ "from": "templatePendingAcceptanceByVendor", "to": "templatePartBApproved"}], "ui_actions": ["template.approve"], "category": "Process.Template.Prepare", "version": "1.0.0"}}'),
+('templatePartBDecline','{"head": { "code": "templatePartBDecline", "display": "Decline Template as Part B", "transformations": [{ "from": "templatePendingAcceptanceByVendor", "to": "templatePartBDeclined"}], "ui_actions": ["template.decline"], "category": "Process.Template.Prepare", "version": "1.0.0"}}'),
+('templatePrepare','{"head": { "code": "templatePrepare", "display": "Prepare Template", "transformations": [{ "from": "templatePreparing", "to": "templatePrepared"}], "ui_actions": ["template.cru"], "category": "Process.Template.Prepare", "version": "1.0.0"}}');
 
 
 
@@ -552,7 +562,7 @@ insert into public.role (name_key, content)
 insert into public.user (name_key, content)
     values
 ('tliu', '{"head": 
-    { "code":"tliu",  
+    { "username":"tliu",  
         "version": "1.0",
         "firstName": "Teng",
         "lastName": "Liu",
@@ -561,7 +571,7 @@ insert into public.user (name_key, content)
         "phone": "902758483"}
 }'),
 ('summerc', '{"head": 
-    { "code":"summerc",  
+    { "username":"summerc",  
         "version": "1.0",
         "firstName": "Summer",
         "lastName": "Cake",
@@ -570,7 +580,7 @@ insert into public.user (name_key, content)
         "phone": "902752223"}
 }'),
 ('winterw', '{"head": 
-    { "code":"winterw",  
+    { "username":"winterw",  
         "version": "1.0",
         "firstName": "Wendy",
         "lastName": "Warm",
@@ -583,7 +593,7 @@ insert into public.user (name_key, content)
 insert into public.user (name_key, content)
     values
 ('uauthor', '{"head": 
-    { "code":"uauthor",  
+    { "username":"uauthor",  
         "version": "1.0",
         "firstName": "uauthorF",
         "lastName": "uauthorL",
@@ -593,7 +603,7 @@ insert into public.user (name_key, content)
         "phone": "902758483"}
 }'),
 ('umanager', '{"head": 
-    { "code":"umanager",  
+    { "username":"umanager",  
         "version": "1.0",
         "firstName": "umanagerF",
         "lastName": "umanagerL",
@@ -603,7 +613,7 @@ insert into public.user (name_key, content)
         "phone": "902758483"}
 }'),
 ('udirector', '{"head": 
-    { "code":"udirector",  
+    { "username":"udirector",  
         "version": "1.0",
         "firstName": "udirectorF",
         "lastName": "udirectorL",
@@ -613,7 +623,7 @@ insert into public.user (name_key, content)
         "phone": "902758483"}
 }'),
 ('uscc', '{"head": 
-    { "code":"uscc",  
+    { "username":"uscc",  
         "version": "1.0",
         "firstName": "usccF",
         "lastName": "usccL",
@@ -623,7 +633,7 @@ insert into public.user (name_key, content)
         "phone": "902758483"}
 }'),
 ('ucoo', '{"head": 
-    { "code":"ucoo",  
+    { "username":"ucoo",  
         "version": "1.0",
         "firstName": "ucooF",
         "lastName": "ucooL",
@@ -633,7 +643,7 @@ insert into public.user (name_key, content)
         "phone": "902758483"}
 }'),
 ('ucfo', '{"head": 
-    { "code":"ucfo",  
+    { "username":"ucfo",  
         "version": "1.0",
         "firstName": "ucfoF",
         "lastName": "ucfoL",
@@ -643,7 +653,7 @@ insert into public.user (name_key, content)
         "phone": "902758483"}
 }'),
 ('uvendor', '{"head": 
-    { "code":"uvendor",  
+    { "username":"uvendor",  
         "version": "1.0",
         "firstName": "uvendorF",
         "lastName": "uvendorL",
