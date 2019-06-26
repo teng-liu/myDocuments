@@ -1,6 +1,16 @@
 
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
+
+CREATE TABLE public.process
+(
+    uuid uuid NOT NULL DEFAULT uuid_generate_v4(),
+    name_key text unique,
+    content jsonb,
+    CONSTRAINT process_pkey PRIMARY KEY (uuid)
+);
+
+
 CREATE TABLE public.contract
 (
     uuid uuid NOT NULL DEFAULT uuid_generate_v4(),
@@ -795,7 +805,17 @@ insert into public.user (name_key, content)
 
 
 
-
+insert into public.process (name_key, content) 
+    values ('prj-test-NO.1', '{
+        "head": {
+            "contract": "Contract NO.2",
+            "template": "",
+            "state": "PendingL1Approval",
+            "possible-actions": ["level1Approve", "level1Decline"],
+            "start-time": "",
+            "expire-time": ""
+        }
+    }');
 
 
 
