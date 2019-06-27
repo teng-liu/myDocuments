@@ -2,6 +2,11 @@
 Week 9 (June.24 ~ June.28)
 ==========================
 
+June.27
+=======
+1. change: changed all the data reference as UUID, instead of the name_key
+
+
 June.26
 =======
 1. done Create new user from UI
