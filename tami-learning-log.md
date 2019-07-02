@@ -1,11 +1,39 @@
 
+
+Week 10
+========
+
+July 2
+======
+
+https://www.youtube.com/watch?v=6LhTe8Mz6jM
+https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow
+
+https://datasift.github.io/gitflow/IntroducingGitFlow.html
+https://nvie.com/posts/a-successful-git-branching-model/
+
+
+https://www.youtube.com/watch?v=HVsySz-h9r4
+
+
+
+
+
+
+
+
 Week 9 (June.24 ~ June.28)
 ==========================
 
+June.28
+=======
+1. checked login user -> privilege, based on its role_privilege settings
+2. when author login, only template/contract create, modify, submit. 
+   but if SCC or cfo, they have approval only, no modify, submit button.
+
 June.27
 =======
-1. change: changed all the data reference as UUID, instead of the name_key
-
+change: changed all the data reference as UUID, instead of the name_key (API, UI, and database)
 
 June.26
 =======
@@ -21,12 +49,8 @@ June.25
 1. gitlab account working now. need to prepare code for submit
 2. done the role-action mapping (save and edit) in the Previlege section.
 
-
-
 June.24
 =======
-
-
 1.Meeting record => process work-flow
 
 README of shared files:
