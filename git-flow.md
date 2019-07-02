@@ -8,6 +8,7 @@
   - the develop branch serves as an integration branch for **features**
 
 ~~~sh
+## set up your username/email in the git config
 git --version
 git config --list
 git config --global user.name "yourname"
@@ -32,6 +33,15 @@ git branch --merged                         # list the branch that already merge
 git merge new-feature-name                  # this will merge the Branch to Master
 git push origin master                      # then after merge, push to the master 
 git branch --merged                         # make sure listed the merged branch
+# OR
+git merge --squash new-feature-name         # merge the last commit of branch to master
+# OR -> rebase - branch
+git checkout new-feature-name
+git rebase master
+# OR -> rebase - master
+git checkout master
+git rebase new-feature-name
+
 
 git branch -d new-feature-name              # delete branch, because it is merged to master, this branch no longer needed -> this command only deleted locally
 git branch -a                               # make sure the branch is gone locally, but still on remote
@@ -40,20 +50,20 @@ git branch -a                               # check again, both local and remote
 
 ######### quick example #########
 
-
+git clone [project-url...]
 git branch                  # you will see the result below
 #   develop
 # * master
 
 git checkout develop        # all branch goes from 'develop'
 
-git branch [new-feature]
+git branch [new-feature]    # create new branch, can be based on features or developer
 git checkout [new-feature]
 # change your code on reqirement, after you've done, or for everyday commit, do this:
 git status
 git add .
 git commit - m "comments..."
-git push -u origin [new-feature]
+git push -u origin [new-feature]    # please remember add the branch-name
 
 # this is used for merge branch to the master/develop
 git checkout master
