@@ -6,17 +6,33 @@ Week 10
 July 2
 ======
 
-https://www.youtube.com/watch?v=6LhTe8Mz6jM
+https://www.youtube.com/watch?v=HVsySz-h9r4&list=PL-osiE80TeTuRUfjRe54Eea17-YfnOOAx
+https://www.youtube.com/watch?v=HVsySz-h9r4&list=PL-osiE80TeTuRUfjRe54Eea17-YfnOOAx&index=1
+
 https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow
 
 https://datasift.github.io/gitflow/IntroducingGitFlow.html
 https://nvie.com/posts/a-successful-git-branching-model/
 
 
-https://www.youtube.com/watch?v=HVsySz-h9r4
+1. clone link (master)
+2. switch to "develop" branch
+3. create new branch for developing
+   1. push to branch everyday
+4. pull from master (when should pull from master if master changed)
+5. when coding feature done, push to master (pull request / merge request)
 
+I've uploaded the code to our gitlab today. And I scheduled a meeting tomorrow for going through this.
+Targets:
+ understand what the git flow is, 
+ how to create and work on branch, pull and push between branch and master/develop
 
+I can try to explain this tomorrow, I guess 30-1hr meeting before my computer.
 
+And the following link is a video introduce about git general operations and the git flow.
+please check it out if you have time.
+
+https://www.youtube.com/watch?v=HVsySz-h9r4&list=PL-osiE80TeTuRUfjRe54Eea17-YfnOOAx&index=1
 
 
 
