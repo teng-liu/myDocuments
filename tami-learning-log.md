@@ -3,8 +3,13 @@
 Week 10
 ========
 
+July 3
+
+
+
 July 2
 ======
+worked on: gitlab -> team work flow
 
 collection: https://www.youtube.com/watch?v=HVsySz-h9r4&list=PL-osiE80TeTuRUfjRe54Eea17-YfnOOAx
 video-1:    https://www.youtube.com/watch?v=HVsySz-h9r4&list=PL-osiE80TeTuRUfjRe54Eea17-YfnOOAx&index=1
