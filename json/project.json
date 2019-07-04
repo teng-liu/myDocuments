@@ -1,0 +1,17 @@
+{
+    "head": {
+        "nameCode": "",
+        "start-date": "",
+        "end-date": "",
+        "owner": ""
+    },
+    "body": {
+        "contract-uuid": "",
+        "template-uuid": "",
+        "process": {
+            "current-state": "",
+            "previous-state": "",
+            "possible-actions": []
+        }
+    }
+}
