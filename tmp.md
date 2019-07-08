@@ -1,21 +1,27 @@
 
 
-~~~sql
+project:    prj-test-NO.1
+current state:      PendingL1Approval
+action:     level1Approve
+--> next state can be found from process_action, or t_transitions
 
-content #>{head, relations}
-
-
-
-~~~
-
+==> update current state, and possible-actions (for process/project)
 
 
+1. find the process by name
+    select * from public.process where name_key = 'prj-test-NO.1';
+2. get its current state: 
+    select content#>'{head, state}' from public.process where name_key = 'prj-test-NO.1';
+3. find in action
+   with t_state as (
+       select content#>'{head, state}' as state from public.process where name_key = 'prj-test-NO.1'
+   )
 
-
-
-
-
-
+select * 
+	from public.t_transitions 
+	where action_name = 'level1Approve' 
+		and from_state = (select (content#>'{head, state}')::text from public.process where name_key = 'prj-test-NO.1');
+		
 
 
 ~~~sql

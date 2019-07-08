@@ -119,7 +119,7 @@ CREATE TABLE public.t_transitions
 
 
 -- store all process states, dictionary-table
-insert into public.process_action (name_key, content)
+insert into public.process_state (name_key, content)
     values
 ('ContractCorrectedL100Issue', '{}'),
 ('ContractCorrectedL1Issue', '{}'),

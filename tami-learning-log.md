@@ -3,10 +3,18 @@
 Week 10
 ========
 
+July 5
+======
+- created Project module, which including Project, Contract
+- worked on process/workflow
+
+July 4
+======
+worked on Process/workflow
+
 July 3
 ======
-
-
+worked on Logout function, and Edit Profile
 
 July 2
 ======
@@ -21,17 +29,6 @@ git-flow:     https://www.atlassian.com/git/tutorials/comparing-workflows/gitflo
 
 https://datasift.github.io/gitflow/IntroducingGitFlow.html
 https://nvie.com/posts/a-successful-git-branching-model/
-
-
-1. clone link (master)
-2. switch to "develop" branch
-3. create new branch for developing
-   1. push to branch everyday
-4. pull from master (when should pull from master if master changed)
-5. when coding feature done, push to master (pull request / merge request)
-
-
-
 
 
 Week 9 (June.24 ~ June.28)
