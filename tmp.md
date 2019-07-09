@@ -1,5 +1,33 @@
 
 
+
+
+~~~sql
+---find possible actions => given a workflow id (and its current_state)
+select w.name_key as workflow, 
+        w.current_state as current_state, 
+        a.name_key as possible_action 
+    from workflow w
+    inner join workflow_action a on a.from_state=w.current_state
+    where w.name_key = 'workflow001';
+
+~~~
+
+
+with t_workflow as (
+    select w.name_key as workflow,
+            w.current_state as current_state,
+            a.name_key as action,
+            a.to_state as new_state
+        from workflow w
+        inner join workflow_action a
+            on a.from_state=w.current_state
+        where a.name_key='level1Approve' and w.name_key='workflow001' 
+    )
+update workflow set current_state=t_workflow.new_state; 
+
+
+
 project:    prj-test-NO.1
 current state:      PendingL1Approval
 action:     level1Approve
@@ -8,7 +36,7 @@ action:     level1Approve
 ==> update current state, and possible-actions (for process/project)
 
 
-
+~~~sql
 
 with t1 as (
 	select name_key, content#>'{head, state}' as state, content#>'{head, possible-actions}' as actions
@@ -23,7 +51,7 @@ with t1 as (
 		from t2 x
 			inner join process_action y
 				on y.name_key = x.action_name;
-
+~~~
 
 
 

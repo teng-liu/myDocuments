@@ -104,6 +104,14 @@ CREATE TABLE public.process_state
     CONSTRAINT process_state_pkey PRIMARY KEY (uuid)
 );
 
+CREATE TABLE public.vendor
+(
+    uuid uuid NOT NULL DEFAULT uuid_generate_v4(),
+    name_key text unique,
+    content jsonb,
+    CONSTRAINT vendor_pkey PRIMARY KEY (uuid)
+);
+
 -- store transitions for generating fsm
 CREATE TABLE public.t_transitions
 (
@@ -115,6 +123,74 @@ CREATE TABLE public.t_transitions
     option text,
     CONSTRAINT t_transitions_pkey PRIMARY KEY (uuid)
 );
+
+-- workflow actions -> non-json
+CREATE TABLE public.workflow_action
+(
+    uuid uuid NOT NULL DEFAULT uuid_generate_v4(),
+    name_key text unique,
+    display text,
+    from_state text,
+    to_state text,
+    ui_actions text,
+    category text,
+    description text,
+    message text,
+    options jsonb,
+    CONSTRAINT workflow_action_pkey PRIMARY KEY (uuid)
+);
+
+CREATE TABLE public.workflow
+(
+    uuid uuid NOT NULL DEFAULT uuid_generate_v4(),
+    name_key text unique,
+    display text,
+    current_state text,
+    template_uuid uuid,
+    contract_uuid uuid,
+    description text,
+    options jsonb,
+    CONSTRAINT workflow_pkey PRIMARY KEY (uuid)
+);
+
+
+
+insert into public.workflow (name_key, display, current_state)
+    values
+('workflow001', 'deltaware-ct.009', 'PendingL1Approval'),
+('workflow002', 'iWave-ct.8374', 'New');
+
+
+insert into public.vendor (name_key, content) 
+    values
+('iwave-pei', '{
+    "head": {
+        "code": "iwave-pei",
+        "display": "iWave",
+        "registered-code": "VEN72398348",
+        "address": "134 Kent St, Charlottetown",
+        "postal-code": "PE C1A"
+    }
+}'),
+('deltaware-pei', '{
+    "head": {
+        "code": "iwave-pei",
+        "display": "The DeltaWare Division of MAXIMUS",
+        "registered-code": "VEN95874000",
+        "address": "176 Great George St, Charlottetown",
+        "postal-code": "PE C1A 4K9"
+    }
+}'),
+('upei', '{
+    "head": {
+        "code": "upei",
+        "display": "University of PEI",
+        "registered-code": "EDU737322",
+        "address": "550 University Ave, Charlottetown",
+        "postal-code": "PE C1A 4P3"
+    }
+}');
+
 
 
 
@@ -178,6 +254,49 @@ insert into public.process_state (name_key, content)
 ('TemplatePendingApprovalBySupervisor', '{}'),
 ('TemplatePrepared', '{}'),
 ('TemplatePreparing', '{}');
+
+
+
+
+----new actions -> workflow action, no next auto action
+
+insert into public.workflow_action (name_key, display, from_state, to_state, ui_actions, category, message)
+    values
+('start', 'Start', 'New', 'TemplatePreparing', 'workflow.start', 'Process.Workflow', 'Workflow started'),
+('templatePrepare', 'Prepare Template', 'TemplatePreparing', 'TemplatePendingApprovalBySupervisor', 'template.cru', 'Process.Template.Prepare', 'Template was Prepared'),
+('templatePartAApprove', 'Approve Template as Part A', 'TemplatePendingApprovalBySupervisor', 'TemplatePendingAcceptanceByVendor', 'template.approve', 'Process.Template.Prepare', 'Template has been Approved by PartA'),
+('templatePartADecline', 'Decline Template as Part A', 'TemplatePendingApprovalBySupervisor', 'PendingTemplateCorrectionFromPartA', 'template.decline', 'Process.Template.Prepare', 'Template has been Declined by PartA, modification required'),
+('templatePartBApprove', 'Approve Template as Part B', 'TemplatePendingAcceptanceByVendor', 'ContractPreparing', 'template.approve', 'Process.Template.Prepare', 'Template has been Approved by PartB and Template is Fixed'),
+('templatePartBDecline', 'Decline Template as Part B', 'TemplatePendingAcceptanceByVendor', 'PendingTemplateCorrectionFromPartB', 'template.decline', 'Process.Template.Prepare', 'Template has been Declined by PartB, modification required'),
+('templateCorrectionForPartA', 'Template Correction for Part A', 'PendingTemplateCorrectionFromPartA', 'TemplatePendingApprovalBySupervisor', 'template.ru', 'Process.Template.Prepare', 'Template issue was Corrected based on PartA requirement'),
+('templateCorrectionForPartB', 'Template Correction for Part B', 'PendingTemplateCorrectionFromPartB', 'TemplatePendingAcceptanceByVendor', 'template.ru', 'Process.Template.Prepare', 'Template issue was Corrected based on PartB requirement'),
+('contractPrepare', 'Prepare Contract', 'ContractPreparing', 'PendingL1Approval', 'contract.cru', 'Process.Contract.Prepare', 'Contract has been Prepared'),
+('level1Approve', 'Approve as Level 1 staff', 'PendingL1Approval', 'PendingL2Approval', 'contract.approve', 'Process.Contract.Approval', 'Contract Level1 Approved'),
+('level1Decline', 'Decline as Level 1 staff', 'PendingL1Approval', 'ContractPendingCorrectionL1Issue', 'contract.decline', 'Process.Contract.Approval', 'Contract Level1 Declined, modification required'),
+('contractCorrectionL1', 'Contract Correction L1', 'ContractPendingCorrectionL1Issue', 'PendingL1Approval', 'contract.ru', 'Process.Contract.Prepare', 'Contract issue that reported from Level1 staff has been corrected'),
+('level2Approve', 'Approve as Level 2 staff', 'PendingL2Approval', 'PendingL3Approval', 'contract.approve', 'Process.Contract.Approval', 'Contract Level2 Approved'),
+('level2Decline', 'Decline as Level 2 staff', 'PendingL2Approval', 'ContractPendingCorrectionL2Issue', 'contract.decline', 'Process.Contract.Approval', 'Contract Level2 Declined, modification required'),
+('contractCorrectionL2', 'Contract Correction L2', 'ContractPendingCorrectionL2Issue', 'PendingL1Approval', 'contract.ru', 'Process.Contract.Prepare', 'Contract issue that reported from Level2 staff has been corrected'),
+('level3Approve', 'Approve as Level 3 staff', 'PendingL3Approval', 'PendingL4Approval', 'contract.approve', 'Process.Contract.Approval', 'Contract Level3 Approved'),
+('level3Decline', 'Decline as Level 3 staff', 'PendingL3Approval', 'ContractPendingCorrectionL3Issue', 'contract.decline', 'Process.Contract.Approval', 'Contract Level3 Declined, modification required'),
+('contractCorrectionL3', 'Contract Correction L3', 'ContractPendingCorrectionL3Issue', 'PendingL3Approval', 'contract.ru', 'Process.Contract.Prepare', 'Contract issue that reported from Level3 staff has been corrected'),
+('level4Approve', 'Approve as Level 4 staff', 'PendingL4Approval', 'PendingL5Approval', 'contract.approve', 'Process.Contract.Approval', 'Contract Level4 Approved'),
+('level4ApproveWithCondition', 'Conditional Approve as Level 4 staff', 'PendingL4Approval', 'ContractPendingCorrectionL4IssueWithApproval', 'contract.conditonalApprove', 'Process.Contract.Approval', 'Contract Level4 Approved, but with condition of correction'),
+('level4Decline', 'Decline as Level 4 staff', 'PendingL4Approval', 'ContractPendingCorrectionL4Issue', 'contract.decline', 'Process.Contract.Approval', 'Contract Level4 Declined, modification required'),
+('contractCorrectionL4', 'Contract Correction L4', 'ContractPendingCorrectionL4Issue', 'PendingL3Approval', 'contract.ru', 'Process.Contract.Prepare', 'Contract issue that reported from Level4 staff has been corrected'),
+('contractCorrectionL4WithApproval', 'Contract Correction L4 Pre-Approved', 'ContractPendingCorrectionL4IssueWithApproval', 'PendingL5Approval', 'contract.ru', 'Process.Contract.Prepare', 'Contract pre-approved issue that reported from Level4 staff has been corrected'),
+('level5Approve', 'Approve as Level 5 staff', 'PendingL5Approval', 'PendingPartBSign', 'contract.approve', 'Process.Contract.Approval', 'Contract Level5 Approved'),
+('level5ApproveWithCondition', 'Conditional Approve as Level 5 staff', 'PendingL5Approval', 'ContractPendingCorrectionL5IssueWithApproval', 'contract.conditonalApprove', 'Process.Contract.Approval', 'Contract Level5 Approved, but with condition of correction'),
+('level5Decline', 'Decline as Level 5 staff', 'PendingL5Approval', 'ContractPendingCorrectionL5Issue', 'contract.decline', 'Process.Contract.Approval', 'Contract Level5 Declined, modification required'),
+('contractCorrectionL5', 'Contract Correction L5', 'ContractPendingCorrectionL5Issue', 'PendingL3Approval', 'contract.ru', 'Process.Contract.Prepare', 'Contract issue that reported from Level5 staff has been corrected'),
+('contractCorrectionL5WithApproval', 'Contract Correction L5 Pre-Approved', 'ContractPendingCorrectionL5IssueWithApproval', 'PendingPartBSign', 'contract.ru', 'Process.Contract.Prepare', 'Contract pre-approved issue that reported from Level5 staff has been corrected'),
+('partBSign', 'Sign Contract as Part B', 'PendingPartBSign', 'PendingPartASign', 'contract.sign', 'Process.Contract.Sign', 'PartB has been Signed'),
+('partBSignDecline', 'Decline Sign Contract as Part B', 'PendingPartBSign', 'ContractPendingCorrectionL100Issue', 'contract.declineSign', 'Process.Contract.Sign', 'PartB has been Declined Sign, modification required'),
+('contractCorrectionL100', 'Contract Correction for Part B', 'ContractPendingCorrectionL100Issue', 'PendingL3Approval', 'contract.ru', 'Process.Contract.Prepare', 'Contract issue that reported from Part-B staff has been corrected'),
+('partASign', 'Sign Contract as Part A', 'PendingPartASign', 'Finalizing', 'contract.sign', 'Process.Contract.Sign', 'PartA has been Signed'),
+('contractCorrectionSignPartA', 'Contract Correction for Part A', 'ContractPendingCorrectionSignIssueFromPartA', 'PendingL3Approval', 'contract.ru', 'Process.Contract.Prepare', 'Contract issue that reported from Part-A staff has been corrected'),
+('partASignDecline', 'Decline Sign Contract as Part A', 'PendingPartASign', 'ContractPendingCorrectionSignIssueFromPartA', 'contract.declineSign', 'Process.Contract.Sign', 'PartA has been Declined Sign, modification required'),
+('finalize', 'Finalize', 'Finalizing', 'Finished', 'contract.finalize', 'Process.Contract.Finalize', 'Finalized (backup...)');
 
 
 
