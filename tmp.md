@@ -8,6 +8,25 @@ action:     level1Approve
 ==> update current state, and possible-actions (for process/project)
 
 
+
+
+with t1 as (
+	select name_key, content#>'{head, state}' as state, content#>'{head, possible-actions}' as actions
+		from public.process 
+		where name_key = 'prj-test-NO.1'
+	),
+	t2 as (
+	select name_key, jsonb_array_elements_text(actions) as action_name
+		from t1
+	)
+	select x.name_key, x.action_name, y.content#>'{head, relations, 0, to}'
+		from t2 x
+			inner join process_action y
+				on y.name_key = x.action_name;
+
+
+
+
 1. find the process by name
     select * from public.process where name_key = 'prj-test-NO.1';
 2. get its current state: 
