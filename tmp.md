@@ -3,7 +3,28 @@
 
 
 ~~~sql
----find possible actions => given a workflow id (and its current_state)
+
+---v3.0---query all workflow with possible_actions as an array
+select w.*, 
+	array_agg(a.name_key) as possible_action 
+from workflow w      
+	inner join workflow_action a 
+		on a.from_state=w.current_state
+	group by w.uuid, w.name_key, w.current_state, w.template_uuid, w.contract_uuid, w.description, w.options;
+
+
+
+--v2.0---query all the workflow with its possible_actions
+select w.name_key as workflow, 
+    w.current_state as current_state, 
+    a.name_key as possible_action 
+from workflow w      
+    inner join workflow_action a on a.from_state=w.current_state;
+
+
+
+
+--v1.0-find possible actions => given a workflow id (and its current_state)
 select w.name_key as workflow, 
         w.current_state as current_state, 
         a.name_key as possible_action 
