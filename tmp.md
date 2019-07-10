@@ -11,7 +11,7 @@ select w.name_key as workflow,
     inner join workflow_action a on a.from_state=w.current_state
     where w.name_key = 'workflow001';
 
-~~~
+
 
 
 with t_workflow as (
@@ -22,9 +22,17 @@ with t_workflow as (
         from workflow w
         inner join workflow_action a
             on a.from_state=w.current_state
-        where a.name_key='level1Approve' and w.name_key='workflow001' 
+        where a.name_key='level4Approve'
     )
-update workflow set current_state=t_workflow.new_state; 
+update workflow set current_state=t_workflow.new_state 
+	from t_workflow 
+	where workflow.name_key='workflow001'; 
+
+
+~~~
+
+
+
 
 
 
