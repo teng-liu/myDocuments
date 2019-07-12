@@ -1,8 +1,59 @@
 
 
+
+~~~tech
+
+https://www.educba.com/node-js-vs-php-performance/
+
+https://www.tandemseven.com/blog/performance-java-vs-node/
+
+https://www.toptal.com/back-end/server-side-io-performance-node-php-java-go
+
+https://www.hongkiat.com/blog/node-js-server-side-javascript/
+
+~~~
+
+
+Week 11
+========
+July.12
+====
+- save / edit Profile information
+- bug fix
+- API changes
+
+July.11
+======
+TODO after demo:
+- refresh functions
+- contract group -> user(vendor user)|role
+- workflow implement by role-actions
+- Decline panel
+- Audit Log
+- template editor/builder -> later
+
+July.10
+======
+- workflow / bug fix
+- database table structure & data change
+  - workflow
+  - actions
+  - vendor
+- API changes
+
+July.9
+======
+- added vendor, changed settings page as tab
+- workflow, states -> re-organise, update states
+
+July.8
+======
+- sample Report
+- workflow (project)
+- meeting -> pre-demo
+
 Week 10
 ========
-
 July 5
 ======
 - created Project module, which including Project, Contract

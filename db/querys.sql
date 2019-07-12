@@ -1,5 +1,28 @@
 
 
+
+
+
+
+with t_role as (
+	select r.uuid as role_uuid,
+		jsonb_build_object('uuid', r.uuid, 'display', r.content#>>'{head, display}') as role
+	from public.user u
+	inner join public.role r
+		on u.content#>>'{head, role}' = r.uuid::text
+	group by r.uuid
+)
+select u.*, r.role
+	from public.user u
+	inner join t_role r
+		on u.content#>>'{head, role}' = r.role_uuid::text
+	where u.name_key = 'admin';
+
+
+
+
+
+
 select w.*, 
 	array_agg(a.name_key) as possible_action 
 from workflow w      
