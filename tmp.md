@@ -1,8 +1,68 @@
 
 
 
+CREATE TABLE public.contractGroup
+(
+    uuid uuid NOT NULL DEFAULT uuid_generate_v4(),
+    name_key text unique,
+    content jsonb,
+    CONSTRAINT contractGroup_pkey PRIMARY KEY (uuid)
+);
+
+CREATE TABLE public.rel_contract_Group
+(
+    uuid uuid NOT NULL DEFAULT uuid_generate_v4(),
+    name_key text unique,
+    group_uuid uuid,
+    contract_uuid uuid,
+    option jsonb,
+    CONSTRAINT contractMappingGroup_pkey PRIMARY KEY (uuid)
+);
+
+
+insert into public.contractGroup(name_key, content)
+    values
+    ('groupAA', '
+    {
+        "head": {
+            "display": "GROUP AA"
+        }
+    }
+    '),
+        ('groupBB', '
+    {
+        "head": {
+            "display": "GROUP BB"
+        }
+    }
+    ');
+
+
+
+
+
+
+
+
+
 
 ~~~sql
+
+
+
+select cg.uuid as group_uuid,
+		jsonb_agg(
+			jsonb_build_object('contract_key', c.name_key, 'contract_uuid', c.uuid)) 
+		as contracts
+	from public.rel_contract_group rel
+	inner join public.contract_group cg
+	on cg.uuid = rel.group_uuid
+	inner join public.contract c
+	on c.uuid = rel.contract_uuid
+	where cg.uuid = '501f9dde-2911-4410-94a0-5537d7d945f7'
+	group by cg.uuid
+	
+
 
 ---v3.0---query all workflow with possible_actions as an array
 select w.*, 

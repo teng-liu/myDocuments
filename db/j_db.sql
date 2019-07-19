@@ -19,6 +19,23 @@ CREATE TABLE public.contract
     CONSTRAINT contract_pkey PRIMARY KEY (uuid)
 );
 
+CREATE TABLE public.contractGroup
+(
+    uuid uuid NOT NULL DEFAULT uuid_generate_v4(),
+    name_key text unique,
+    content jsonb,
+    CONSTRAINT contractGroup_pkey PRIMARY KEY (uuid)
+);
+
+CREATE TABLE public.rel_contract_Group
+(
+    uuid uuid NOT NULL DEFAULT uuid_generate_v4(),
+    name_key text unique,
+    group_uuid uuid,
+    contract_uuid uuid,
+    option jsonb,
+    CONSTRAINT contractMappingGroup_pkey PRIMARY KEY (uuid)
+);
 
 CREATE TABLE public.contract_template
 (
@@ -84,6 +101,14 @@ CREATE TABLE public.m_role_action
     name_key text unique,
     content jsonb,
     CONSTRAINT role_action_pkey PRIMARY KEY (uuid)
+);
+
+CREATE TABLE public.rel_role_action
+(
+    uuid uuid NOT NULL DEFAULT uuid_generate_v4(),
+    name_key text unique,
+    content jsonb,
+    CONSTRAINT role_rel_action_pkey PRIMARY KEY (uuid)
 );
 
 

@@ -1,17 +1,34 @@
 
 
+Week 12
+========
 
-~~~tech
+Here are features I added this week, based on the last meeting, the Contract Group, and contract's privilege set up on user.
+You can check the UI looks from the attached screenshots. I will continue this as well as refresh functions and fixing bugs.
 
-https://www.educba.com/node-js-vs-php-performance/
 
-https://www.tandemseven.com/blog/performance-java-vs-node/
+1. User Contract relation (assign contract or contract group to certain user(s), user can only see the contract they have access to)
 
-https://www.toptal.com/back-end/server-side-io-performance-node-php-java-go
+2. Added contract group, so that people can organize contracts, and assign it to certain user(s) [privilege on contract]
 
-https://www.hongkiat.com/blog/node-js-server-side-javascript/
+3. Also added a Decline panel to recording the Decline reason and comments, but so far only have Defect Type and Defect Details, I will add more attributes next week.
 
-~~~
+4. database structure changes and new tables, also corresponding API changes.
+
+
+July.17
+-------
+- Technical report
+
+July.16
+-------
+- Technical report
+
+July.15
+-------
+- contract group
+- decline panel
+
 
 
 Week 11
