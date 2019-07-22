@@ -1,5 +1,14 @@
 
 
+July.22
+-------
+1. contract group -> if submit all together, need to keep a list of current contract, adding contracts, removing contracts => then display current contract + adding - removing, and submit adding, removing separately, and SQL need work for bench of data ... insert a list of data...
+
+2. user previleged contract -> by group, by contract, store as single contract | and contract Group
+
+3. double clicked to move to left, refresh left list
+
+
 $ git clone git@gitlab.gpei.ca:quickr/framework/coop-student-shared-repository.git
 Cloning into 'coop-student-shared-repository'...
 The authenticity of host 'gitlab.gpei.ca (172.18.54.88)' can't be established.

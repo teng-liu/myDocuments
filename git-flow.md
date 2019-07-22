@@ -13,7 +13,9 @@ git --version
 git config --list
 git config --global user.name "yourname"
 git config --global user.email "youremail"
-git branch -a 
+git config --global push.default current
+git branch -a                              # list all the branches
+
 
 git pull origin master
 git push origin master

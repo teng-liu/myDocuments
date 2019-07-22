@@ -1,6 +1,36 @@
 
 
 
+
+
+
+
+insert into public.rel_user_contract (name_key, user_uuid, contract_group_uuid)
+ values ('AAAB', '048af2eb-ebe5-4ef8-80d5-97034aa16e65', '3b706eb3-8d98-48cb-853e-b6201244375e')
+
+
+
+
+
+update public.user set content = '
+{
+    "head": {
+        "role": "9ff8a532-c942-4ad4-91d6-43d2a2486663",
+        "email": "eeee",
+        "phone": "q324",
+        "lastName": "LLL",
+        "nameCode": "marry",
+        "password": "123",
+        "firstName": "FFFName",
+        "privileged-contract-group": ["4f28156c-8956-478a-a1a8-3efe56b2fdd6", "3b706eb3-8d98-48cb-853e-b6201244375e"]
+    }
+}
+'
+where name_key = 'marry';
+
+
+
+
 CREATE TABLE public.contractGroup
 (
     uuid uuid NOT NULL DEFAULT uuid_generate_v4(),
@@ -42,7 +72,56 @@ insert into public.contractGroup(name_key, content)
 
 
 
+~~~sql
 
+-- get contract list, based on user's assigned contract group
+
+select c.*, u.name_key, g.name_key as group_name 
+ from contract_group g
+	inner join public.rel_user_contract r
+		on r.contract_group_uuid = g.uuid
+	inner join rel_contract_group r1
+		on r1.group_uuid = g.uuid
+	inner join public.contract c
+		on c.uuid = r1.contract_uuid
+	inner join public.user u
+	on u.uuid = r.user_uuid
+where u.uuid='1a4a85c1-3f87-43fc-94b7-905443c81a69'
+
+
+
+
+
+
+
+
+
+--query user collection, with its contract_group information, array of json {group_name, group_uuid}
+
+with t_user as (
+select u.name_key,
+(jsonb_array_elements_text(
+ u.content#>'{head, privileged-contract-group}')) as c_group
+ from public.user u
+),
+t_user_con_group as (
+select 
+ t.name_key as user_name, 
+		jsonb_agg(
+		jsonb_build_object('group_uuid', g.uuid, 'group_name', g.name_key)) as contract_group
+from t_user t
+  inner join public.contract_group g
+  on g.uuid::text = (t.c_group)
+	group by t.name_key
+) 
+select u.*, t.contract_group
+ from public.user u
+ inner join t_user_con_group t
+ on u.name_key = t.user_name
+ ;
+
+
+~~~
 
 
 
@@ -392,3 +471,375 @@ insert into public.contract (name_key, content)
     }
 }');
 ~~~
+
+
+
+====================================
+
+
+
+select * from public.user;
+select * from public.contract_template;
+select * from contract;
+select * from action;
+select * from public.role;
+select * from m_role_action;
+select * from public.user where name_key ilike 'u%'
+select * from contract_group;
+
+drop table public.process;
+drop table public.process_action;
+drop table public.process_state;
+drop table public.t_transitions;
+drop table public.event;
+
+select * from m_role_action;
+select * from workflow;
+select * from workflow_action;
+
+select * from rel_user_contract;
+
+
+-- delete from public.process_action;
+-- delete from public.role;
+-- delete from public.user;
+-- delete from public.m_role_action;
+-- delete from public.role where name_key ilike 'undefined'
+-- delete from public.user where name_key ilike 'u%'
+-- delete from public.contract_template where uuid = '26ab4d14-132b-4b8f-8c16-2986b36745b5';
+
+
+CREATE TABLE public.rel_user_contract
+(
+    uuid uuid NOT NULL DEFAULT uuid_generate_v4(),
+    name_key text unique,
+    user_uuid uuid,
+    contract_group_uuid uuid,
+    contract_uuid uuid,
+    option jsonb,
+    CONSTRAINT contractMappingUser_pkey PRIMARY KEY (uuid)
+);
+
+insert into public.rel_user_contract (name_key, user_uuid, contract_group_uuid)
+ values ('AAAA', '048af2eb-ebe5-4ef8-80d5-97034aa16e65', '4f28156c-8956-478a-a1a8-3efe56b2fdd6')
+
+insert into public.rel_user_contract (name_key, user_uuid, contract_group_uuid)
+ values ('AAAB', '048af2eb-ebe5-4ef8-80d5-97034aa16e65', '3b706eb3-8d98-48cb-853e-b6201244375e')
+
+insert into public.rel_user_contract (name_key, user_uuid, contract_group_uuid)
+ values ('BBB', '1a4a85c1-3f87-43fc-94b7-905443c81a69', '4f28156c-8956-478a-a1a8-3efe56b2fdd6')
+
+select * from public.user;
+
+select c.uuid, c.name_key, c.content
+                        from public.contract c
+                    inner join public.user u
+                        on u.content#>'{head, vendorName}' = c.content#>'{body, partB-company}'
+                    where u.name_key = ''
+
+
+with t_role as (
+	select r.uuid as role_uuid,
+		jsonb_build_object('uuid', r.uuid, 'display', r.content#>>'{head, display}') as role
+	from public.user u
+	inner join public.role r
+		on u.content#>>'{head, role}' = r.uuid::text
+	group by r.uuid
+)
+select u.*, r.role
+	from public.user u
+	inner join t_role r
+		on u.content#>>'{head, role}' = r.role_uuid::text
+	where u.name_key = 'marry'
+
+
+
+select * from public.user
+
+select name_key, content#>'{head, privileged-contract-group}' 
+ from public.user
+
+select * from contract_group
+select * from rel_contract_Group;
+
+select c.*, u.name_key, g.name_key as group_name 
+ from contract_group g
+	inner join public.rel_user_contract r
+		on r.contract_group_uuid = g.uuid
+	inner join rel_contract_group r1
+		on r1.group_uuid = g.uuid
+	inner join public.contract c
+		on c.uuid = r1.contract_uuid
+	inner join public.user u
+	on u.uuid = r.user_uuid
+where u.uuid='1a4a85c1-3f87-43fc-94b7-905443c81a69'
+
+1a4a85c1-3f87-43fc-94b7-905443c81a69
+
+with t_user as (
+select r.user_uuid,
+			jsonb_agg(
+		jsonb_build_object('group_uuid', g.uuid, 'group_name', g.name_key)) as contract_group
+ from public.rel_user_contract r
+ left join public.contract_group g
+ 	on g.uuid = r.contract_group_uuid
+	group by r.user_uuid
+)
+select u.*, t.contract_group from public.user u
+ left join t_user t
+ on t.user_uuid = u.uuid
+ 
+
+select u.*, g.uuid as group_uuid, g.name_key as group_name
+ from public.user u
+ inner join public.rel_user_contract r
+ 	on r.user_uuid = u.uuid
+ inner join public.contract_group g
+ 	on g.uuid = r.contract_group_uuid
+	
+	
+	
+
+with t_user as (
+select u.name_key,
+(jsonb_array_elements_text(
+ u.content#>'{head, privileged-contract-group}')) as c_group
+ from public.user u
+),
+t_user_con_group as (
+select 
+ t.name_key as user_name, 
+		jsonb_agg(
+		jsonb_build_object('group_uuid', g.uuid, 'group_name', g.name_key)) as contract_group
+from t_user t
+  left join public.contract_group g
+  on g.uuid::text = (t.c_group)
+	group by t.name_key
+) 
+select u.*, t.contract_group
+ from public.user u
+ left join t_user_con_group t
+ on u.name_key = t.user_name
+ ;
+
+
+
+
+select u.*, t.group_uuid, t.group_name, 
+	jsonb_agg(
+		jsonb_build_object('group_uuid', t.group_uuid, 'group_name', t.group_name))
+ from public.user u
+ inner join t_user_con_group t
+ 	on u.name_key = t.user_name
+
+ ;
+
+
+
+
+
+update public.user set content = '
+{
+    "head": {
+        "role": "9ff8a532-c942-4ad4-91d6-43d2a2486663",
+        "email": "eeee",
+        "phone": "q324",
+        "lastName": "LLL",
+        "nameCode": "marry",
+        "password": "123",
+        "firstName": "FFFName",
+        "privileged-contract-group": ["4f28156c-8956-478a-a1a8-3efe56b2fdd6", "3b706eb3-8d98-48cb-853e-b6201244375e"]
+    }
+}'
+where name_key = 'marry';
+
+
+update public.user 
+	set name_key = 'tttt' where name_key = 'tt'
+
+select r.name_key as role_name_key,
+		r.uuid as role_uuid,
+		m.content#>'{body}' as previleges
+	from public.m_role_action m
+	inner join public.role r
+	on m.content#>>'{head, role-uuid}' = r.uuid::text
+where r.name_key = 'coo';
+
+
+
+
+with t_user_prv as (
+	select 
+		x.name_key as user, 
+		y.content#>>'{head, display}' as role_name, 
+		jsonb_array_elements_text(z.content#>'{body}') as privilege
+		from public.user x
+			inner join public.role y
+				on x.content#>>'{head, role}' = y.content#>>'{head, display}'
+			inner join public.m_role_action z
+				on y.content#>>'{head, display}' = z.name_key
+		where x.name_key = 'wewe'
+	)
+	select *
+		from t_user_prv p
+			inner join public.process_action a
+				on p.privilege = a.name_key;
+
+
+
+update contract_template set name_key='Contract Template - Defa ult'
+ where uuid='26ab4d14-132b-4b8f-8c16-2986b36745b5'
+;
+
+insert into public.process (name_key, content) 
+    values ('prj-test-NO.1', '{
+        "head": {
+            "contract": "Contract NO.2",
+            "template": "",
+            "state": "PendingL1Approval",
+            "possible-actions": ["level1Approve", "level1Decline"],
+            "start-time": "",
+            "expire-time": ""
+        }
+    }');
+
+CREATE TABLE public.process
+(
+    uuid uuid NOT NULL DEFAULT uuid_generate_v4(),
+    name_key text unique,
+    content jsonb,
+    CONSTRAINT process_pkey PRIMARY KEY (uuid)
+);
+
+
+update user
+	set content = content - ''
+
+insert into public.user (name_key, content)
+    values
+('tt', '{"head": 
+    { "code":"tt",  
+        "version": "1.0",
+        "firstName": "tt",
+        "lastName": "tt",
+        "passward": "tt",
+        "role": "author",
+        "email": "uauthor@gov.pe.ca",
+        "phone": "902758483"}
+}')
+
+
+
+
+
+----------
+select c.content->'body'->>'maximum-total-amount' AS "cost", 
+		c.content->'body'->>'partB-company' AS "company"
+	from public.contract c
+	;
+
+with t_list as (
+    select
+		name_key as contractName,
+        (content#>>'{body, maximum-total-amount}')::decimal as money,
+        content#>>'{body, partB-company}' as company
+        from contract
+ )
+select 
+    company,  
+    sum(money) as sum
+from t_list
+	group by company;
+---------------
+
+
+insert into public.user (name_key, content)
+    values
+('uauthor', '{"head": 
+    { "username":"uauthor",  
+        "version": "1.0",
+        "firstName": "uauthorF",
+        "lastName": "uauthorL",
+        "passward": "123",
+        "role": "author",
+        "email": "uauthor@gov.pe.ca",
+        "phone": "902758483"}
+}'),
+('umanager', '{"head": 
+    { "username":"umanager",  
+        "version": "1.0",
+        "firstName": "umanagerF",
+        "lastName": "umanagerL",
+        "passward": "123",
+        "role": "manager",
+        "email": "umanager@gov.pe.ca",
+        "phone": "902758483"}
+}'),
+('udirector', '{"head": 
+    { "username":"udirector",  
+        "version": "1.0",
+        "firstName": "udirectorF",
+        "lastName": "udirectorL",
+        "passward": "123",
+        "role": "director",
+        "email": "udirector@gov.pe.ca",
+        "phone": "902758483"}
+}'),
+('uscc', '{"head": 
+    { "username":"uscc",  
+        "version": "1.0",
+        "firstName": "usccF",
+        "lastName": "usccL",
+        "passward": "123",
+        "role": "scc",
+        "email": "uscc@gov.pe.ca",
+        "phone": "902758483"}
+}'),
+('ucoo', '{"head": 
+    { "username":"ucoo",  
+        "version": "1.0",
+        "firstName": "ucooF",
+        "lastName": "ucooL",
+        "passward": "123",
+        "role": "coo",
+        "email": "ucoo@gov.pe.ca",
+        "phone": "902758483"}
+}'),
+('ucfo', '{"head": 
+    { "username":"ucfo",  
+        "version": "1.0",
+        "firstName": "ucfoF",
+        "lastName": "ucfoL",
+        "passward": "123",
+        "role": "cfo",
+        "email": "ucfo@gov.pe.ca",
+        "phone": "902758483"}
+}'),
+('uvendor', '{"head": 
+    { "username":"uvendor",  
+        "version": "1.0",
+        "firstName": "uvendorF",
+        "lastName": "uvendorL",
+        "passward": "123",
+        "role": "vendor",
+        "email": "uvendor@gov.pe.ca",
+        "phone": "902758483"}
+}');
+
+
+----------------
+
+with t_list as (
+    select
+		name_key as contractName,
+        (content#>>'{body, maximum-total-amount}')::decimal as money,
+        content#>>'{body, partB-company}' as company
+        from contract
+ )
+select 
+	contractName,
+    company, 
+    money, 
+    sum(money) over (partition by company) as sum
+from t_list;
+-----------
