@@ -1,4 +1,56 @@
 
+~~~sql
+
+insert into 
+    public.rel_contract_group (name_key, group_uuid, contract_uuid)
+values
+    ($1, $2, $3)
+
+
+CREATE TABLE public.rel_user_contract
+(
+    contract_uuid uuid,
+    contract_group_uuid uuid,
+    CONSTRAINT contractMappingUser_pkey PRIMARY KEY (contract_group_uuid, contract_uuid)
+);
+create index rel_user_contract_idx on public.rel_user_contract (contract_uuid);
+
+
+-- changes
+
+
+insert into 
+    public.rel_contract_group (name_key, group_uuid, contract_uuid)
+	select * 
+	from 
+	jsonb_to_recordset('
+		 [{
+			"name_key": "TTTT", 
+			"group_uuid": "e24964ad-04d7-495d-ad2d-9be967a69982",
+			"contract_uuid": "e24964ad-04d7-495d-ad2d-9be967a69982"}, 
+		 {
+			"name_key": "EEEEE", 
+			"group_uuid": "e24964ad-04d7-495d-ad2d-9be967a69982",
+			"contract_uuid": "e24964ad-04d7-495d-ad2d-9be967a69982"}]')
+	as x (name_key text, group_uuid uuid, contract_uuid uuid)
+on conflict (..) do nothing;
+	
+
+
+insert into public.rel_user_contract (name_key, user_uuid, contract_group_uuid)
+ values ('AAAB', 'e24964ad-04d7-495d-ad2d-9be967a69982', '5fc65198-c6ef-438b-bc47-b1218399a2f8')
+
+
+CREATE TABLE public.rel_user_contract
+(
+    user_uuid uuid,
+    contract_group_uuid uuid,
+    CONSTRAINT contractMappingUser_pkey PRIMARY KEY (contract_group_uuid, contract_uuid)
+);
+
+~~~
+
+
 
 July.22
 -------

@@ -6,7 +6,7 @@
 
 
 insert into public.rel_user_contract (name_key, user_uuid, contract_group_uuid)
- values ('AAAB', '048af2eb-ebe5-4ef8-80d5-97034aa16e65', '3b706eb3-8d98-48cb-853e-b6201244375e')
+ values ('AAAB', 'e24964ad-04d7-495d-ad2d-9be967a69982', '5fc65198-c6ef-438b-bc47-b1218399a2f8')
 
 
 
