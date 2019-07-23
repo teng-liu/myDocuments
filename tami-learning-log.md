@@ -1,5 +1,13 @@
 
 
+7.23
+-----
+updated/changed map-rel tables 
+user login query contract list -> vendor / user allocated
+  assignment -> add bunch -> done, remove bunch -> TODO
+bugs of contract list/vendor/template
+
+
 Week 12
 ========
 
