@@ -1,11 +1,27 @@
 
 
+7.24
+----
+1. !added tab access set-up to ACL privilege tree: Settings, Report, Process
+  so not only admin can access these tabs, others can if they were allocated the access privilege
+2. fixed bug of: defalut selection of the drop-down list didn't save (have to trigger onChange event) --> fixed now, default has value and will be saved
+3. working on create contract througn Workflow tab, and determine the template
+
 7.23
 -----
-updated/changed map-rel tables 
-user login query contract list -> vendor / user allocated
-  assignment -> add bunch -> done, remove bunch -> TODO
-bugs of contract list/vendor/template
+1. changed map/relation db tables 
+2. user login added query(filter) when get contract list
+- if vendor -> only the contract with same vendor, AND its allocated contract, that is even in the same vendor, different user can see different contract list
+- non-vendor -> only see the contract based on the contract-group that assigned to this user, that is no matter which role(not admin), the contract list are based on what they were allocated
+- TODO: assignment -> add bunch -> done, remove bunch -> TODO
+3. fixed bugs of contract list/vendor/template
+
+
+7.22
+----
+1. worked on UI double-click event to move item between two lists
+2. Added map tables for Contract Group with Contract, and User Contract Group with contract group
+
 
 
 Week 12
