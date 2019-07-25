@@ -1,5 +1,15 @@
 
 
+7.25
+----
+1. display and save contract from Workflow
+2. privilege stable now, vendor -> different person, different role
+3. need to change from Contract Group to Workflow Group??  (to manage both template and contract)
+
+docker exec -t 8134d7dacc58 pg_dumpall -c -U postgres > dump_`date +%d-%m-%Y"_"%H_%M_%S`.sql
+
+cat your_dump.sql | docker exec -i your-db-container psql -U postgres
+
 7.24
 ----
 1. !added tab access set-up to ACL privilege tree: Settings, Report, Process
