@@ -1,14 +1,17 @@
 
+Week 13
+=======
+7.26
+-----
+1. Added workflow group concept, moved logic of ACL on Contract Group to Workflow Group -> create / assign
+2. Filtered contract list filter function is done
+3. next week i will work on entire process/workflow, try to connect all these together
 
 7.25
 ----
 1. display and save contract from Workflow
 2. privilege stable now, vendor -> different person, different role
 3. need to change from Contract Group to Workflow Group??  (to manage both template and contract)
-
-docker exec -t 8134d7dacc58 pg_dumpall -c -U postgres > dump_`date +%d-%m-%Y"_"%H_%M_%S`.sql
-
-cat your_dump.sql | docker exec -i your-db-container psql -U postgres
 
 7.24
 ----
