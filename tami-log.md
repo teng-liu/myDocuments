@@ -1,6 +1,46 @@
 
 
 
+1. capture:
+- observations from the workplace
+- growth in your understanding of various subjects
+- connections to your academic courses, your ideas and
+thoughts throughout your term and 
+- will help you identify your strengths
+- develop further self awareness and determine areas for improvement.
+
+
+
+
+1. Your reflective journal will be made up of weekly entries capturing your **observations** from your workplace and your **interactions** with and within it. It is not a place to provide a descriptive account of what you did/tasks you completed, but a means to communicate your development, thinking, and learning. 
+
+Themes to be explored in your journal:
+
+- The significance of this work term to your professional and academic growth, and your wider career plans;
+- Progress toward or barriers in achieving the SMART goals you set for your work term;
+- Connections between your learning from your work term and what you have learned in your academic courses/theory;
+- Identifying the skills your work term is requiring you to develop and/or practice
+- Detailing areas for professional growth/improvement
+
+
+
+
+
+
+end
+-----------------
+
+
+
+
+
+
+
+
+
+
+
+
 Steps to Reproduce:
 
 open user settings

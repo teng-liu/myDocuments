@@ -1,3 +1,8 @@
+Week 14
+=======
+This week I worked on fixing bugs, implementing ACL controls and try to make the entire procedure working properly.
+There are lots of details need to deal with, as the application grows and more complex, it needs more time to design the entire process and provide a beter userbilities.
+
 
 Week 13
 =======
@@ -682,6 +687,8 @@ May 21
 May.20
 ======
 Holiday 
+
+
 
 Week 3 (May.13 ~ May.17)
 =======================
