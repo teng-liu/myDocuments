@@ -1,3 +1,17 @@
+
+
+
+
+8.5
+---
+Added Home page, Task list (query)
+Report (for taskList, also style)
+
+Todo: Control buttons, add privilege of role / user
+Added:  control by workflow states 
+
+
+
 Week 14
 =======
 This week I worked on fixing bugs, implementing ACL controls and try to make the entire procedure working properly.
