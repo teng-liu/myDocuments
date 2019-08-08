@@ -1,5 +1,55 @@
 
 
+### ACL
+- Role-Base [Action control]
+- User-Base [Contract Group]
+  - same role, different workflow/contract involved
+  - same vender, different workflow/contract involved
+- Configurable Privileges [Action, UI-tabs]
+- Users: Vendors, Authors, Supervisors, Approvers, TB
+
+### Workflow
+- Maintain Workflow states, actions, procedure
+- Tasks on User
+- Comments recorder
+
+
+### Report
+- Management
+- Data
+
+
+
+
+
+From online resources:
+https://sites.google.com/site/healthcarecontractmanagement/experience-the-most-dynamic-contract-management-system
+
+- Auditing & Reporting
+- Contract Amendment
+- Obligations Management
+- Execution
+- Approval
+- Negotiation
+- Authoring
+- Contract Rewuest
+- Renewal
+
+
+Week 15
+=======
+
+8.8
+problem recorder panel - done, comments
+
+8.7 
+styles
+bugs
+problem recorder panel 
+
+8.6 
+done refresh functions, refresh after add/remove/updates
+style updates 
 
 
 8.5
