@@ -1,5 +1,33 @@
 
 
+3-week plan
+============
+- Installation package
+  - Webpack and Docker
+- Documentations
+  - User Guide
+  - Developer Instruction
+- Bug fix
+
+#### OR
+
+- More features
+
+
+Future Plan
+==============
+- Template Editor
+- Contract Properties / Comments in current Template
+- Fulfil Contract content / Schedules docs... / relevent documents
+- Enrich Report [on requirement]
+  - And report graph
+- Better usability
+
+
+
+Current features
+================
+
 ### ACL
 - Role-Base [Action control]
 - User-Base [Contract Group]
@@ -39,23 +67,31 @@ https://sites.google.com/site/healthcarecontractmanagement/experience-the-most-d
 Week 15
 =======
 
+8.9
+----
+- Prepare PPT for demo
+- Adding demo Data
+
 8.8
+----
 problem recorder panel - done, comments
 
 8.7 
-styles
-bugs
-problem recorder panel 
+----
+- styles
+- bugs
+- problem recorder panel 
 
 8.6 
-done refresh functions, refresh after add/remove/updates
-style updates 
+----
+- done refresh functions, refresh after add/remove/updates
+- style updates 
 
 
 8.5
 ---
-Added Home page, Task list (query)
-Report (for taskList, also style)
+- Added Home page, Task list (query)
+- Report (for taskList, also style)
 
 Todo: Control buttons, add privilege of role / user
 Added:  control by workflow states 
