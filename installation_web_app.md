@@ -21,11 +21,41 @@ $ git clone https://github.com/teng-liu/installation_web.git
 
 ~~~
 
+4. install nodejs
+~~~
+sudo dnf install nodejs
+~~~
 
 4. install docker
 ~~~
 $ sudo dnf install docker-ce docker-ce-cli containerd.io
 ~~~
+
+5. build
+~~~
+npm install
+npm run build
+
+# prepare Dockerfile
+
+# open firewall for http
+[root@localhost html]# firewall-cmd --zone=FedoraServer --add-service=http --permanent
+success
+[root@localhost html]# firewall-cmd --reload
+success
+[root@localhost html]#
+
+
+docker build . -t itss/cms-ui:1.0.0 -t itss/cms-ui:latest  
+docker run -d --name cms.ui -p 8100:80 itss/cms-ui
+
+# port forward:  vm:host   8100:8100
+
+~~~
+
+
+
+
 
 5. docker build web_app
 ~~~sh
