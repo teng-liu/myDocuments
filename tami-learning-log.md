@@ -1,4 +1,20 @@
 
+Week 14
+=======
+packaging:
+
+https://www.freecodecamp.org/news/create-a-fullstack-react-express-mongodb-app-using-docker-c3e3e21c4074/
+
+https://codewithhugo.com/node-postgres-express-docker-compose/
+
+https://www.scalyr.com/blog/create-docker-image/
+
+
+https://dev.to/alex_barashkov/using-docker-for-nodejs-in-development-and-production-3cgp
+
+
+
+
 
 3-week plan
 ============
