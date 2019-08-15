@@ -1,4 +1,48 @@
 
+Aug.15
+=======
+
+
+Updating 35df2b0..e2a41ec
+Fast-forward
+ contract-system-api/docs/cms_init.sql              | 379 +++++++++++++
+ contract-system-api/src/core/resources.js          |  82 ++-
+ contract-system-api/src/server.js                  |   6 +-
+ contract-system-db/docs/cms_init.sql               | 611 ++++++++++++++++++---
+ .../src/components/contract/contractControl.tsx    |  88 ++-
+ .../src/components/contract/contractTemplate.tsx   | 544 ++++++++++++------
+ .../src/components/template/template.tsx           | 427 ++++++++++----
+ contract-system-ui/src/store/middlewares/api.ts    | 567 +++++++++++--------
+ 8 files changed, 2057 insertions(+), 647 deletions(-)
+
+
+
+
+From https://github.com/teng-liu/installation_web
+   8bcbea7..b823037  master     -> origin/master
+Updating 8bcbea7..b823037
+Fast-forward
+ README.md                      | 141 ++++++++++++++++++++++++++++++++++++++++-
+ web.api/Dockerfile             |  22 +------
+ web.api/docker-compose.yml     |  50 +++++++++++++++
+ web.api/package-lock.json      |  49 ++++----------
+ web.api/package.json           |   5 +-
+ web.api/src/index.js           |  10 +++
+ web.api/src/server.js          |   5 +-
+ web.db/Dockerfile              |   2 +
+ web.ui/Dockerfile              |  22 +------
+ web.ui/docker/nginx.conf       |   0
+ web.ui/package-lock.json       |  29 ++++++---
+ web.ui/src/components/main.tsx |   2 +-
+ 12 files changed, 247 insertions(+), 90 deletions(-)
+ create mode 100644 web.api/docker-compose.yml
+ create mode 100644 web.db/Dockerfile
+ create mode 100644 web.ui/docker/nginx.conf
+PS C:\Users\tliu\Documents\tami\projects\installation_web>
+
+
+
+
 
 
 1. capture:
