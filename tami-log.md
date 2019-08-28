@@ -1,4 +1,207 @@
 
+
+
+Thank you notes
+================
+
+Scott Cudmore
+  Enterprise Architecture Services, ITSS
+  Director
+
+Tracy Wood
+  ITSS
+  COO
+  TMWOOD@gov.pe.ca
+
+Laura Stanford
+  ITSS
+  Project Manager
+  lgstanford@gov.pe.ca
+
+Kim Knox
+  ITSS - Business Application Services - Project Management Office
+  Project Management Office
+  kjknox@gov.pe.ca
+
+Sherry McCourt
+  Finance - ITSS - Business Application Services
+  Manager - System Support
+  SAMCCOURT@gov.pe.ca
+
+Betty MacLean
+  PT - ITSS
+  Policy Coordinator - IT Shared Services
+  BPMACLEAN@gov.pe.ca
+
+Colin Beaton
+  PT - ITSS - Infrastructure
+  IT Manager
+  crbeaton@gov.pe.ca
+
+Patti Costello
+  ITSS - Business Systems Division
+  Business Analyst
+  plcostello@gov.pe.ca
+
+Stacey MacDonald
+  PT - ITSS - Business Systems
+  IT Consultant
+  SFMACDONALD@gov.pe.ca
+
+Trent Crane
+  ITSS -Corporate Operations, Finance & Planning section
+  Supply Chain Coordinator
+  RTCRANE@gov.pe.ca
+
+
+~~~
+Hi Scott,
+
+Thank you so much for this rewarding four-month experience in ITSS.
+
+I really appreciated your willingness to let me try different development technics.
+Your trust and support gave us courage and confidence to conduct this new project.
+Its a big progres and I am willing to continue to contribute to it next summer if the position still open.
+
+Thank you again for all of your support, and for all of the opportunities you have given me.
+
+Sincerely,
+
+Teng (Tami) Liu
+9026290576
+tliu2@upei.ca
+~~~
+
+
+TMWOOD@gov.pe.ca
+~~~
+Hi Tracy,
+
+Thank you so much for this rewarding four-month experience in ITSS.
+
+I really appreciated the trust and support that you have given to conduct this new project. Its a big progres for CMS and I am willing to continue to contribute to it next summer if the position is still open.
+
+Thank you again for all of your support, and for all of the opportunities you have given me.
+
+Sincerely,
+
+Teng (Tami) Liu
+9026290576
+tliu2@upei.ca
+~~~
+
+SAMCCOURT@gov.pe.ca
+~~~
+Hi Sherry,
+
+Thank you so much for all the disscussions, ideas and paticipant with us about the contract management system. Its a big progres for CMS. I would love to continue to contribute to it with the team.
+
+I really appreciated the trust and support that you have given to us. Thank you again.
+
+Sincerely,
+
+Teng (Tami) Liu
+9026290576
+tliu2@upei.ca
+~~~
+
+BPMACLEAN@gov.pe.ca
+~~~
+Hi Betty,
+
+Thank you so much for all the disscussions, ideas and paticipant with us about the contract management system. Its a big progres for CMS. I would love to continue to contribute to it with the team.
+
+I really appreciated the trust and support that you have given to us. Thank you again.
+
+Sincerely,
+
+Teng (Tami) Liu
+9026290576
+tliu2@upei.ca
+~~~
+
+lgstanford@gov.pe.ca
+~~~
+Hi Laura,
+
+Thank you so much for all the caring and support you gave to us. I admire your ideas, courages and capabilities. You are awasome. Hope someday I can work for you.
+
+Thanks again for everything!
+
+Sincerely,
+
+Teng (Tami) Liu
+9026290576
+tliu2@upei.ca
+~~~
+
+crbeaton@gov.pe.ca
+plcostello@gov.pe.ca
+~~~
+Hi Colin & Patti,
+
+Thank you so much for all the caring and support you gave to us in this summer. You are friendly, nice and supportive which made me feel warm and made the work here easier.
+
+Thanks again for everything!
+
+Sincerely,
+
+Teng (Tami) Liu
+9026290576
+tliu2@upei.ca
+~~~
+
+RTCRANE@gov.pe.ca
+~~~
+Hi Mr. Crane,
+
+Thank you so much for all the disscussions, ideas and paticipant with us about the contract management system. Its a big progres for CMS. I would love to continue to contribute to it with the team.
+
+I really appreciated the trust and support that you have given to us. Thank you again.
+
+Sincerely,
+
+Teng (Tami) Liu
+9026290576
+tliu2@upei.ca
+~~~
+
+
+examples
+------------------------------
+
+Subject: Your Name - Thank You for the Opportunity
+
+Dear Mr. Ms. Last Name,
+
+Thank you so much for a rewarding three months as the Environmental Health and Justice Intern at ABC Nonprofit.
+
+I really appreciated your willingness to let me explore all of the departments within the company. I was able to sit in on board meetings, organize fundraising events, collaborate with campaign staff on environment policies, write content for your website, and more. You really allowed me to see how an environmental nonprofit works, from the ground up. I have gained skills in campaign research, writing social media content, and event planning.
+
+I look forward to going back to school and completing my degree in Environmental Studies. This internship has only helped increase my desire to work for a company like yours in the future.
+
+Thank you again for all of your support, and for all of the opportunities you have given me.
+
+Sincerely,
+
+Firstname Lastname
+Phone Number
+Email Address
+LinkedIn Profile URL (optional)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Aug.15
 =======
 
