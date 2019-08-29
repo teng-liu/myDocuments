@@ -1,6 +1,40 @@
 
 
 
+
+
+Installation Package
+--------------------
+- Path:   Alfresco -> ITSS Contract Management Development -> Installation (80MB)
+  - http://alfresco.peigov/share/s/fNzuZmJkQFOzViAWdoTpfA
+- Note:   There is a "Installation_guide.pdf" in the same folder
+
+Documentations
+--------------
+- Path-1:   Alfresco -> ITSS Contract Management Development -> Documentation
+- Path-2:   Gitlab.gpei.ca -> Coop Student Shared Repository -> documentation
+  - https://gitlab.gpei.ca/quickr/framework/coop-student-shared-repository
+
+Source Code
+-----------
+- Path:   Gitlab.gpei.ca -> Coop Student Shared Repository
+  - https://gitlab.gpei.ca/quickr/framework/coop-student-shared-repository
+- Note:   All API, UI, Database projects are in this same repository, please read README.md in this repository for more information
+
+
+
+
+Hi Cindy,
+
+Thank you! Its my pleasure to work in ITSS especially on this new project, the Contract Management System. I would love to continue to contribute to no matter next summer or after I graduate in 2021. Thank you so much for the opportunity!
+
+Sincerely,
+
+Teng (Tami) Liu
+9026290576
+tliu2@upei.ca
+
+
 Thank you notes
 ================
 
